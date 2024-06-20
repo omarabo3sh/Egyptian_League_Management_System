@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="scene2anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size:stretch ;            -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.ChooseController">
+   <children>
+      <Button defaultButton="true" layoutX="186.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTeamClick" prefHeight="25.0" prefWidth="87.0" text="TEAM" />
+      <Button defaultButton="true" layoutX="329.0" layoutY="340.0" mnemonicParsing="false" onAction="#onMatchClick" prefHeight="25.0" prefWidth="87.0" text="MATCH" />
+      <Button defaultButton="true" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBackClick"  prefHeight="25.0" prefWidth="49.0" text="Back" />   </children>
+</AnchorPane>
