@@ -15,6 +15,7 @@ public class Application extends javafx.application.Application {
 
        // String css = Objects.requireNonNull(this.getClass().getResource("Styles.css")).toExternalForm();
         //scene.getStylesheets().add(css);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
 
         stage.setResizable(false);
         stage.setTitle("Egyptian League Management System");
