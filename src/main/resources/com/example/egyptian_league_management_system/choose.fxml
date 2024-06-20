@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
@@ -8,7 +9,7 @@
 <AnchorPane id="scene2anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.ChooseController">
    <children>
 
-      <Button layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="38.0" prefWidth="87.0" text="Home" wrapText="true">
+      <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" text="Home" wrapText="true">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -32,7 +33,17 @@
                   </Stop>
                </stops>
             </LinearGradient>
-         </textFill></Button>
+         </textFill>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect></Button>
 
       <Button layoutX="303.0" layoutY="340.0" mnemonicParsing="false" onAction="#onMatchClick" prefHeight="25.0" prefWidth="101.0" text="MATCH" textAlignment="CENTER">
          <font>
