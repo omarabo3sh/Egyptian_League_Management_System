@@ -1,7 +1,16 @@
 package com.example.egyptian_league_management_system;
-import javafx.fxml.FXML;
 
-public class PlayerController {
+import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
+
+import javafx.scene.layout.AnchorPane;
+
+    public class TeamController {
+
+        private AnchorPane scene3AnchorPane;
 
    /*  private Button btnShowPlayers;
 

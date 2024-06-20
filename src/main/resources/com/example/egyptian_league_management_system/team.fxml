@@ -3,9 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="scene2AnchorPane" prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.egyptian_league_management_system.PlayerController">
+<AnchorPane fx:id="scene3anchorpane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.TeamController">
    <children>
       <DialogPane contentText="fs goat" headerText="messi" layoutX="30.0" layoutY="55.0" style="-fx-background-color: #000;">
          <buttonTypes>
@@ -14,5 +12,3 @@
       </DialogPane>
    </children>
 </AnchorPane>
-
-

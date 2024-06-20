@@ -5,6 +5,11 @@
 
 <AnchorPane id="scene3AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.MatchController">
    <children>
-      <Button id="match" layoutX="235.0" layoutY="152.0" mnemonicParsing="false" onAction="#matchOnClick" text="Button" />
+      <TableView layoutX="169.0" layoutY="74.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
