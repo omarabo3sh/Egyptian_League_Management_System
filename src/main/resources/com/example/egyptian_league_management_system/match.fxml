@@ -32,11 +32,29 @@
                    </stops>
                </LinearGradient>
            </textFill></Button>
-      <DialogPane layoutX="69.0" layoutY="83.0" prefHeight="163.0" prefWidth="469.0" />
-      <Label layoutX="139.0" layoutY="101.0" text="Team1" />
-      <Label layoutX="436.0" layoutY="101.0" text="Team2" />
-      <Label layoutX="286.0" layoutY="101.0" text="Date" />
-      <Label layoutX="125.0" layoutY="148.0" text="Referee :" />
-      <Label layoutX="125.0" layoutY="183.0" text="score :" />
-      <Label layoutX="125.0" layoutY="216.0" text="Stadium :" />  </children>
+      <DialogPane layoutX="69.0" layoutY="83.0" prefHeight="163.0" prefWidth="469.0" style="-fx-background-color: #015284;" />
+      <Label layoutX="139.0" layoutY="101.0" text="Team1" textFill="#fee020">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="436.0" layoutY="101.0" text="Team2" textFill="#fee020">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="286.0" layoutY="101.0" text="Date" textFill="#ff004d">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="125.0" layoutY="148.0" text="Referee :" textFill="#3aefff">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Label layoutX="125.0" layoutY="183.0" text="score :" textFill="#3aefff">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Label layoutX="125.0" layoutY="216.0" text="Stadium :" textFill="#3aefff">
+         <font>
+            <Font size="17.0" />
+         </font></Label>  </children>
 </AnchorPane>
