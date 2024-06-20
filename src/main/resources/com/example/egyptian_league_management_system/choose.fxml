@@ -20,9 +20,9 @@
                         <Color />
                      </color>
                   </Stop>
-                  <Stop offset="0.3631356966084559">
+                  <Stop offset="0.3631356966084557">
                      <color>
-                        <Color red="1.0" green="0.20061728358268738" blue="0.20061728358268738" />
+                        <Color red="0.48245614767074585" green="0.348440557718277" blue="0.348440557718277" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -34,7 +34,7 @@
             </LinearGradient>
          </textFill></Button>
 
-      <Button layoutX="310.0" layoutY="340.0" mnemonicParsing="false" onAction="#onMatchClick" prefHeight="25.0" prefWidth="101.0" text="MATCH" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="303.0" layoutY="340.0" mnemonicParsing="false" onAction="#onMatchClick" prefHeight="25.0" prefWidth="101.0" text="MATCH" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
@@ -61,7 +61,7 @@
          </textFill></Button>
 
 
-      <Button layoutX="186.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTeamClick" prefHeight="25.0" prefWidth="87.0" text="TEAM" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="179.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTeamClick" prefHeight="25.0" prefWidth="87.0" text="TEAM" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
