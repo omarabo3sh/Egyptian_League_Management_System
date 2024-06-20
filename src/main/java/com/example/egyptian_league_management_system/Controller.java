@@ -21,7 +21,7 @@ public class Controller {
 
     @FXML
     public void startBtnClick(ActionEvent actionEvent) throws IOException, IOException {
-        new Switch(scene1AnchorPane, "second.fxml");
+        new Switch(scene1AnchorPane, "Player.fxml");
     }
 
 }
