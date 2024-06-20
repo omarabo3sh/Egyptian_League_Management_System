@@ -12,5 +12,6 @@ public class Switch {
         currentAnchorPane.getChildren().removeAll();
         currentAnchorPane.getChildren().setAll(nextAnchorPane);
     }
+
 }
 
