@@ -2,12 +2,10 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.paint.Color?>
-<AnchorPane fx:id="scene3anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.TeamController">
+<AnchorPane fx:id="scene3anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.TeamController">
    <children>
       <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="38.0" prefWidth="64.0" text="Back" textAlignment="CENTER" wrapText="true">
          <font>
@@ -34,38 +32,38 @@
                </stops>
             </LinearGradient>
          </textFill></Button>
-      <DialogPane layoutX="39.0" layoutY="37.0" prefHeight="196.0" prefWidth="519.0" style="-fx-background-color: #554fb2;" />
-      <Label layoutX="274.0" layoutY="50.0" text="Name" textFill="WHITE">
+      <DialogPane layoutX="39.0" layoutY="37.0" prefHeight="196.0" prefWidth="519.0" style="-fx-background-color: #3e434c;" />
+      <Label layoutX="274.0" layoutY="50.0" text="Name" textFill="#ff004d">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="90.0" layoutY="107.0" text="Team :" textFill="WHITE">
+      <Label layoutX="90.0" layoutY="107.0" text="Team :" textFill="#3aefff">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="90.0" layoutY="146.0" text="Age :" textFill="WHITE">
+      <Label layoutX="90.0" layoutY="146.0" text="Age :" textFill="#3aefff">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="90.0" layoutY="183.0" text="Position :" textFill="WHITE">
+      <Label layoutX="90.0" layoutY="183.0" text="Position :" textFill="#3aefff">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="306.0" layoutY="107.0" text="Rank :" textFill="WHITE">
+      <Label layoutX="306.0" layoutY="107.0" text="Rank :" textFill="#3aefff">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="306.0" layoutY="146.0" text="Score :" textFill="WHITE">
+      <Label layoutX="306.0" layoutY="146.0" text="Score :" textFill="#3aefff">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="306.0" layoutY="183.0" text="Number :" textFill="WHITE">
+      <Label layoutX="306.0" layoutY="183.0" text="Number :" textFill="#3aefff">
          <font>
             <Font size="18.0" />
          </font>
