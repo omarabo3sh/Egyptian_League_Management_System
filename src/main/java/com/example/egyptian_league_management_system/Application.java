@@ -9,10 +9,6 @@ import java.io.IOException;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
-        /*Load FXML file
-        Parent root = FXMLLoader.load(getClass().getResource("welcomePage.fxml"));
-
-        Scene scene = new Scene(root);*/
 
         FXMLLoader fxmlLoader=new FXMLLoader(Application.class.getResource("welcomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
