@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="scene1AnchorPane" prefHeight="400.0" prefWidth="600.0"  style="-fx-background-image: url('EPL.jpg'); -fx-background-size:stretch ;            -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controller">
+<AnchorPane fx:id="scene1AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size:stretch ;            -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controller">
     <children>
-        <Button fx:id="btn_1" defaultButton="true" layoutX="249.0" layoutY="328.0" mnemonicParsing="false" onAction="#startBtnClick" prefHeight="25.0" prefWidth="101.0" text="Start" textFill="WHITE" wrapText="true">
+        <Button fx:id="btn_1" defaultButton="true" layoutX="243.0" layoutY="345.0" mnemonicParsing="false" onAction="#startBtnClick" prefHeight="25.0" prefWidth="101.0" text="Start" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font></Button>
