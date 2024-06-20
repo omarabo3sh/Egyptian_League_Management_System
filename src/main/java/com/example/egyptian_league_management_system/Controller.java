@@ -1,27 +1,28 @@
 package com.example.egyptian_league_management_system;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
-
-import java.io.IOException;
+import javafx.scene.layout.AnchorPane;
 
 public class Controller {
 
-    @FXML
-    private Button start_btn; // Injected via FXML
+
+    private ResourceBundle resources;
 
     @FXML
-    public void onstartBtnClick(ActionEvent actionEvent) {
+    private URL location;
+
+    @FXML
+    private AnchorPane scene1AnchorPane;
 
 
+    @FXML
+    public void startBtnClick(ActionEvent actionEvent) throws IOException, IOException {
+        new Switch(scene1AnchorPane, "second.fxml");
     }
 
-    public void omar_onaction(ActionEvent actionEvent) {
-
-
-    }
 }
+
