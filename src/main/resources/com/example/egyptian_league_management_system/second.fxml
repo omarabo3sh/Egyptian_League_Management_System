@@ -2,15 +2,48 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="scene2AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.SecondController">
-   <children>
-      <DialogPane contentText="fs goat" headerText="messi" layoutX="30.0" layoutY="55.0" style="-fx-background-color: #000;">
-         <buttonTypes>
-            <ButtonType fx:constant="CLOSE" />
-         </buttonTypes>
-      </DialogPane>
-   </children>
-</AnchorPane>
-
-
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="741.0" prefWidth="601.0">
+         <children>
+            <DialogPane layoutX="20.0" layoutY="50.0" prefHeight="223.0" prefWidth="538.0" style="-fx-background-color: #131a48;" />
+            <Label layoutX="233.0" layoutY="62.0" text="Name" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="72.0" layoutY="172.0" prefHeight="30.0" prefWidth="80.0" text=" Age     : " textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="72.0" layoutY="218.0" prefHeight="30.0" prefWidth="101.0" text="Position   : " textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="131.0" prefHeight="30.0" prefWidth="74.0" text="Team   :" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="308.0" layoutY="131.0" prefHeight="30.0" prefWidth="77.0" text="Rank     :" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="312.0" layoutY="172.0" text="Score   :" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="308.0" layoutY="218.0" text="Number   :" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
