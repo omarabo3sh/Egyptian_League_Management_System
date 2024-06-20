@@ -3,6 +3,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <AnchorPane id="scene3AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.MatchController">
    <children>
       <TableView layoutX="169.0" layoutY="74.0" prefHeight="200.0" prefWidth="200.0">
@@ -11,5 +15,29 @@
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-       <Button defaultButton="true" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="25.0" prefWidth="49.0" text="Back" />   </children>
+       <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="38.0" prefWidth="64.0" text="Back" textAlignment="CENTER" wrapText="true">
+           <font>
+               <Font name="System Bold Italic" size="17.0" />
+           </font>
+           <textFill>
+               <LinearGradient endX="0.8359621210429194" endY="0.9684542571708608" startX="0.4132491635975401" startY="0.34069400630914826">
+                   <stops>
+                       <Stop>
+                           <color>
+                               <Color />
+                           </color>
+                       </Stop>
+                       <Stop offset="0.3631356966084559">
+                           <color>
+                               <Color red="1.0" green="0.20061728358268738" blue="0.20061728358268738" />
+                           </color>
+                       </Stop>
+                       <Stop offset="1.0">
+                           <color>
+                               <Color red="0.05263157933950424" green="0.026640675961971283" blue="0.026640675961971283" />
+                           </color>
+                       </Stop>
+                   </stops>
+               </LinearGradient>
+           </textFill></Button>  </children>
 </AnchorPane>
