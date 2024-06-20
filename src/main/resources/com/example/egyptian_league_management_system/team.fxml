@@ -10,5 +10,6 @@
             <ButtonType fx:constant="CLOSE" />
          </buttonTypes>
       </DialogPane>
+      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="25.0" prefWidth="69.0" text="Back" />
    </children>
 </AnchorPane>
