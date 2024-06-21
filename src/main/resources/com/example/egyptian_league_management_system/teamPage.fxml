@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.TeamPageController">
+    <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" text="Back" wrapText="true">
+        <font>
+            <Font name="System Bold Italic" size="15.0" />
+        </font>
+        <textFill>
+            <LinearGradient endX="0.8359621210429194" endY="0.9684542571708608" startX="0.4132491635975401" startY="0.34069400630914826">
+                <stops>
+                    <Stop>
+                        <color>
+                            <Color />
+                        </color>
+                    </Stop>
+                    <Stop offset="0.3631356966084557">
+                        <color>
+                            <Color red="0.48245614767074585" green="0.348440557718277" blue="0.348440557718277" />
+                        </color>
+                    </Stop>
+                    <Stop offset="1.0">
+                        <color>
+                            <Color red="0.05263157933950424" green="0.026640675961971283" blue="0.026640675961971283" />
+                        </color>
+                    </Stop>
+                </stops>
+            </LinearGradient>
+        </textFill>
+        <effect>
+            <Lighting>
+                <bumpInput>
+                    <Shadow />
+                </bumpInput>
+
+            </Lighting>
+        </effect></Button>
+   <ImageView fitHeight="233.0" fitWidth="212.0" layoutX="40.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+   <Label layoutX="264.0" layoutY="59.0" prefHeight="38.0" prefWidth="205.0" text="team name" />
+</AnchorPane>
