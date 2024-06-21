@@ -6,44 +6,44 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="scene3anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.MatchController">
+<AnchorPane  prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.MatchController">
 
 
-
-            <AnchorPane layoutX="48.0" layoutY="44.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="505.0" style="-fx-background-color: #303030;">
-                <children>
-                    <Label fx:id="name" contentDisplay="CENTER" layoutX="56.0" layoutY="36.0" prefHeight="60.0" prefWidth="112.0" text="Team1" textAlignment="CENTER" textFill="WHITE">
-                        <font>
-                            <Font name="Agency FB Bold" size="48.0" />
-                        </font>
-                    </Label>
-                    <Label layoutX="56.0" layoutY="106.0" prefHeight="42.0" prefWidth="112.0" text="Referee   :" textFill="WHITE">
-                        <font>
-                            <Font name="Agency FB" size="24.0" />
-                        </font>
-                    </Label>
-                    <Label layoutX="56.0" layoutY="146.0" prefHeight="42.0" prefWidth="112.0" text="score   :" textFill="WHITE">
-                        <font>
-                            <Font name="Agency FB" size="24.0" />
-                        </font>
-                    </Label>
-                    <Label layoutX="56.0" layoutY="188.0" prefHeight="42.0" prefWidth="133.0" text="Stadium   :" textFill="WHITE">
-                        <font>
-                            <Font name="Agency FB" size="24.0" />
-                        </font>
-                    </Label>
-                    <Label fx:id="salary" layoutX="345.0" layoutY="37.0" prefHeight="42.0" prefWidth="112.0" text="Team2" textFill="WHITE">
-                        <font>
-                            <Font name="Agency FB Bold" size="48.0" />
-                        </font>
-                    </Label>
-         <Label layoutX="226.0" layoutY="61.0" text="Date" textFill="WHITE">
+    <AnchorPane layoutX="48.0" layoutY="44.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                minWidth="-Infinity" prefHeight="244.0" prefWidth="505.0" style="-fx-background-color: #303030;">
+        <Label  contentDisplay="CENTER" layoutX="56.0" layoutY="36.0" prefHeight="60.0" prefWidth="112.0"
+               text="Team1" textAlignment="CENTER" textFill="WHITE">
             <font>
-               <Font name="System Bold" size="24.0" />
+                <Font name="Agency FB Bold" size="48.0"/>
             </font>
-         </Label>
-                </children>
-            </AnchorPane>
+        </Label>
+        <Label layoutX="56.0" layoutY="106.0" prefHeight="42.0" prefWidth="112.0" text="Referee   :" textFill="WHITE">
+            <font>
+                <Font name="Agency FB" size="24.0"/>
+            </font>
+        </Label>
+        <Label layoutX="56.0" layoutY="146.0" prefHeight="42.0" prefWidth="112.0" text="score   :" textFill="WHITE">
+            <font>
+                <Font name="Agency FB" size="24.0"/>
+            </font>
+        </Label>
+        <Label layoutX="56.0" layoutY="188.0" prefHeight="42.0" prefWidth="133.0" text="Stadium   :" textFill="WHITE">
+            <font>
+                <Font name="Agency FB" size="24.0"/>
+            </font>
+        </Label>
+        <Label  layoutX="345.0" layoutY="37.0" prefHeight="42.0" prefWidth="112.0" text="Team2"
+               textFill="WHITE">
+            <font>
+                <Font name="Agency FB Bold" size="48.0"/>
+            </font>
+        </Label>
+        <Label layoutX="226.0" layoutY="61.0" text="Date" textFill="WHITE">
+           <font>
+               <Font name="System Bold" size="24.0"/>
+           </font>
+        </Label>
+    </AnchorPane>
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" text="Back" wrapText="true">
         <font>

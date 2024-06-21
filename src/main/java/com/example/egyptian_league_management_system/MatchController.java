@@ -1,30 +1,23 @@
 package com.example.egyptian_league_management_system;
 import java.io.IOException;
-import java.util.List;
+import java.util.Objects;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class MatchController {
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-    private Button btnShowMatches;
+
 
 
     public void onBackClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("choose.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("choose.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }

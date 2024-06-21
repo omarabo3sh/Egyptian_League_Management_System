@@ -5,17 +5,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("welcomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-
-       // String css = Objects.requireNonNull(this.getClass().getResource("Styles.css")).toExternalForm();
-        //scene.getStylesheets().add(css);
-       // scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
 
         stage.setResizable(false);
         stage.setTitle("Egyptian League Management System");

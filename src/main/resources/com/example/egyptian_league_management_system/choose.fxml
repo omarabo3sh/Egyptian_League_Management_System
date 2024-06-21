@@ -6,96 +6,105 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="scene2anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.ChooseController">
-   <children>
+<AnchorPane id="scene2anchor pane" prefHeight="400.0" prefWidth="600.0"
+            style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;"
+            xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.egyptian_league_management_system.ChooseController">
+   <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0"
+           prefWidth="66.0" text="Home" wrapText="true">
+      <font>
+         <Font name="System Bold Italic" size="15.0"/>
+      </font>
+      <textFill>
+         <LinearGradient endX="0.8359621210429194" endY="0.9684542571708608" startX="0.4132491635975401"
+                         startY="0.34069400630914826">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color/>
+                  </color>
+               </Stop>
+               <Stop offset="0.3631356966084557">
+                  <color>
+                     <Color red="0.48245614767074585" green="0.348440557718277" blue="0.348440557718277"/>
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="0.05263157933950424" green="0.026640675961971283" blue="0.026640675961971283"/>
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </textFill>
+      <effect>
+         <Lighting>
+            <bumpInput>
+               <Shadow/>
+            </bumpInput>
+            <light>
+               <Light.Distant/>
+            </light>
+         </Lighting>
+      </effect>
+   </Button>
 
-      <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" text="Home" wrapText="true">
-         <font>
-            <Font name="System Bold Italic" size="15.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="0.8359621210429194" endY="0.9684542571708608" startX="0.4132491635975401" startY="0.34069400630914826">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.3631356966084557">
-                     <color>
-                        <Color red="0.48245614767074585" green="0.348440557718277" blue="0.348440557718277" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.05263157933950424" green="0.026640675961971283" blue="0.026640675961971283" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant />
-               </light>
-            </Lighting>
-         </effect></Button>
-
-      <Button layoutX="303.0" layoutY="340.0" mnemonicParsing="false" onAction="#onMatchClick" prefHeight="25.0" prefWidth="101.0" text="MATCH" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold Italic" size="17.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="0.8359621210429194" endY="0.9684542571708608" startX="0.4132491635975401" startY="0.34069400630914826">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.3631356966084559">
-                     <color>
-                        <Color red="1.0" green="0.20061728358268738" blue="0.20061728358268738" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.05263157933950424" green="0.026640675961971283" blue="0.026640675961971283" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill></Button>
+   <Button layoutX="303.0" layoutY="340.0" mnemonicParsing="false" onAction="#onMatchClick" prefHeight="25.0"
+           prefWidth="101.0" text="MATCH" textAlignment="CENTER">
+      <font>
+         <Font name="System Bold Italic" size="17.0"/>
+      </font>
+      <textFill>
+         <LinearGradient endX="0.8359621210429194" endY="0.9684542571708608" startX="0.4132491635975401"
+                         startY="0.34069400630914826">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color/>
+                  </color>
+               </Stop>
+               <Stop offset="0.3631356966084559">
+                  <color>
+                     <Color red="1.0" green="0.20061728358268738" blue="0.20061728358268738"/>
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="0.05263157933950424" green="0.026640675961971283" blue="0.026640675961971283"/>
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </textFill>
+   </Button>
 
 
-      <Button layoutX="179.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTeamClick" prefHeight="25.0" prefWidth="87.0" text="TEAM" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold Italic" size="17.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="0.8359621210429194" endY="0.9684542571708608" startX="0.4132491635975401" startY="0.34069400630914826">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.3631356966084559">
-                     <color>
-                        <Color red="1.0" green="0.20061728358268738" blue="0.20061728358268738" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.05263157933950424" green="0.026640675961971283" blue="0.026640675961971283" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill></Button>
-   </children>
+   <Button layoutX="179.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTeamClick" prefHeight="38.0"
+           prefWidth="101.0" text="TEAM" textAlignment="CENTER">
+      <font>
+         <Font name="System Bold Italic" size="17.0"/>
+      </font>
+      <textFill>
+         <LinearGradient endX="0.8359621210429194" endY="0.9684542571708608" startX="0.4132491635975401"
+                         startY="0.34069400630914826">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color/>
+                  </color>
+               </Stop>
+               <Stop offset="0.3631356966084559">
+                  <color>
+                     <Color red="1.0" green="0.20061728358268738" blue="0.20061728358268738"/>
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="0.05263157933950424" green="0.026640675961971283" blue="0.026640675961971283"/>
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </textFill>
+   </Button>
 </AnchorPane>

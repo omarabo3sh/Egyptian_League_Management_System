@@ -1,6 +1,8 @@
 package com.example.egyptian_league_management_system;
 
 import java.io.IOException;
+import java.util.Objects;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,7 +17,7 @@ public class ChooseController {
     private Parent root;
 
     public void onTeamClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("team.fxml"));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("team.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -23,7 +25,7 @@ public class ChooseController {
     }
 
     public void onMatchClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("match.fxml"));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("match.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -31,7 +33,7 @@ public class ChooseController {
     }
 
     public void onBackClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("welcomePage.fxml"));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("welcomePage.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
