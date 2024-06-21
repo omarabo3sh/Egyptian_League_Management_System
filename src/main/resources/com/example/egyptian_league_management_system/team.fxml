@@ -6,77 +6,49 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="scene3anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.TeamController">
+<AnchorPane fx:id="scene3anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.TeamController">
 
-         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="600.0" style="-fx-background-color: #303030;">
-            <children>
-               <Label fx:id="name" contentDisplay="CENTER" layoutX="56.0" layoutY="36.0" prefHeight="60.0" prefWidth="498.0" text="Lionel Messi" textAlignment="CENTER" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB Bold" size="48.0" />
-                  </font>
-               </Label>
-               <Label layoutX="56.0" layoutY="106.0" prefHeight="42.0" prefWidth="112.0" text="Club           :" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label layoutX="56.0" layoutY="146.0" prefHeight="42.0" prefWidth="112.0" text="Country     :" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label layoutX="56.0" layoutY="186.0" prefHeight="42.0" prefWidth="112.0" text="Age            :" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label layoutX="351.0" layoutY="106.0" prefHeight="42.0" prefWidth="112.0" text="Height        :" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label layoutX="351.0" layoutY="146.0" prefHeight="42.0" prefWidth="112.0" text="Salary        :" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label layoutX="351.0" layoutY="186.0" prefHeight="42.0" prefWidth="112.0" text="Position      :" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label fx:id="clubName" layoutX="170.0" layoutY="106.0" prefHeight="42.0" prefWidth="179.0" text="Manchaster United" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label fx:id="countryName" layoutX="170.0" layoutY="146.0" prefHeight="42.0" prefWidth="182.0" text="Barcalona" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label fx:id="age" layoutX="170.0" layoutY="186.0" prefHeight="42.0" prefWidth="165.0" text="Barcalona" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label fx:id="height" layoutX="465.0" layoutY="106.0" prefHeight="42.0" prefWidth="137.0" text="Barcalona" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label fx:id="position" layoutX="465.0" layoutY="186.0" prefHeight="42.0" prefWidth="136.0" text="Barcalona" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-               <Label fx:id="salary" layoutX="465.0" layoutY="146.0" prefHeight="42.0" prefWidth="136.0" text="Barcalona" textFill="WHITE">
-                  <font>
-                     <Font name="Agency FB" size="24.0" />
-                  </font>
-               </Label>
-            </children>
-         </AnchorPane>
+
+
+   <AnchorPane layoutX="61.0" layoutY="41.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="505.0" style="-fx-background-color: #303030;">
+      <children>
+         <Label fx:id="name" contentDisplay="CENTER" layoutX="56.0" layoutY="36.0" prefHeight="60.0" prefWidth="112.0" text="Name" textAlignment="CENTER" textFill="WHITE">
+            <font>
+               <Font name="Agency FB Bold" size="48.0" />
+            </font>
+         </Label>
+         <Label layoutX="56.0" layoutY="106.0" prefHeight="42.0" prefWidth="112.0" text="Team  :" textFill="WHITE">
+            <font>
+               <Font name="Agency FB" size="24.0" />
+            </font>
+         </Label>
+         <Label layoutX="56.0" layoutY="146.0" prefHeight="42.0" prefWidth="112.0" text="Age   :" textFill="WHITE">
+            <font>
+               <Font name="Agency FB" size="24.0" />
+            </font>
+         </Label>
+         <Label layoutX="56.0" layoutY="188.0" prefHeight="42.0" prefWidth="133.0" text="Position  :" textFill="WHITE">
+            <font>
+               <Font name="Agency FB" size="24.0" />
+            </font>
+         </Label>
+         <Label layoutX="281.0" layoutY="110.0" text="Rank :" textFill="WHITE">
+            <font>
+               <Font name="Agency FB" size="24.0" />
+            </font>
+         </Label>
+         <Label layoutX="281.0" layoutY="150.0" prefHeight="31.0" prefWidth="56.0" text="Score :" textFill="WHITE">
+            <font>
+               <Font name="Agency FB" size="24.0" />
+            </font>
+         </Label>
+         <Label layoutX="281.0" layoutY="192.0" text="Number :" textFill="WHITE">
+            <font>
+               <Font name="Agency FB" size="24.0" />
+            </font>
+         </Label>
+      </children>
+   </AnchorPane>
 
    <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" text="Back" wrapText="true">
       <font>
