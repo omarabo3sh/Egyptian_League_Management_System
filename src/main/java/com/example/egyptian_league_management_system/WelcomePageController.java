@@ -11,7 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Controller {
+public class WelcomePageController {
 
 
 
@@ -20,7 +20,7 @@ public class Controller {
     @FXML
 
         public void startBtnClick(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("choose.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("choice.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
             stage.setScene(scene);

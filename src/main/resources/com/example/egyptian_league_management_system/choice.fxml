@@ -6,7 +6,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="scene2anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.ChooseController">
+<AnchorPane id="scene2anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('EPL.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.ChoiceController">
    <children>
 
       <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" text="Home" wrapText="true">

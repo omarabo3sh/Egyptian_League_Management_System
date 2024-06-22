@@ -10,14 +10,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class ChooseController {
+public class ChoiceController {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     public void onTeamsClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("teamChoice.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("team.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

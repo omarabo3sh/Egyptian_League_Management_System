@@ -15,7 +15,7 @@ public class MatchController {
 
 
     public void onBackClick(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("choose.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("choice.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
