@@ -1,8 +1,11 @@
 package com.example.egyptian_league_management_system;
 
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 import java.util.Objects;
@@ -21,6 +24,7 @@ public class Application extends javafx.application.Application {
 
         stage.show();
     }
+
 
     public static void main(String[] args) {
         launch(args);
