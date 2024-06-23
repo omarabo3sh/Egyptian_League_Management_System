@@ -1,0 +1,29 @@
+.button-73 {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 40em;
+    -fx-border-style: none;
+    -fx-effect: dropshadow(gaussian, rgba(173,207,255,1), 10, 0, 0, -6);
+    -fx-text-fill: #000000;
+    -fx-cursor: hand;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-font-size: 1.2em; /* Changed from 1.2rem to 1.2em */
+    -fx-font-weight: 700;
+    -fx-letter-spacing: -0.24px;
+    -fx-padding: 1em 1.3em; /* Changed from 1rem 1.3rem to 1em 1.3em */
+    -fx-text-alignment: center;
+    -fx-text-decoration: none;
+    -fx-transition: all 0.15s;
+    -fx-user-select: none;
+}
+
+.button-73:hover {
+    -fx-background-color: #FFC229;
+    -fx-effect: innershadow(gaussian, rgba(255,99,20,1), 8, 0, 0, 0);
+}
+
+@media (min-width: 768px) {
+    .button-73 {
+        -fx-font-size: 1.5em; /* Changed from 1.5rem to 1.5em */
+        -fx-padding: 0.75em 2em; /* Changed from 0.75rem 2rem to 0.75em 2em */
+    }
+}
