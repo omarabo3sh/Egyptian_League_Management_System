@@ -19,3 +19,26 @@
     -fx-background-color: #d4f2f5; /* Light cyan */
     -fx-effect: innershadow(gaussian, rgba(255,99,20,1), 8, 0, 0, 0);
 }
+
+.cssbuttons-io {
+    -fx-background-color: linear-gradient(to right, #00bf63, #5ce1e6);
+    -fx-background-radius: 0.8em;
+    -fx-cursor: hand;
+    -fx-border-style: none;
+    -fx-font-family: inherit;
+    -fx-font-weight: bold; /* JavaFX uses 'bold' for font-weight */
+    -fx-font-size: 17px;
+    -fx-text-fill: white; /* JavaFX uses 'white' instead of 'ghostwhite' */
+    -fx-padding: 0.8em 0.9em 0.8em 1.02em; /* Consolidate padding to one line */
+    -fx-alignment: center-left;
+}
+
+.cssbuttons-io:hover {
+    -fx-background-color: linear-gradient(to right, #5ce1e6, #00bf63); /* Swap gradient colors on hover */
+}
+
+.cssbuttons-io:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
