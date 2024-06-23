@@ -3,20 +3,20 @@
     -fx-background-radius: 40em;
     -fx-border-style: none;
     -fx-effect: dropshadow(gaussian, rgba(173,207,255,1), 10, 0, 0, -6);
-    -fx-text-fill: linear-gradient(to bottom, #ff3333, #090202); /* Text color gradient */
+    -fx-text-fill: linear-gradient(to bottom, #ff3333, #090202);
     -fx-cursor: hand;
-    -fx-font-family: "System Bold Italic"; /* Font family */
-    -fx-font-size: 18.0px; /* Font size */
-    -fx-font-weight: bold; /* Font weight */
-    -fx-padding: 0.5em 1em; /* Adjust padding for better visual balance */
+    -fx-font-family: "System Bold Italic";
+    -fx-font-size: 18.0px;
+    -fx-font-weight: bold;
+    -fx-padding: 0.5em 1em;
     -fx-text-alignment: center;
     -fx-text-decoration: none;
-    -fx-wrap-text: true; /* Enable text wrapping */
-    -fx-content-display: center; /* Align text content to the center */
+    -fx-wrap-text: true;
+    -fx-content-display: center;
 }
 
 .button-73:hover {
-    -fx-background-color: #d4f2f5; /* Light cyan */
+    -fx-background-color: #d4f2f5;
     -fx-effect: innershadow(gaussian, rgba(255,99,20,1), 8, 0, 0, 0);
 }
 
@@ -27,20 +27,20 @@
     -fx-background-radius: 40em;
     -fx-border-style: none;
     -fx-effect: dropshadow(gaussian, rgba(173,207,255,1), 10, 0, 0, -6);
-    -fx-text-fill: linear-gradient(to bottom, #ff3333, #090202); /* Text color gradient */
+    -fx-text-fill: linear-gradient(to bottom, #ff3333, #090202);
     -fx-cursor: hand;
-    -fx-font-family: "System Bold Italic"; /* Font family */
-    -fx-font-size: 12.0px; /* Font size */
-    -fx-font-weight: bold; /* Font weight */
-    -fx-padding: 0.5em 1em; /* Adjust padding for better visual balance */
+    -fx-font-family: "System Bold Italic";
+    -fx-font-size: 12.0px;
+    -fx-font-weight: bold;
+    -fx-padding: 0.5em 1em;
     -fx-text-alignment: center;
     -fx-text-decoration: none;
-    -fx-wrap-text: true; /* Enable text wrapping */
-    -fx-content-display: center; /* Align text content to the center */
+    -fx-wrap-text: true;
+    -fx-content-display: center;
 }
 
 .button-7:hover {
-    -fx-background-color: #d4f2f5; /* Light cyan */
+    -fx-background-color: #d4f2f5;
     -fx-effect: innershadow(gaussian, rgba(255,99,20,1), 8, 0, 0, 0);
 }
 
