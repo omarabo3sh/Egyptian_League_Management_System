@@ -9,11 +9,8 @@
             xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.egyptian_league_management_system.ChoiceController">
    <Button alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick"
-           prefHeight="26.0" prefWidth="66.0" styleClass="button-73" text="Home" wrapText="true">
-      <font>
-         <Font size="10.0"/>
-      </font>
-   </Button>
+           prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Home" wrapText="true"/>
+
 
    <Button alignment="CENTER" layoutX="303.0" layoutY="340.0" mnemonicParsing="false" onAction="#onMatchesClick"
            prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="MATCHES" textAlignment="CENTER"
