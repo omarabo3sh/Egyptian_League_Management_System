@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl6.jpg'); -fx-background-size:stretch ;       -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.TeamController">
     <Button alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
     <Button alignment="CENTER" layoutX="201.0" layoutY="345.0" mnemonicParsing="false" onAction="#onTeamClick" prefHeight="38.0" prefWidth="198.0" styleClass="button-73" text="Show Players" textAlignment="CENTER" wrapText="true" />
-
+      <ImageView fx:id="team1ImageView" layoutX="50.0" layoutY="50.0" />
+    <ImageView fx:id="team2ImageView" layoutX="150.0" layoutY="50.0" />
 </AnchorPane>

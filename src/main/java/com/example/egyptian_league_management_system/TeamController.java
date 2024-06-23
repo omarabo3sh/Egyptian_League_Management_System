@@ -1,41 +1,45 @@
 package com.example.egyptian_league_management_system;
 
 import java.io.IOException;
-import java.util.Objects;
+
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.fxml.FXML;
+
+import javafx.scene.image.ImageView;
 
 public class TeamController {
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+
+
+    @FXML
+    private ImageView team1ImageView;
+    @FXML
+    private ImageView team2ImageView;
 
 
 
+
+
+    public void initialize() {
+
+
+      //  Image team1Image = new Image(Objects.requireNonNull(getClass().getResource("ahly.jpg")).toString());
+       // Image team2Image = new Image(Objects.requireNonNull(getClass().getResource("zamalek.png")).toString());
+
+        //team1ImageView.setImage(team1Image);
+        //team2ImageView.setImage(team2Image);
+
+
+
+    }
 
     public void onBackClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("choice.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Styles.css")).toExternalForm());
-
-        stage.show();
+        Application.switchScene(event,"choice.fxml");
     }
-    public void onTeamClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("player.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Styles.css")).toExternalForm());
 
-        stage.show();
+    public void onTeamClick(ActionEvent event) throws IOException {
+        Application.switchScene(event,"player.fxml");
     }
 
 
