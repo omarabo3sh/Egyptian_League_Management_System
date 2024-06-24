@@ -1,88 +1,91 @@
 package com.example.egyptian_league_management_system;
-import java.io.IOException;
-import java.util.Objects;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ScrollPane;
+
 
 public class MatchController {
 
-
-
-
-    public void onBackClick(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("choice.fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Styles.css")).toExternalForm());
-
-        stage.show();
-    }
-    /*
-    private MatchService matchService;
-    public MatchController() {
-        matchService = new MatchService();
-    }
+    @FXML
+    private ScrollPane scrollPane;
 
     @FXML
+    private AnchorPane parentAnchorPane;
+
     public void initialize() {
-        btnShowMatches.setOnAction(event -> {
-            List<Match> matches = matchService.getAllMatches();
-            displayMatchDialogs(matches);
-        });
-    }
+        int numberOfPanes = 5;
 
-    public void displayMatchDialogs(List<Match> matches) {
-        for (Match match : matches) {
-            Platform.runLater(() -> {
-                Dialog<Void> dialog = new Dialog<>();
-                dialog.setTitle("Match Information");
-                DialogPane dialogPane = createMatchDialogPane(match);
-                dialog.setDialogPane(dialogPane);
-                dialog.showAndWait();
-            });
+        parentAnchorPane.setPrefHeight(numberOfPanes * 254); // Adjust the height based on the number of panes
+        for (int i = 1; i <= numberOfPanes; i++) {
+            AnchorPane matchAnchorPane = createMatchAnchorPane("Team1", "Team2", "Referee", "Score", "Stadium", "Date");
+            matchAnchorPane.setLayoutX(52);
+            matchAnchorPane.setLayoutY((i - 1) * 254 + 44); // Space out panes vertically
+            parentAnchorPane.getChildren().add(matchAnchorPane);
         }
+        scrollPane.setContent(parentAnchorPane);
     }
 
-    public DialogPane createMatchDialogPane(Match match) {
-        DialogPane dialogPane = new DialogPane();
+    private AnchorPane createMatchAnchorPane(String team1, String team2, String referee, String score, String stadium, String date) {
+        AnchorPane anchorPane = new AnchorPane();
+        anchorPane.setPrefWidth(505);
+        anchorPane.setPrefHeight(244);
+        anchorPane.setStyle("-fx-background-color: #303030;");
 
-        GridPane grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
+        Label labelTeam1 = new Label(team1);
+        labelTeam1.setLayoutX(56);
+        labelTeam1.setLayoutY(36);
+        labelTeam1.setPrefWidth(112);
+        labelTeam1.setPrefHeight(60);
+        labelTeam1.setTextFill(javafx.scene.paint.Color.WHITE);
+        labelTeam1.setFont(new javafx.scene.text.Font("Agency FB Bold", 48));
 
-        grid.add(new Label("Match ID:"), 0, 0);
-        grid.add(new Label(String.valueOf(match.getId())), 1, 0);
+        Label labelReferee = new Label("Referee: " + referee);
+        labelReferee.setLayoutX(56);
+        labelReferee.setLayoutY(149);
+        labelReferee.setPrefWidth(112);
+        labelReferee.setPrefHeight(42);
+        labelReferee.setTextFill(javafx.scene.paint.Color.WHITE);
+        labelReferee.setFont(new javafx.scene.text.Font("Agency FB", 24));
 
-        grid.add(new Label("Date:"), 0, 1);
-        grid.add(new Label(match.getDate().toString()), 1, 1);
+        Label labelScore = new Label("Score: " + score);
+        labelScore.setLayoutX(56);
+        labelScore.setLayoutY(107);
+        labelScore.setPrefWidth(112);
+        labelScore.setPrefHeight(42);
+        labelScore.setTextFill(javafx.scene.paint.Color.WHITE);
+        labelScore.setFont(new javafx.scene.text.Font("Agency FB", 24));
 
-        grid.add(new Label("Team 1:"), 0, 2);
-        grid.add(new Label(match.getTeam1().getName()), 1, 2);
+        Label labelStadium = new Label("Stadium: " + stadium);
+        labelStadium.setLayoutX(186);
+        labelStadium.setLayoutY(191);
+        labelStadium.setPrefWidth(133);
+        labelStadium.setPrefHeight(42);
+        labelStadium.setTextFill(javafx.scene.paint.Color.WHITE);
+        labelStadium.setFont(new javafx.scene.text.Font("Agency FB", 24));
 
-        grid.add(new Label("Team 2:"), 0, 3);
-        grid.add(new Label(match.getTeam2().getName()), 1, 3);
+        Label labelTeam2 = new Label(team2);
+        labelTeam2.setLayoutX(345);
+        labelTeam2.setLayoutY(37);
+        labelTeam2.setPrefWidth(112);
+        labelTeam2.setPrefHeight(42);
+        labelTeam2.setTextFill(javafx.scene.paint.Color.WHITE);
+        labelTeam2.setFont(new javafx.scene.text.Font("Agency FB Bold", 48));
 
-        grid.add(new Label("Referee:"), 0, 4);
-        grid.add(new Label(match.getFootballReferee()), 1, 4);
+        Label labelDate = new Label(date);
+        labelDate.setLayoutX(221);
+        labelDate.setLayoutY(56);
+        labelDate.setTextFill(javafx.scene.paint.Color.WHITE);
+        labelDate.setFont(new javafx.scene.text.Font("System Bold", 24));
 
-        grid.add(new Label("Score:"), 0, 5);
-        grid.add(new Label(match.getScore()), 1, 5);
+        anchorPane.getChildren().addAll(labelTeam1, labelReferee, labelScore, labelStadium, labelTeam2, labelDate);
 
-        grid.add(new Label("Stadium:"), 0, 6);
-        grid.add(new Label(match.getStadiumName()), 1, 6);
-
-        dialogPane.setContent(grid);
-        dialogPane.getButtonTypes().addAll(ButtonType.OK);
-
-        return dialogPane;
-
+        return anchorPane;
     }
-  */
+public void onBackClick(ActionEvent event) throws IOException {
+        Application.switchScene(event,"choice.fxml");
+    }
 }
-

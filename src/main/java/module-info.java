@@ -6,6 +6,7 @@ module com.example.egyptian_league_management_system {
     requires com.dlsc.formsfx;
     requires java.sql;
     requires java.persistence;
+    requires java.desktop;
 
     opens com.example.egyptian_league_management_system to javafx.fxml;
     exports com.example.egyptian_league_management_system;
