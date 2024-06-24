@@ -3,12 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl6.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.MatchController">
     <ScrollPane fx:id="scrollPane" prefHeight="400.0" prefWidth="600.0">
-        <AnchorPane fx:id="parentAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0">
+        <VBox fx:id="vbox" alignment="CENTER" spacing="10" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0">
             <!-- Dynamic panes will be added here by the controller -->
-        </AnchorPane>
+        </VBox>
     </ScrollPane>
     <Button alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
 </AnchorPane>

@@ -5,8 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.control.ScrollPane;
-
+import javafx.geometry.Pos;
 
 public class MatchController {
 
@@ -14,19 +15,22 @@ public class MatchController {
     private ScrollPane scrollPane;
 
     @FXML
-    private AnchorPane parentAnchorPane;
+    private VBox vbox;
 
     public void initialize() {
         int numberOfPanes = 5;
 
-        parentAnchorPane.setPrefHeight(numberOfPanes * 254); // Adjust the height based on the number of panes
+        vbox.setPrefHeight(numberOfPanes * 254); // Adjust the height based on the number of panes
+        vbox.setAlignment(Pos.CENTER); // Center the VBox contents horizontally
+
         for (int i = 1; i <= numberOfPanes; i++) {
             AnchorPane matchAnchorPane = createMatchAnchorPane("Team1", "Team2", "Referee", "Score", "Stadium", "Date");
-            matchAnchorPane.setLayoutX(52);
-            matchAnchorPane.setLayoutY((i - 1) * 254 + 44); // Space out panes vertically
-            parentAnchorPane.getChildren().add(matchAnchorPane);
+            matchAnchorPane.setPrefWidth(505);
+            matchAnchorPane.setPrefHeight(244);
+            vbox.getChildren().add(matchAnchorPane);
         }
-        scrollPane.setContent(parentAnchorPane);
+
+        scrollPane.setContent(vbox);
     }
 
     private AnchorPane createMatchAnchorPane(String team1, String team2, String referee, String score, String stadium, String date) {
@@ -85,7 +89,8 @@ public class MatchController {
 
         return anchorPane;
     }
-public void onBackClick(ActionEvent event) throws IOException {
-        Application.switchScene(event,"choice.fxml");
+
+    public void onBackClick(ActionEvent event) throws IOException {
+        Application.switchScene(event, "choice.fxml");
     }
 }
