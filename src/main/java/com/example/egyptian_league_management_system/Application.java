@@ -25,7 +25,7 @@ public class Application extends javafx.application.Application {
         stage.setResizable(false);
         stage.setTitle("Egyptian League Management System");
         stage.setScene(scene);
-        stage.getIcons().add(new Image("epl.png"));
+
 
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Styles.css")).toExternalForm());
 
