@@ -1,6 +1,7 @@
 package com.example.egyptian_league_management_system.Operations;
 
 
+
 import com.example.egyptian_league_management_system.Database.DatabaseManager ;
 import com.example.egyptian_league_management_system.Entities.Player ;
 import com.example.egyptian_league_management_system.Entities.Team ;
@@ -140,5 +141,52 @@ public class TeamOperations {
         });
         return teams;
     }
+
+    public List<Team> getTeamsGoalSorted(){
+        List<Team> teams = getAll();
+        List<Team>teamsWithPlayers = new ArrayList<>();
+        for (Team team : teams){
+            teamsWithPlayers.add(getTeamPlayers(team));
+        }
+
+        Collections.sort(teamsWithPlayers, new Comparator<Team>() {
+            @Override
+            public int compare(Team o1, Team o2) {
+                return Integer.compare(calculateTotalGoals(o1) , calculateTotalGoals(o2));
+            }
+        });
+
+        return teamsWithPlayers;
+
+    }
+
+    public List<Team> getTeamAverageAgeSorted(){
+        List<Team> teams = getAll();
+        List<Team> teamsWithPlayers = new ArrayList<>();
+        for (Team team : teams){
+            teamsWithPlayers.add(getTeamPlayers(team));
+        }
+
+        Collections.sort(teamsWithPlayers, new Comparator<Team>() {
+            @Override
+            public int compare(Team o1, Team o2) {
+                return Integer.compare(o1.getTotalScore() , o2.getTotalScore());
+            }
+        });
+        return teamsWithPlayers;
+    }
+
+    private int calculateTotalGoals(Team team){
+        int sum = 0 ;
+        if (team.getPlayers() == null){
+            return 0;
+        }else {
+            for (Player player : team.getPlayers()){
+                sum+=player.getAge();
+            }
+        }
+        return sum/team.getPlayers().size();
+    }
+
 
 }

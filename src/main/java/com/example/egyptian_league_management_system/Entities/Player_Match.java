@@ -22,7 +22,7 @@ public class Player_Match {
     }
 
     // Parameterized constructor
-    public Player_Match(Player player, Match match) {
+    public  Player_Match(Player player, Match match) {
         this.player = player;
         this.match = match;
     }
