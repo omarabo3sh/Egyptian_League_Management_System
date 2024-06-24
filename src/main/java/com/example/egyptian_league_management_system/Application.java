@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -24,6 +25,8 @@ public class Application extends javafx.application.Application {
         stage.setResizable(false);
         stage.setTitle("Egyptian League Management System");
         stage.setScene(scene);
+        stage.getIcons().add(new Image("epl.png"));
+
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Styles.css")).toExternalForm());
 
         stage.show();
@@ -33,6 +36,7 @@ public class Application extends javafx.application.Application {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(Objects.requireNonNull(Application.class.getResource("Styles.css")).toExternalForm());
+
         stage.setScene(scene);
         stage.show();
     }
