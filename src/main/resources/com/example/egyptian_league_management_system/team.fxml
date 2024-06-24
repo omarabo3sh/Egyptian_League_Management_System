@@ -3,10 +3,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl6.jpg'); -fx-background-size:stretch ;       -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.TeamController">
     <Button alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
-    <Button alignment="CENTER" layoutX="201.0" layoutY="345.0" mnemonicParsing="false" onAction="#onTeamClick" prefHeight="38.0" prefWidth="198.0" styleClass="button-73" text="Show Players" textAlignment="CENTER" wrapText="true" />
-      <ImageView fx:id="team1ImageView" layoutX="50.0" layoutY="50.0" />
-    <ImageView fx:id="team2ImageView" layoutX="150.0" layoutY="50.0" />
+   <ImageView fx:id="team2ImageView" fitHeight="100" fitWidth="100" layoutX="72.0" layoutY="101.0" onMouseClicked="#onImage2Click" />
+
+   <Label alignment="CENTER" layoutX="116.0" layoutY="14.0" prefHeight="45.0" prefWidth="368.0" text="Double Click on Team's Logo To Show Their Players" wrapText="true">
+      <font>
+         <Font name="System Bold Italic" size="15.0" />
+      </font>
+      <textFill>
+         <LinearGradient cycleMethod="REPEAT">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="0.5" green="0.11728394776582718" blue="0.11728394776582718" />
+                  </color>
+               </Stop>
+               <Stop offset="0.4178082191780822">
+                  <color>
+                     <Color red="0.09649122506380081" green="0.0830896720290184" blue="0.0830896720290184" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="0.0689999982714653" green="0.6899999976158142" blue="0.49880900979042053" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </textFill>
+   </Label>
+   <ImageView fx:id="team1ImageView" fitHeight="100" fitWidth="100" layoutX="185.0" layoutY="100.0" onMouseClicked="#onImage1Click" />
 </AnchorPane>
