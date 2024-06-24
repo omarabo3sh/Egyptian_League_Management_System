@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl6.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.PlayerController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.PlayerController">
    <ScrollPane fx:id="scrollPane"  prefHeight="400.0" prefWidth="600.0" fitToWidth="true" fitToHeight="true">
-      <VBox fx:id="vbox" alignment="TOP_CENTER" spacing="10">
+      <VBox  style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" fx:id="vbox" alignment="TOP_CENTER" spacing="10">
          <!-- Dynamic panes will be added here by the controller -->
       </VBox>
    </ScrollPane>
