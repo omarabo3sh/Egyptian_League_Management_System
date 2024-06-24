@@ -1,6 +1,5 @@
 package com.example.egyptian_league_management_system.Entities;
 
-import javax.persistence.Entity;
 import javax.persistence.*;
 import java.util.List;
 
@@ -9,23 +8,57 @@ public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    int Id;
-    String Name;
-    String CaptainName;
-    int TotalScore;
-    @OneToMany(mappedBy = "team" , cascade = CascadeType.ALL)
-    List<Player> players;
+    private int id;
 
-    @OneToMany(mappedBy = "team" , cascade = CascadeType.ALL)
-    List<Match>matches;
-    public Team( String name, String captainName, int totalScore) {
+    private String name;
+    private String captainName;
+    private int totalScore;
 
-        Name = name;
-        CaptainName = captainName;
-        TotalScore = totalScore;
+    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
+    private List<Player> players;
+
+    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
+    private List<Match> matches;
+
+    public Team() {
     }
-    public Team(){
 
+    public Team(String name, String captainName, int totalScore) {
+        this.name = name;
+        this.captainName = captainName;
+        this.totalScore = totalScore;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCaptainName() {
+        return captainName;
+    }
+
+    public void setCaptainName(String captainName) {
+        this.captainName = captainName;
+    }
+
+    public int getTotalScore() {
+        return totalScore;
+    }
+
+    public void setTotalScore(int totalScore) {
+        this.totalScore = totalScore;
     }
 
     public List<Player> getPlayers() {
@@ -36,37 +69,11 @@ public class Team {
         this.players = players;
     }
 
-    public int getId() {
-        return Id;
+    public List<Match> getMatches() {
+        return matches;
     }
 
-    public void setId(int id) {
-        Id = id;
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
     }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public String getCaptainName() {
-        return CaptainName;
-    }
-
-    public void setCaptainName(String captainName) {
-        CaptainName = captainName;
-    }
-
-    public int getTotalScore() {
-        return TotalScore;
-    }
-
-    public void setTotalScore(int totalScore) {
-        TotalScore = totalScore;
-    }
-
-
 }

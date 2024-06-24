@@ -1,28 +1,98 @@
 package com.example.egyptian_league_management_system.Entities;
 
-import javax.persistence.Entity;
 import javax.persistence.*;
 import java.util.List;
+import javax.persistence.Entity;
 
 @Entity
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    int Id;
-    String Name;
-    String Number ;
-    String Position;
-    int Age;
-    int Sore;
-    int Rank;
+    private int id;
+
+    private String name;
+    private String number;
+    private String position;
+    private int age;
+    private int score;
+    private int rank;
+
     @ManyToOne
-    @JoinColumn(name = "team_id" , referencedColumnName = "id")
+    @JoinColumn(name = "team_id", referencedColumnName = "id")
+    private Team team;
 
-    Team team;
+    @OneToMany(mappedBy = "player", cascade = CascadeType.ALL)
+    private List<Match> matches;
 
-    @OneToMany(mappedBy = "Player" , cascade = CascadeType.ALL)
-    List<Match> matches;
+    public Player() {
+    }
+
+    public Player(String name, String number, String position, int age, int score, int rank, Team team) {
+        this.name = name;
+        this.number = number;
+        this.position = position;
+        this.age = age;
+        this.score = score;
+        this.rank = rank;
+        this.team = team;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
 
     public Team getTeam() {
         return team;
@@ -32,76 +102,11 @@ public class Player {
         this.team = team;
     }
 
-
-    public Player(String name, String number, String position, int age, int sore, int rank , Team team) {
-
-        Name = name;
-        Number = number;
-        Position = position;
-        Age = age;
-        Sore = sore;
-        Rank = rank;
-        this.team = team;
-
-
+    public List<Match> getMatches() {
+        return matches;
     }
 
-    public Player() {
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public String getNumber() {
-        return Number;
-    }
-
-    public void setNumber(String number) {
-        Number = number;
-    }
-
-    public String getPosition() {
-        return Position;
-    }
-
-    public void setPosition(String position) {
-        Position = position;
-    }
-
-    public int getAge() {
-        return Age;
-    }
-
-    public void setAge(int age) {
-        Age = age;
-    }
-
-    public int getSore() {
-        return Sore;
-    }
-
-    public void setSore(int sore) {
-        Sore = sore;
-    }
-
-    public int getRank() {
-        return Rank;
-    }
-
-    public void setRank(int rank) {
-        Rank = rank;
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
     }
 }

@@ -20,11 +20,12 @@ public class MatchController {
     public void initialize() {
         int numberOfPanes = 5;
 
-        vbox.setPrefHeight(numberOfPanes * 254); // Adjust the height based on the number of panes
-        vbox.setAlignment(Pos.CENTER); // Center the VBox contents horizontally
+        vbox.setPrefHeight(numberOfPanes * 254);
+        vbox.setAlignment(Pos.CENTER);
 
         for (int i = 1; i <= numberOfPanes; i++) {
-            AnchorPane matchAnchorPane = createMatchAnchorPane("Team1", "Team2", "Referee", "Score", "Stadium", "Date");
+            AnchorPane matchAnchorPane = createMatchAnchorPane("Team1", "Team2", "Referee",
+                    "Score", "Stadium", "Date");
             matchAnchorPane.setPrefWidth(505);
             matchAnchorPane.setPrefHeight(244);
             vbox.getChildren().add(matchAnchorPane);
@@ -33,7 +34,8 @@ public class MatchController {
         scrollPane.setContent(vbox);
     }
 
-    private AnchorPane createMatchAnchorPane(String team1, String team2, String referee, String score, String stadium, String date) {
+    private AnchorPane createMatchAnchorPane(String team1, String team2, String referee, String score,
+                                             String stadium, String date) {
         AnchorPane anchorPane = new AnchorPane();
         anchorPane.setPrefWidth(505);
         anchorPane.setPrefHeight(244);

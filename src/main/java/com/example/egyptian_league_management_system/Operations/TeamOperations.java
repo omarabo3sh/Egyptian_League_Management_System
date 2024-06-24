@@ -100,7 +100,7 @@ public class TeamOperations {
                 player.setPosition(resultSet.getString("Position"));
                 player.setAge(resultSet.getInt("Age"));
                 player.setRank(resultSet.getInt("Rank"));
-                player.setSore(resultSet.getInt("Score"));
+                player.setScore(resultSet.getInt("Score"));
                 players.add(player);
             }
             team.setPlayers(players);

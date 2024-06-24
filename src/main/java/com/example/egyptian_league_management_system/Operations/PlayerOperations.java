@@ -17,7 +17,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class PlayerOperations {
-    private DatabaseManager databaseManager = new DatabaseManager();
+    private static DatabaseManager databaseManager = new DatabaseManager();
     public PlayerOperations(){
         databaseManager.startConnection();
     }
@@ -31,7 +31,7 @@ public class PlayerOperations {
             preparedStatement.setString(2 , player.getNumber());
             preparedStatement.setString(3 , player.getPosition());
             preparedStatement.setInt(4 , player.getAge());
-            preparedStatement.setInt(5 , player.getSore());
+            preparedStatement.setInt(5 , player.getScore());
             preparedStatement.setInt(6 , player.getRank());
             preparedStatement.setInt(7 , player.getTeam().getId());
             preparedStatement.executeUpdate();
@@ -55,7 +55,7 @@ public class PlayerOperations {
                 player.setAge(resultSet.getInt("Age"));
                 player.setRank(resultSet.getInt("Rank"));
                 player.setPosition(resultSet.getString("Position"));
-                player.setSore(resultSet.getInt("Score"));
+                player.setScore(resultSet.getInt("Score"));
                 team = teamOperations.getTeamById(resultSet.getInt("team_id"));
                 player.setTeam(team);
             }
@@ -75,7 +75,7 @@ public class PlayerOperations {
             preparedStatement.setString(2 , player.getNumber());
             preparedStatement.setString(3 , player.getPosition());
             preparedStatement.setInt(4 , player.getAge());
-            preparedStatement.setInt(5 , player.getSore());
+            preparedStatement.setInt(5 , player.getScore());
             preparedStatement.setInt(6 , player.getRank());
             preparedStatement.setInt(7 , player.getId());
             preparedStatement.executeUpdate();
@@ -83,7 +83,7 @@ public class PlayerOperations {
             throw new RuntimeException(e);
         }
     }
-    public List<Player> getAllPlayers(){
+    public static List<Player> getAllPlayers(){
         String query = "select * from player";
         List<Player> players = new ArrayList<>();
         try {
@@ -93,7 +93,7 @@ public class PlayerOperations {
                 Player player = new Player();
                 player.setId(resultSet.getInt("id"));
                 player.setName(resultSet.getString("Name"));
-                player.setSore(resultSet.getInt("Score"));
+                player.setScore(resultSet.getInt("Score"));
                 player.setAge(resultSet.getInt("Age"));
                 player.setRank(resultSet.getInt("Rank"));
                 player.setPosition(resultSet.getString("Position"));
@@ -112,7 +112,7 @@ public class PlayerOperations {
         Collections.sort(players, new Comparator<Player>() {
             @Override
             public int compare(Player o1, Player o2) {
-                return Integer.compare(o1.getSore() , o2.getSore());
+                return Integer.compare(o1.getScore() , o2.getScore());
             }
         });
         return players;
