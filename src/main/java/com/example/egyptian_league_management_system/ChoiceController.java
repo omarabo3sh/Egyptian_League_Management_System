@@ -36,6 +36,9 @@ private DatePicker datePicker;
         //add date var from their class
 
         }
+    public void onAddNnewClick(ActionEvent event) throws IOException {
+        Application.switchScene(event,"insert.fxml");
 
+    }
 
 }

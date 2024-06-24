@@ -2,9 +2,7 @@ package com.example.egyptian_league_management_system;
 
 import java.io.IOException;
 import java.util.List;
-
 import com.example.egyptian_league_management_system.Entities.Player;
-import com.example.egyptian_league_management_system.Entities.Team;
 import com.example.egyptian_league_management_system.Operations.PlayerOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,7 +19,7 @@ public class PlayerController {
     @FXML
     private VBox vbox;
 
-    public void initialize() {
+  /*  public void initialize() {
         List<Player> players = PlayerOperations.getAllPlayers();
         for (Player player : players) {
             AnchorPane playerPane = createPlayerPane(player);
@@ -29,7 +27,7 @@ public class PlayerController {
         }
         scrollPane.setContent(vbox);
     }
-
+*/
     private AnchorPane createPlayerPane(Player player) {
         AnchorPane pane = new AnchorPane();
         pane.setPrefWidth(480);
@@ -91,5 +89,10 @@ public class PlayerController {
         pane.getChildren().addAll(labelName, labelTeam, labelAge, labelPosition, labelRank, labelScore, labelNumber);
 
         return pane;
+    }
+
+    public void onBackClick(ActionEvent event) throws IOException {
+
+        Application.switchScene(event,"choice.fxml");
     }
 }

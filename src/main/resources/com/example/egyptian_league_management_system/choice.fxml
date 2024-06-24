@@ -9,14 +9,18 @@
    <Button alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Home" wrapText="true" />
 
 
-   <Button alignment="CENTER" layoutX="303.0" layoutY="340.0" mnemonicParsing="false" onAction="#onMatchesClick" prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="MATCHES" textAlignment="CENTER" wrapText="true">
+   <Button alignment="CENTER" layoutX="255.0" layoutY="340.0" mnemonicParsing="false" onAction="#onMatchesClick" prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="MATCHES" textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Button>
+   <Button alignment="CENTER"  layoutX="407.0" layoutY="340.0" mnemonicParsing="false" onAction="#onAddNnewClick" prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="ADD NEW" textAlignment="CENTER" wrapText="true">
       <font>
          <Font size="17.0" />
       </font>
    </Button>
 
-
-   <Button alignment="CENTER" layoutX="154.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTeamsClick" prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="TEAMS" textAlignment="CENTER">
+   <Button alignment="CENTER" layoutX="110.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTeamsClick" prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="TEAMS" textAlignment="CENTER">
       <font>
          <Font size="17.0" />
       </font>
@@ -49,7 +53,7 @@
       </textFill>
    </Label>
    <DatePicker layoutX="186.0" layoutY="70.0" onAction="#handleDateSelection" prefHeight="45.0" prefWidth="208.0" promptText="Select Date" styleClass="button-73" />
-   <AnchorPane fx:id="matchAnchorPane" visible="false" layoutX="41.0" layoutY="133.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="189.0" prefWidth="505.0" style="-fx-background-color: #303030;">
+   <AnchorPane fx:id="matchAnchorPane" layoutX="41.0" layoutY="133.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="189.0" prefWidth="505.0" style="-fx-background-color: #303030;" visible="false">
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="21.0" prefHeight="60.0" prefWidth="112.0" text="Team1" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="35.0" />

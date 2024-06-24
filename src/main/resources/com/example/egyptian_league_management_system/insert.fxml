@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.InsertController">
+
+    <Button alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
+   <TextField layoutX="183.0" layoutY="104.0" prefHeight="25.0" prefWidth="233.0" />
+   <TextField layoutX="183.0" layoutY="178.0" prefHeight="25.0" prefWidth="233.0" />
+    <Label alignment="CENTER" layoutX="39.0" layoutY="104.0" prefHeight="26.0" prefWidth="125.0" text="Add New Team" wrapText="true">
+        <font>
+            <Font name="System Bold Italic" size="15.0" />
+        </font>
+        <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                <stops>
+                    <Stop>
+                        <color>
+                            <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
+                        </color>
+                    </Stop>
+                    <Stop offset="0.4178082191780822">
+                        <color>
+                            <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                    </Stop>
+                    <Stop offset="1.0">
+                        <color>
+                            <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
+                        </color>
+                    </Stop>
+                </stops>
+            </LinearGradient>
+        </textFill>
+    </Label>
+
+    <Label alignment="CENTER" layoutX="39.0" layoutY="177.0" prefHeight="25.0" prefWidth="134.0" text="Add New Player" wrapText="true">
+        <font>
+            <Font name="System Bold Italic" size="15.0" />
+        </font>
+        <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                <stops>
+                    <Stop>
+                        <color>
+                            <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
+                        </color>
+                    </Stop>
+                    <Stop offset="0.4178082191780822">
+                        <color>
+                            <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                    </Stop>
+                    <Stop offset="1.0">
+                        <color>
+                            <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
+                        </color>
+                    </Stop>
+                </stops>
+            </LinearGradient>
+        </textFill>
+    </Label>
+
+
+</AnchorPane>
