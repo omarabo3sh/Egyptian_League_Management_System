@@ -7,19 +7,27 @@ public class Player_Match {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     @ManyToOne
     @JoinColumn(name = "player_id")
-   Player player;
+    Player player;
 
     @ManyToOne
     @JoinColumn(name = "match_id")
     Match match;
 
+    // No-argument constructor
+    public Player_Match() {
+        // This constructor is intentionally empty.
+    }
+
+    // Parameterized constructor
     public Player_Match(Player player, Match match) {
         this.player = player;
         this.match = match;
     }
 
+    // Getters and Setters
     public int getId() {
         return id;
     }
