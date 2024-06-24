@@ -1,8 +1,9 @@
 package com.example.egyptian_league_management_system.Operations;
 
-import org.example.Database.DatabaseManager;
-import org.example.Entities.Player;
-import org.example.Entities.Team;
+
+import com.example.egyptian_league_management_system.Database.DatabaseManager ;
+import com.example.egyptian_league_management_system.Entities.Player ;
+import com.example.egyptian_league_management_system.Entities.Team ;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,7 +1,7 @@
 package com.example.egyptian_league_management_system.Operations;
 
-import org.example.Database.DatabaseManager;
-import org.example.Entities.Refree;
+import com.example.egyptian_league_management_system.Database.DatabaseManager ;
+import com.example.egyptian_league_management_system.Entities.Refree ;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
