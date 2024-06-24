@@ -31,6 +31,7 @@ public class Application extends javafx.application.Application {
 
         stage.show();
     }
+
     public static void switchScene(ActionEvent event, String fxmlFile) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(Application.class.getResource(fxmlFile)));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -41,6 +42,7 @@ public class Application extends javafx.application.Application {
         stage.show();
     }
     public static void switchScene(MouseEvent event, String fxmlFile) throws IOException {
+
         Parent root = FXMLLoader.load(Objects.requireNonNull(Application.class.getResource(fxmlFile)));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
