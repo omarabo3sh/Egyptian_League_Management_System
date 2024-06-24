@@ -23,6 +23,14 @@ public class Team {
     public Team() {
     }
 
+    public Team(int id, String name, String captainName, int totalScore, List<Player> players) {
+        this.id = id;
+        this.name = name;
+        this.captainName = captainName;
+        this.totalScore = totalScore;
+        this.players = players;
+    }
+
     public Team(String name, String captainName, int totalScore) {
         this.name = name;
         this.captainName = captainName;

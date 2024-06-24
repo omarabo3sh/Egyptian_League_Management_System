@@ -11,4 +11,11 @@ public class InsertController {
     public void onBackClick(ActionEvent event) throws IOException {
         Application.switchScene(event, "choice.fxml");
     }
+
+    public void onAddPlayerClick(ActionEvent event)  throws IOException {
+
+    }
+
+    public void onAddTeamClick(ActionEvent event) {
+    }
 }
