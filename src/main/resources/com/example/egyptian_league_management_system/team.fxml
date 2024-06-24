@@ -15,21 +15,21 @@
          <Font name="System Bold Italic" size="15.0" />
       </font>
       <textFill>
-         <LinearGradient cycleMethod="REPEAT">
+         <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
             <stops>
                <Stop>
                   <color>
-                     <Color red="0.5" green="0.11728394776582718" blue="0.11728394776582718" />
+                     <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
                   </color>
                </Stop>
                <Stop offset="0.4178082191780822">
                   <color>
-                     <Color red="0.09649122506380081" green="0.0830896720290184" blue="0.0830896720290184" />
+                     <Color red="1.0" green="1.0" blue="1.0" />
                   </color>
                </Stop>
                <Stop offset="1.0">
                   <color>
-                     <Color red="0.0689999982714653" green="0.6899999976158142" blue="0.49880900979042053" />
+                     <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
                   </color>
                </Stop>
             </stops>
