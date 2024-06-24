@@ -1,12 +1,36 @@
 package com.example.egyptian_league_management_system;
 import java.io.IOException;
 import javafx.event.ActionEvent;
+import javafx.scene.layout.AnchorPane;
 
 public class PlayerController {
+
+    public AnchorPane anchorPane;
 
     public void onBackClick(ActionEvent event) throws IOException {
         Application.switchScene(event,"team.fxml");
     }
+
+    /*public void generatePlayers() {
+
+        for (int i = 1; i <= 10; i++) {
+            String playerName = "Player " + i;
+            AnchorPane playerPane = createPlayerPane(playerName);
+            anchorPane.getChildren().add(playerPane);
+        }
+    }
+
+    private AnchorPane createPlayerPane(String playerName) {
+        AnchorPane pane = new AnchorPane();
+        Label nameLabel = new Label(playerName);
+        AnchorPane.setTopAnchor(nameLabel, 10.0);
+        AnchorPane.setLeftAnchor(nameLabel, 10.0);
+        pane.getChildren().add(nameLabel);
+
+        return pane;
+    }
+
+     */
 /*
     private Button btnShowPlayers;
 

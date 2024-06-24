@@ -7,6 +7,7 @@ import java.util.Objects;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -19,6 +20,7 @@ public class TeamController {
 
     @FXML
     private ImageView team1ImageView;
+
 
 
 
@@ -37,7 +39,8 @@ public class TeamController {
 
 
     public void onImage1Click(MouseEvent mouseEvent) throws IOException {
-
+        //PlayerController playerController = loader.getController();
+        //playerController.generatePlayers();
         Application.switchScene( mouseEvent,"player.fxml");
     }
 
