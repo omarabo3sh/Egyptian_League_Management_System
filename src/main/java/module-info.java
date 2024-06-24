@@ -4,6 +4,7 @@ module com.example.egyptian_league_management_system {
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
+    requires java.sql;
 
     opens com.example.egyptian_league_management_system to javafx.fxml;
     exports com.example.egyptian_league_management_system;
