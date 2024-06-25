@@ -19,11 +19,15 @@ public class TeamsManagementController {
         infoLabel.setText(data);
     }
 
-    public void onDisplayTeamMatchesClick(ActionEvent event) { String data="";
+    public void onDisplayTeamMatchesClick(ActionEvent event) {
+        String data="";
         infoLabel.setText(data);
     }
 
-    public void onDisplayTeamDetailedScoresClick(ActionEvent event) { String data="";
+    public void onDisplayTeamDetailedScoresClick(ActionEvent event) {
+
+        String data="";
+
         infoLabel.setText(data);
     }
 
