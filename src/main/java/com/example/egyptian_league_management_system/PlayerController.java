@@ -20,9 +20,19 @@ public class PlayerController {
     @FXML
     private VBox vbox;
 
+    private String teamName;
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+        initialize();
+    }
+
     public void initialize() {
+        if (teamName == null) {
+            return;
+        }
         TeamOperations teamOperations = new TeamOperations();
-        Team team = teamOperations.getTeamByName("Barcelona");
+        Team team = teamOperations.getTeamByName(teamName);
         team = teamOperations.getTeamPlayers(team);
         for (Player player : team.getPlayers()) {
             try {

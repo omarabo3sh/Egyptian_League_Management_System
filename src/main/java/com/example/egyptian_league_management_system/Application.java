@@ -2,6 +2,7 @@ package com.example.egyptian_league_management_system;
 
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -28,23 +29,22 @@ public class Application extends javafx.application.Application {
 
         stage.show();
     }
-
-    public static void switchScene(ActionEvent event, String fxmlFile) throws IOException {
+    public static void switchScene(Event event, String fxmlFile) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(Application.class.getResource(fxmlFile)));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(Objects.requireNonNull(Application.class.getResource("Styles.css")).toExternalForm());
-
-        stage.setScene(scene);
+        stage.setScene(new Scene(root));
         stage.show();
     }
-    public static void switchScene(MouseEvent event, String fxmlFile) throws IOException {
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(Application.class.getResource(fxmlFile)));
+    public static void switchSceneWithParams(Event event, String fxmlFile, String teamName) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Application.class.getResource(fxmlFile));
+        Parent root = loader.load();
+
+        PlayerController controller = loader.getController();
+        controller.setTeamName(teamName);
+
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(Objects.requireNonNull(Application.class.getResource("Styles.css")).toExternalForm());
-        stage.setScene(scene);
+        stage.setScene(new Scene(root));
         stage.show();
     }
 

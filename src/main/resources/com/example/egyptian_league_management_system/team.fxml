@@ -8,7 +8,6 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size:stretch ;       -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.TeamController">
     <Button alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
-   <ImageView fx:id="team2ImageView" fitHeight="100" fitWidth="100" layoutX="72.0" layoutY="101.0" onMouseClicked="#onImage2Click" />
 
    <Label alignment="CENTER" layoutX="116.0" layoutY="14.0" prefHeight="45.0" prefWidth="368.0" text="Double Click on Team's Logo To Show Their Players" wrapText="true">
       <font>
@@ -36,5 +35,13 @@
          </LinearGradient>
       </textFill>
    </Label>
+
+   <ImageView fx:id="team2ImageView" fitHeight="100" fitWidth="100" layoutX="72.0" layoutY="101.0" onMouseClicked="#onImage2Click" />
    <ImageView fx:id="team1ImageView" fitHeight="100" fitWidth="100" layoutX="185.0" layoutY="100.0" onMouseClicked="#onImage1Click" />
+   <ImageView fx:id="team3ImageView" fitHeight="100" fitWidth="100" layoutX="304.0" layoutY="102.0" onMouseClicked="#onImage3Click" />
+   <ImageView fx:id="team4ImageView" fitHeight="100" fitWidth="100" layoutX="417.0" layoutY="101.0" onMouseClicked="#onImage4Click" />
+   <ImageView fx:id="team5ImageView" fitHeight="100" fitWidth="100" layoutX="78.0" layoutY="213.0" onMouseClicked="#onImage5Click" />
+   <ImageView fx:id="team6ImageView" fitHeight="100" fitWidth="100" layoutX="191.0" layoutY="212.0" onMouseClicked="#onImage6Click" />
+   <ImageView fx:id="team7ImageView" fitHeight="100" fitWidth="100" layoutX="310.0" layoutY="214.0" onMouseClicked="#onImage7Click" />
+   <ImageView fx:id="team8ImageView" fitHeight="100" fitWidth="100" layoutX="423.0" layoutY="213.0" onMouseClicked="#onImage8Click" />
 </AnchorPane>
