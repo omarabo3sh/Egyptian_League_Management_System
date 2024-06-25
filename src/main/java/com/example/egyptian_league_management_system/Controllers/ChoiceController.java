@@ -1,10 +1,9 @@
-package com.example.egyptian_league_management_system;
+package com.example.egyptian_league_management_system.Controllers;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Date;
 
-import com.example.egyptian_league_management_system.Entities.Match;
+import com.example.egyptian_league_management_system.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -36,7 +35,7 @@ private DatePicker datePicker;
         //add date var from their class
 
         }
-    public void onAddNnewClick(ActionEvent event) throws IOException {
+    public void onAddNewClick(ActionEvent event) throws IOException {
         Application.switchScene(event,"insert.fxml");
 
     }

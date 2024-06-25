@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="scene2anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.ChooseController">
+    <Button id="home" alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Home" wrapText="true" />
+    <Button id="SHOW MATCHES" alignment="CENTER" layoutX="300.0" layoutY="162.0" mnemonicParsing="false" onAction="#onShowMatchesClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="SHOW MATCHES" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Button>
+    <Button id="TEAMS MANAGEMENT" alignment="CENTER" layoutX="8.0" layoutY="250.0" mnemonicParsing="false" onAction="#onTeamsManagementClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="TEAMS MANAGEMENT" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Button>
+
+    <Button id="SHOW TEAMS" alignment="CENTER" layoutX="8.0" layoutY="162.0" mnemonicParsing="false" onAction="#onShowTeamsClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="SHOW TEAMS" textAlignment="CENTER">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Button>
+   <Button id="MATCHES MANAGEMENT" alignment="CENTER" layoutX="300.0" layoutY="250.0" mnemonicParsing="false" onAction="#onMatchesManagementClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="MATCHES MANAGEMENT" textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Button>
+
+</AnchorPane>

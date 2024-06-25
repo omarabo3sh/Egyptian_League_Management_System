@@ -5,7 +5,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="scene2anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.ChoiceController">
+<AnchorPane id="scene2anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.ChoiceController">
    <Button alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Home" wrapText="true" />
 
 
@@ -14,7 +14,7 @@
          <Font size="17.0" />
       </font>
    </Button>
-   <Button alignment="CENTER"  layoutX="407.0" layoutY="340.0" mnemonicParsing="false" onAction="#onAddNnewClick" prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="ADD NEW" textAlignment="CENTER" wrapText="true">
+   <Button alignment="CENTER" layoutX="407.0" layoutY="340.0" mnemonicParsing="false" onAction="#onAddNewClick" prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="ADD NEW" textAlignment="CENTER" wrapText="true">
       <font>
          <Font size="17.0" />
       </font>
