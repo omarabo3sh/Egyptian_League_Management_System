@@ -63,4 +63,21 @@ public void onEnterTeamInformationClick(ActionEvent event)  throws IOException {
 public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, IOException {
     Application.switchScene(event,"updateTeamInformation.fxml");
 
-}}
+}
+
+    public void onSearchForTeamIClick(ActionEvent event) {
+        String teamName = teamNameField.getText();
+        Team team = teamOperations.getTeamByName(teamName);
+
+        String data ;
+        if (team != null && team.getName() != null) {
+            data = "Team Name: " + team.getName() + "\n" +
+                    "Captain: " + team.getCaptainName() + "\n" +
+                    "Total Score: " + team.getTotalScore();
+        } else {
+            data = "Team not found.";
+        }
+
+        infoLabel.setText(data);
+    }
+}

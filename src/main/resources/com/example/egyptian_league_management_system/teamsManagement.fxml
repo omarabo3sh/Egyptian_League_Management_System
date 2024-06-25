@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.TeamsManagementController">
-    <TextField fx:id="teamNameField" layoutX="225.0" layoutY="252.0" promptText="Enter Team Name" />
+    <TextField fx:id="teamNameField" layoutX="216.0" layoutY="252.0" promptText="Enter Team Name" />
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
 
@@ -27,7 +27,7 @@
         </font>
     </Button>
 
-    <Button alignment="CENTER" layoutX="168.0" layoutY="76.0" mnemonicParsing="false" onAction="#onEnterTeamInformationClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Enter team information" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="23.0" layoutY="90.0" mnemonicParsing="false" onAction="#onEnterTeamInformationClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Enter team information" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>
@@ -44,5 +44,10 @@
             <Font size="17.0" />
         </font>
     </Label>
+   <Button alignment="CENTER" layoutX="310.0" layoutY="90.0" mnemonicParsing="false" onAction="#onSearchForTeamIClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Search for team " textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Button>
 
 </AnchorPane>
