@@ -13,7 +13,7 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-//      TeamOperations teamOperations = new TeamOperations();
+      TeamOperations teamOperations = new TeamOperations();
 //      List<Team> teams ;
 //      teams = teamOperations.getAll();
 //      for (Team team : teams){
@@ -27,14 +27,11 @@ public class Main {
 //        for (Team team : teams){
 //            System.out.println(team.getTotalScore());
 //        }
-        PlayerOperations playerOperations = new PlayerOperations();
-        TeamOperations teamOperations = new TeamOperations();
-        Team team =teamOperations.getTeamById(2);
-       team = teamOperations.getTeamPlayers(team);
 
-       for (Player player : team.getPlayers()){
-           System.out.println(player.getName());
-       }
+
+     Team team = teamOperations.getTeamById(2);
+     team = teamOperations.getTeamMatches(team);
+     System.out.print("");
 
 
     }

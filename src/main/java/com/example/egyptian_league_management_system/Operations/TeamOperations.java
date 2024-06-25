@@ -3,8 +3,11 @@ package com.example.egyptian_league_management_system.Operations;
 
 
 import com.example.egyptian_league_management_system.Database.DatabaseManager ;
+import com.example.egyptian_league_management_system.Entities.Match;
 import com.example.egyptian_league_management_system.Entities.Player ;
 import com.example.egyptian_league_management_system.Entities.Team ;
+import com.example.egyptian_league_management_system.Entities.Team_Match;
+import com.example.egyptian_league_management_system.Main;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -162,6 +165,12 @@ public class TeamOperations {
 
     }
 
+    public int getTeamTotalScores(Team team){
+
+        team = getTeamPlayers(team);
+        return calculateTotalGoals(team);
+    }
+
     public List<Team> getTeamAverageAgeSorted(){
         List<Team> teams = getAll();
         List<Team> teamsWithPlayers = new ArrayList<>();
@@ -172,7 +181,7 @@ public class TeamOperations {
         Collections.sort(teamsWithPlayers, new Comparator<Team>() {
             @Override
             public int compare(Team o1, Team o2) {
-                return Integer.compare(o1.getTotalScore() , o2.getTotalScore());
+                return Integer.compare(calculateAverageAge(o1) , calculateAverageAge(o2));
             }
         });
         return teamsWithPlayers;
@@ -184,10 +193,41 @@ public class TeamOperations {
             return 0;
         }else {
             for (Player player : team.getPlayers()){
+                sum+=player.getScore();
+            }
+        }
+        return sum;
+    }
+
+    private int calculateAverageAge(Team team){
+        int sum = 0 ;
+        if (team.getPlayers() == null){
+            return 0;
+        }else {
+            for (Player player : team.getPlayers()){
                 sum+=player.getAge();
             }
         }
         return sum/team.getPlayers().size();
+    }
+
+    public Team getTeamMatches(Team team){
+        String query = "select * from team_match where team_idd = ?";
+        MatchOperations matchOperations = new MatchOperations();
+        List<Match> matches = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
+            preparedStatement.setInt(1 , team.getId());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Match match = matchOperations.getMatchById(resultSet.getInt("match_idd"));
+                matches.add(match);
+            }
+            team.setMatches(matches);
+            return team;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
