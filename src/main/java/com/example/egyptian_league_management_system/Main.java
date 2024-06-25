@@ -14,6 +14,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
       TeamOperations teamOperations = new TeamOperations();
+      MatchOperations matchOperations = new MatchOperations();
 //      List<Team> teams ;
 //      teams = teamOperations.getAll();
 //      for (Team team : teams){
@@ -29,9 +30,7 @@ public class Main {
 //        }
 
 
-     Team team = teamOperations.getTeamById(2);
-     team = teamOperations.getTeamMatches(team);
-     System.out.print("");
+
 
 
     }
