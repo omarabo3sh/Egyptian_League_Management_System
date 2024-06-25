@@ -3,7 +3,9 @@ package com.example.egyptian_league_management_system;
 import java.io.IOException;
 import java.util.List;
 import com.example.egyptian_league_management_system.Entities.Player;
+import com.example.egyptian_league_management_system.Entities.Team;
 import com.example.egyptian_league_management_system.Operations.PlayerOperations;
+import com.example.egyptian_league_management_system.Operations.TeamOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -19,15 +21,23 @@ public class PlayerController {
     @FXML
     private VBox vbox;
 
-  /*  public void initialize() {
-        List<Player> players = PlayerOperations.getAllPlayers();
-        for (Player player : players) {
+    public void initialize() {
+        TeamOperations teamOperations = new TeamOperations();
+        Team team = teamOperations.getTeamByName("Barcelona");
+        team = teamOperations.getTeamPlayers(team);
+        for(Player player : team.getPlayers()){
             AnchorPane playerPane = createPlayerPane(player);
             vbox.getChildren().add(playerPane);
+//            System.out.println(player.getName());
         }
-        scrollPane.setContent(vbox);
+//        List<Player> players = PlayerOperations.getAllPlayers();
+//        for (Player player : players) {
+//            AnchorPane playerPane = createPlayerPane(player);
+//            vbox.getChildren().add(playerPane);
+//        }
+//        scrollPane.setContent(vbox);
     }
-*/
+
     private AnchorPane createPlayerPane(Player player) {
         AnchorPane pane = new AnchorPane();
         pane.setPrefWidth(480);

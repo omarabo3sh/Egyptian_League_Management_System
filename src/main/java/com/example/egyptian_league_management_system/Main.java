@@ -28,12 +28,16 @@ public class Main {
 //            System.out.println(team.getTotalScore());
 //        }
         PlayerOperations playerOperations = new PlayerOperations();
-        MatchOperations matchOperations = new MatchOperations();
-        Player_MatchOperation player_matchOperation = new Player_MatchOperation();
-        Player player =  playerOperations.getPlayerByName("Lamin yamal");
-        Match match = matchOperations.getMatchById(1);
-        Player_Match playerMatch = new Player_Match(player , match);
-        player_matchOperation.insert(playerMatch);
+        TeamOperations teamOperations = new TeamOperations();
+        Team team =teamOperations.getTeamById(3);
+        team.setName("Real madrid");
+        teamOperations.updateTeam(team);
+
+//       team = teamOperations.getTeamPlayers(team);
+//
+//       for (Player player : team.getPlayers()){
+//           System.out.println(player.getName());
+//       }
 
 
     }

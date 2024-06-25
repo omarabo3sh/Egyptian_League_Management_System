@@ -88,12 +88,13 @@ public class TeamOperations {
     public Team getTeamPlayers(Team team){
         String query = "select *  from player inner join team on player.team_id = team.id where team.id = ?";
         List<Player> players = new ArrayList<>();
-        Player player = new Player();
+
         try {
             PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
             preparedStatement.setInt(1 , team.getId());
             ResultSet resultSet = preparedStatement.executeQuery();
             for (int i=0 ; resultSet.next() ; i++){
+                Player player = new Player();
                 player.setId(resultSet.getInt("id"));
                 player.setNumber(resultSet.getString("Number"));
                 player.setName(resultSet.getString("Name"));

@@ -10,6 +10,7 @@ public class DatabaseManager {
     private String password = "Omar_Alsabahy2000";
     private Connection connection ;
 
+
     public  DatabaseManager(){
         startConnection();
     }
