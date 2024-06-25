@@ -1,10 +1,8 @@
 package com.example.egyptian_league_management_system;
 
 import java.io.IOException;
-import java.util.List;
 import com.example.egyptian_league_management_system.Entities.Player;
 import com.example.egyptian_league_management_system.Entities.Team;
-import com.example.egyptian_league_management_system.Operations.PlayerOperations;
 import com.example.egyptian_league_management_system.Operations.TeamOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,14 +26,7 @@ public class PlayerController {
         for(Player player : team.getPlayers()){
             AnchorPane playerPane = createPlayerPane(player);
             vbox.getChildren().add(playerPane);
-//            System.out.println(player.getName());
-        }
-//        List<Player> players = PlayerOperations.getAllPlayers();
-//        for (Player player : players) {
-//            AnchorPane playerPane = createPlayerPane(player);
-//            vbox.getChildren().add(playerPane);
-//        }
-//        scrollPane.setContent(vbox);
+        } scrollPane.setContent(vbox);
     }
 
     private AnchorPane createPlayerPane(Player player) {
