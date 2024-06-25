@@ -102,6 +102,7 @@ public class TeamOperations {
                 player.setAge(resultSet.getInt("Age"));
                 player.setRank(resultSet.getInt("Rank"));
                 player.setScore(resultSet.getInt("Score"));
+                player.setTeam(team);
                 players.add(player);
             }
             team.setPlayers(players);

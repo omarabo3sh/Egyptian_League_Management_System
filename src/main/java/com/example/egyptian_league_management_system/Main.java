@@ -29,15 +29,12 @@ public class Main {
 //        }
         PlayerOperations playerOperations = new PlayerOperations();
         TeamOperations teamOperations = new TeamOperations();
-        Team team =teamOperations.getTeamById(3);
-        team.setName("Real madrid");
-        teamOperations.updateTeam(team);
+        Team team =teamOperations.getTeamById(2);
+       team = teamOperations.getTeamPlayers(team);
 
-//       team = teamOperations.getTeamPlayers(team);
-//
-//       for (Player player : team.getPlayers()){
-//           System.out.println(player.getName());
-//       }
+       for (Player player : team.getPlayers()){
+           System.out.println(player.getName());
+       }
 
 
     }
