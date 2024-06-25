@@ -5,6 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.TeamsManagementController">
+    <TextField fx:id="teamNameField" layoutX="225.0" layoutY="252.0" promptText="Enter Team Name" />
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
 
@@ -38,7 +39,7 @@
         </font>
     </Button>
 
-    <Label fx:id="infoLabel" layoutX="50.0" layoutY="269.0" prefHeight="81.0" prefWidth="500.0" text="" textAlignment="CENTER">
+    <Label fx:id="infoLabel" layoutX="50.0" layoutY="285.0" prefHeight="65.0" prefWidth="500.0" text="" textAlignment="CENTER">
         <font>
             <Font size="17.0" />
         </font>

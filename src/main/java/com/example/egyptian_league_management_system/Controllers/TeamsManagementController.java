@@ -1,9 +1,12 @@
 package com.example.egyptian_league_management_system.Controllers;
 
 import com.example.egyptian_league_management_system.Application;
+import com.example.egyptian_league_management_system.Entities.Team;
+import com.example.egyptian_league_management_system.Operations.TeamOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
@@ -13,11 +16,27 @@ public class TeamsManagementController {
     private Label infoLabel;
 
 
+    @FXML
+    private TextField teamNameField;
+
+    private TeamOperations teamOperations = new TeamOperations();
 
     public void onDisplayTeamInformationClick(ActionEvent event) {
-        String data="";
+        String teamName = teamNameField.getText();
+        Team team = teamOperations.getTeamByName(teamName);
+
+        String data ;
+        if (team != null && team.getName() != null) {
+            data = "Team Name: " + team.getName() + "\n" +
+                    "Captain: " + team.getCaptainName() + "\n" +
+                    "Total Score: " + team.getTotalScore();
+        } else {
+            data = "Team not found.";
+        }
+
         infoLabel.setText(data);
     }
+
 
     public void onDisplayTeamMatchesClick(ActionEvent event) {
         String data="";
