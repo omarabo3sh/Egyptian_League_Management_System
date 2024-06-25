@@ -42,7 +42,6 @@ public class EnterTeamInformationController {
 
         teamOperations.insertTeam(newTeam);
 
-        // Clear the text fields after inserting the team
         idField.clear();
         nameField.clear();
         captainNameField.clear();
