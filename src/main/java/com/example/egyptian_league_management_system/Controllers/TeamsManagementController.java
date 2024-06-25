@@ -25,16 +25,16 @@ public class TeamsManagementController {
         String teamName = teamNameField.getText();
         Team team = teamOperations.getTeamByName(teamName);
 
-        String data ;
+        String information;
         if (team != null && team.getName() != null) {
-            data = "Team Name: " + team.getName() + "\n" +
+            information = "Team Name: " + team.getName() + "\n" +
                     "Captain: " + team.getCaptainName() + "\n" +
                     "Total Score: " + team.getTotalScore();
         } else {
-            data = "Team not found.";
+            information = "Team not found.";
         }
 
-        infoLabel.setText(data);
+        infoLabel.setText(information);
     }
 
 
@@ -69,15 +69,15 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
         String teamName = teamNameField.getText();
         Team team = teamOperations.getTeamByName(teamName);
 
-        String data ;
+        String information;
         if (team != null && team.getName() != null) {
-            data = "Team Name: " + team.getName() + "\n" +
+            information = "Team Name: " + team.getName() + "\n" +
                     "Captain: " + team.getCaptainName() + "\n" +
                     "Total Score: " + team.getTotalScore();
         } else {
-            data = "Team not found.";
+            information = "Team not found.";
         }
 
-        infoLabel.setText(data);
+        infoLabel.setText(information);
     }
 }

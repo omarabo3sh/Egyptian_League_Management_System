@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.PlayerManagementController">
+    <TextField fx:id="teamNameField" layoutX="225.0" layoutY="251.0" promptText="Enter Player Name" />
+
+    <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
+
+    <Button alignment="CENTER" layoutX="310.0" layoutY="90.0" mnemonicParsing="false" onAction="#onDisplayPlayerPositionClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text=" Display player position" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Button>
+
+    <Button alignment="CENTER" layoutX="310.0" layoutY="142.0" mnemonicParsing="false" onAction="#onDisplayPlayerInformationClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display player information" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Button>
+
+    <Button alignment="CENTER" layoutX="23.0" layoutY="90.0" mnemonicParsing="false" onAction="#onEnterPlayerInformationClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Enter player information" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Button>
+
+    <Button alignment="CENTER" layoutX="23.0" layoutY="142.0" mnemonicParsing="false" onAction="#onUpdatePlayerInformationClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Update player information" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Button>
+
+    <Label fx:id="infoLabel" layoutX="50.0" layoutY="285.0" prefHeight="65.0" prefWidth="500.0" text="" textAlignment="CENTER">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Label>
+    <Button alignment="CENTER" layoutX="166.0" layoutY="200.0" mnemonicParsing="false" onAction="#onSearchForPlayerClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Search for the player" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Button>
+
+</AnchorPane>

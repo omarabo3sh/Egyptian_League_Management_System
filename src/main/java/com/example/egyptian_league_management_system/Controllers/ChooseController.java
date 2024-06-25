@@ -24,6 +24,13 @@ public class ChooseController {
     }
 
 
-    public void onMatchesManagementClick(ActionEvent actionEvent) {
+    public void onMatchesManagementClick(ActionEvent event) throws IOException{
+     //   Application.switchScene(event,"playerManagement.fxml");
+
+    }
+
+    public void onPlayerManagementClick(ActionEvent event) throws IOException{
+        Application.switchScene(event,"playerManagement.fxml");
+
     }
 }
