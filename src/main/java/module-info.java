@@ -7,6 +7,7 @@ module com.example.egyptian_league_management_system {
     requires java.sql;
     requires java.persistence;
     requires java.desktop;
+    requires mysql.connector.j;
 
     opens com.example.egyptian_league_management_system to javafx.fxml;
     exports com.example.egyptian_league_management_system;
