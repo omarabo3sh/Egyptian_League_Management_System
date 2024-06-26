@@ -5,7 +5,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.TeamsManagementController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.TeamsManagementController">
     <TextField fx:id="teamNameField" alignment="CENTER" layoutX="352.0" layoutY="252.0" prefHeight="38.0" prefWidth="209.0" promptText="enter team name " styleClass="button-73" />
 
 
@@ -97,7 +97,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="29.0" layoutY="251.0" prefHeight="39.0" prefWidth="326.0" text="note: enter player name to use display functions" wrapText="true" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <Label alignment="CENTER" layoutX="29.0" layoutY="251.0" prefHeight="39.0" prefWidth="315.0" text="note: enter team name to use display functions" wrapText="true" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
         <font>
             <Font name="System Bold Italic" size="14.0" />
         </font>
