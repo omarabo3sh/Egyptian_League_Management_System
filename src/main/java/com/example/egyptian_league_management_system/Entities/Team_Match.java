@@ -8,10 +8,10 @@ public class Team_Match {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     @ManyToOne
-     @JoinColumn(name = "team_idd" , referencedColumnName = "id")
+     @JoinColumn(name = "team_id" , referencedColumnName = "id")
     Team team;
     @ManyToOne
-    @JoinColumn(name = "match_idd" , referencedColumnName = "id")
+    @JoinColumn(name = "match_id" , referencedColumnName = "id")
     Match match;
 
     public int getId() {

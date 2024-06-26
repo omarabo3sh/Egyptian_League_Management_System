@@ -212,7 +212,7 @@ public class TeamOperations {
     }
 
     public Team getTeamMatches(Team team){
-        String query = "select * from team_match where team_idd = ?";
+        String query = "select * from team_match where team_id = ?";
         MatchOperations matchOperations = new MatchOperations();
         List<Match> matches = new ArrayList<>();
         try {
@@ -220,7 +220,7 @@ public class TeamOperations {
             preparedStatement.setInt(1 , team.getId());
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
-                Match match = matchOperations.getMatchById(resultSet.getInt("match_idd"));
+                Match match = matchOperations.getMatchById(resultSet.getInt("match_id"));
                 matches.add(match);
             }
             team.setMatches(matches);
@@ -229,6 +229,4 @@ public class TeamOperations {
             throw new RuntimeException(e);
         }
     }
-
-
 }
