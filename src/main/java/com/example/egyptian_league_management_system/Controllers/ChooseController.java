@@ -11,9 +11,6 @@ public class ChooseController {
         Application.switchScene(event,"team.fxml");
     }
 
-    public void onShowMatchesClick(ActionEvent event) throws IOException {
-        Application.switchScene(event,"match.fxml");
-    }
 
     public void onBackClick(ActionEvent event) throws IOException {
         Application.switchScene(event,"welcomePage.fxml");
@@ -25,12 +22,16 @@ public class ChooseController {
 
 
     public void onMatchesManagementClick(ActionEvent event) throws IOException{
-     //   Application.switchScene(event,"playerManagement.fxml");
+       Application.switchScene(event,"matchesManagement.fxml");
 
     }
 
     public void onPlayerManagementClick(ActionEvent event) throws IOException{
         Application.switchScene(event,"playerManagement.fxml");
 
+    }
+
+    public void onAdditionalManagementClick(ActionEvent event) throws IOException {
+        Application.switchScene(event,"additionalManagement.fxml");
     }
 }
