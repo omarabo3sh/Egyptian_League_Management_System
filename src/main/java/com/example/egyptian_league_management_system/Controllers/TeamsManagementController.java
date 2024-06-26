@@ -58,10 +58,6 @@ public class TeamsManagementController {
 
 
 
-    public void onDisplayTeamDetailedScoresClick(ActionEvent event) {
-
-       // onDisplayTeamInformationClick( event);
-    }
 
 
 public void onBackClick(ActionEvent event) throws IOException, IOException {
@@ -129,11 +125,11 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
 
             if (matches != null && !matches.isEmpty()) {
                 StringBuilder matchInfo = new StringBuilder();
-                matchInfo.append("Matches for Team: ").append(team.getName()).append("\n\n");
+                matchInfo.append("Matches for Team: ").append(team.getName()).append(" ");
 
                 for (Match match : matches) {
-                    matchInfo.append("Match ID: ").append(match.getId()).append("\n")
-                            .append("Date: ").append(match.getDate()).append("\n");
+                    matchInfo.append("Match ID: ").append(match.getId()).append(" ")
+                            .append("Date: ").append(match.getDate()).append(" ");
                 }
 
                 infoLabel.setText(matchInfo.toString());
@@ -150,6 +146,10 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
     }
 
 
+    public void onDisplayTeamDetailedScoresClick(ActionEvent event) {
+
+        // onDisplayTeamInformationClick( event);
+    }
 }
 
 
