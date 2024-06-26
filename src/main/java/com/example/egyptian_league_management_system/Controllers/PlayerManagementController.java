@@ -85,8 +85,8 @@ public class PlayerManagementController {
         switchScene(event, "choose.fxml");
     }
 
-    public void onEnterPlayerInformationClick(ActionEvent event) throws IOException {
-        switchScene(event, "enterPlayerInformation.fxml");
+    public void onAddNewPlayerClick(ActionEvent event) throws IOException {
+        switchScene(event,"addNewPlayer.fxml");
 
     }
 
@@ -94,6 +94,10 @@ public class PlayerManagementController {
         switchScene(event, "updatePlayerInformation.fxml");
 
     }
+
+
+
+
 
 
 }

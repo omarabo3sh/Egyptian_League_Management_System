@@ -60,7 +60,7 @@ public void onBackClick(ActionEvent event) throws IOException, IOException {
 }
 
 public void onAddNewTeamClick(ActionEvent event)  throws IOException {
-    switchScene(event,"AddNewTeam.fxml");
+    switchScene(event,"addNewTeam.fxml");
 
 }
 

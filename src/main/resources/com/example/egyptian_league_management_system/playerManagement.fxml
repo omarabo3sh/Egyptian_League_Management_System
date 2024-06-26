@@ -77,7 +77,7 @@
         </font>
     </Button>
 
-    <Button alignment="CENTER" layoutX="23.0" layoutY="90.0" mnemonicParsing="false" onAction="#onEnterPlayerInformationClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Enter player information" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="23.0" layoutY="90.0" mnemonicParsing="false" onAction="#onAddNewPlayerClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Add new player " textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>
