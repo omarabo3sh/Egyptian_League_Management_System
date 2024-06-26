@@ -4,6 +4,8 @@ import com.example.egyptian_league_management_system.Application;
 import com.example.egyptian_league_management_system.Entities.Match;
 import com.example.egyptian_league_management_system.Entities.Team;
 import com.example.egyptian_league_management_system.Operations.TeamOperations;
+
+import com.example.egyptian_league_management_system.Operations.Team_MatchOperation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -11,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+
 import java.util.List;
 
 public class TeamsManagementController {
@@ -21,6 +24,10 @@ public class TeamsManagementController {
     @FXML
     private TextField teamNameField;
 
+
+    private Team_MatchOperation teamMatchOperation = new Team_MatchOperation();
+
+
     private TeamOperations teamOperations = new TeamOperations();
 
     public void onDisplayTeamInformationClick(ActionEvent event) {
@@ -29,9 +36,14 @@ public class TeamsManagementController {
 
         String information;
         if (team != null && team.getName() != null) {
-            information = "Team Name: " + team.getName() + "\n" +
-                    "Captain: " + team.getCaptainName() + "\n" +
-                    "Total Score: " + team.getTotalScore();
+
+            if (team.getPlayers() != null) {
+              return;
+            }
+
+            information = "Team Name: " + team.getName() + "  " +
+                    "Captain: " + team.getCaptainName() + "  " +
+                    "Total Score: " + team.getTotalScore() ;
         } else {
             information = "Team not found.";
         }
@@ -40,21 +52,35 @@ public class TeamsManagementController {
         teamNameField.clear();
     }
 
-    public void onBackClick(ActionEvent event) throws IOException {
-        Application.switchScene(event, "choose.fxml");
-    }
 
-    public void onAddNewTeamClick(ActionEvent event) throws IOException {
-        Application.switchScene(event, "AddNewTeam.fxml");
-    }
 
-    public void onUpdateTeamInformationClick(ActionEvent event) throws IOException {
-        Application.switchScene(event, "updateTeamInformation.fxml");
-    }
 
-    public void onSearchForTeamIClick(ActionEvent event) {
+
+
+
+
+
+public void onBackClick(ActionEvent event) throws IOException, IOException {
+    Application.switchScene(event, "choose.fxml");
+}
+
+public void onAddNewTeamClick(ActionEvent event)  throws IOException {
+    Application.switchScene(event,"AddNewTeam.fxml");
+
+}
+
+public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, IOException {
+    Application.switchScene(event,"updateTeamInformation.fxml");
+
+}
+
+
+
+
+    public void onSearchForTeamIClick(ActionEvent event) throws IOException {
         String teamName = teamNameField.getText().trim();
         if (teamName.isEmpty()) {
+
             showAlert("Input Error", "Please enter a team name.");
             return;
         }
@@ -62,16 +88,19 @@ public class TeamsManagementController {
         Team team = teamOperations.getTeamByName(teamName);
 
         if (team != null && team.getName() != null && team.getName().equals(teamName)) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             showAlert("Team Found", "Team found!");
         } else {
+
             showAlert("Team Not Found", "Team not found!");
         }
-    }
 
+    }
     public void onDisplayTeamMatchesClick(ActionEvent event) {
         String teamName = teamNameField.getText().trim();
         if (teamName.isEmpty()) {
             showAlert("Input Error", "Please enter a team name.");
+
             return;
         }
 
@@ -84,11 +113,11 @@ public class TeamsManagementController {
 
             if (matches != null && !matches.isEmpty()) {
                 StringBuilder matchInfo = new StringBuilder();
-                matchInfo.append("Matches for Team: ").append(team.getName()).append("\n");
+                matchInfo.append("Matches for Team: ").append(team.getName()).append(" ");
 
                 for (Match match : matches) {
-                    matchInfo.append("Match ID: ").append(match.getId()).append("\n")
-                            .append("Date: ").append(match.getDate()).append("\n");
+                    matchInfo.append("Match ID: ").append(match.getId()).append(" ")
+                            .append("Date: ").append(match.getDate()).append(" ");
                 }
 
                 infoLabel.setText(matchInfo.toString());
@@ -97,8 +126,10 @@ public class TeamsManagementController {
             }
         } else {
             showAlert("Team Not Found", "Team not found!");
+
         }
     }
+
 
     public void onDisplayTeamDetailedScoresClick(ActionEvent event) {
         String teamName = teamNameField.getText().trim();
@@ -133,10 +164,12 @@ public class TeamsManagementController {
     }
 
     private void showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(content);
         alert.showAndWait();
     }
 }
+
+
