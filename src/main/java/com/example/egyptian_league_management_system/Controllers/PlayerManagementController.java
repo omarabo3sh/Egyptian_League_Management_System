@@ -1,6 +1,5 @@
 package com.example.egyptian_league_management_system.Controllers;
 
-import com.example.egyptian_league_management_system.Application;
 import com.example.egyptian_league_management_system.Entities.Player;
 
 import com.example.egyptian_league_management_system.Operations.PlayerOperations;
@@ -12,76 +11,94 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+import static com.example.egyptian_league_management_system.Application.showAlert;
+import static com.example.egyptian_league_management_system.Application.switchScene;
+
 public class PlayerManagementController {
     @FXML
     private Label infoLabel;
 
     @FXML
-    private TextField teamNameField;
+    private TextField playerNameField;
     private PlayerOperations playerOperations = new PlayerOperations();
 
-        public void onDisplayPlayerInformationClick(ActionEvent event) {
-            String playerName = teamNameField.getText();
-            Player player = playerOperations.getPlayerByName(playerName);
-
-            if (player != null) {
-                String data = "Player Name: " + player.getName() + "\n" +
-                        "Number: " + player.getNumber() + "\n" +
-                        "Position: " + player.getPosition() + "\n" +
-                        "Age: " + player.getAge() + "\n" +
-                        "Score: " + player.getScore() + "\n" +
-                        "Rank: " + player.getRank();
-
-                infoLabel.setText(data);
-            } else {
-                infoLabel.setText("Player not found.");
-            }
+    public void onSearchForPlayerClick(ActionEvent event) {
+        String playerName = playerNameField.getText().trim();
+        if (playerName.isEmpty()) {
+            showAlert("Input Error", "Please enter a player name.");
+            return;
         }
 
+        Player player = playerOperations.getPlayerByName(playerName);
 
-        public void onDisplayPlayerPositionClick(ActionEvent event) {
-            String  playerName = teamNameField.getText();
-            Player player = playerOperations.getPlayerByName(playerName);
+        if (player != null && player.getName() != null && player.getName().equals(playerName)) {
+            showAlert("Player Found", "Player found!");
+        } else {
+            showAlert("Player Not Found", "Player not found!");
+        }
+        playerNameField.clear();
+    }
 
-            if (player != null) {
-                String data = "Position: " + player.getPosition();
-                infoLabel.setText(data);
-            } else {
-                infoLabel.setText("Player not found.");
-            }
+    public void onDisplayPlayerInformationClick(ActionEvent event) {
+        String playerName = playerNameField.getText();
+        Player player = playerOperations.getPlayerByName(playerName);
+
+        if (playerName.isEmpty()) {
+            showAlert("Input Error", "Please enter a player name.");
+            return;
         }
 
+        if (player != null) {
+            String data = "Player Name: " + player.getName() + " " +
+                    "Number: " + player.getNumber() + " " +
+                    "Position: " + player.getPosition() + "\n" +
+                    "Age: " + player.getAge() + " " +
+                    "Score: " + player.getScore() + " " +
+                    "Rank: " + player.getRank();
 
-        public void onBackClick(ActionEvent event) throws IOException, IOException {
-            Application.switchScene(event, "choose.fxml");
+            infoLabel.setText(data);
+        } else {
+            infoLabel.setText("Player not found.");
         }
+        playerNameField.clear();
+    }
 
-        public void onEnterPlayerInformationClick(ActionEvent event)  throws IOException {
-           Application.switchScene(event,"enterPlayerInformation.fxml");
 
+    public void onDisplayPlayerPositionClick(ActionEvent event) {
+        String playerName = playerNameField.getText();
+        Player player = playerOperations.getPlayerByName(playerName);
+        if (playerName.isEmpty()) {
+            showAlert("Input Error", "Please enter a player name.");
+            return;
         }
-
-        public void onUpdatePlayerInformationClick(ActionEvent event) throws IOException, IOException {
-          Application.switchScene(event,"updatePlayerInformation.fxml");
-
+        if (player != null) {
+            String data = "Position: " + player.getPosition();
+            infoLabel.setText(data);
+        } else {
+            infoLabel.setText("Player not found.");
         }
+        playerNameField.clear();
+    }
 
-        public void onSearchForPlayerClick(ActionEvent event) {
-           String  playerName = teamNameField.getText();
-            Player player = playerOperations.getPlayerByName(playerName);
 
-            if (player != null) {
-                String data = "Player Name: " + player.getName() + "\n" +
-                        "Number: " + player.getNumber() + "\n" +
-                        "Position: " + player.getPosition() + "\n" +
-                        "Age: " + player.getAge() + "\n" +
-                        "Score: " + player.getScore() + "\n" +
-                        "Rank: " + player.getRank();
+    public void onBackClick(ActionEvent event) throws IOException, IOException {
+        switchScene(event, "choose.fxml");
+    }
 
-                infoLabel.setText(data);
-            } else {
-                infoLabel.setText("Player not found.");
-            }
-        }
-        }
+    public void onAddNewPlayerClick(ActionEvent event) throws IOException {
+        switchScene(event,"addNewPlayer.fxml");
+
+    }
+
+    public void onUpdatePlayerInformationClick(ActionEvent event) throws IOException, IOException {
+        switchScene(event, "updatePlayerInformation.fxml");
+
+    }
+
+
+
+
+
+
+}
 

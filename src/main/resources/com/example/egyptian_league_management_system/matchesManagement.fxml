@@ -6,17 +6,24 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.TeamsManagementController">
+    <TextField fx:id="teamNameField" alignment="CENTER" layoutX="352.0" layoutY="252.0" prefHeight="38.0" prefWidth="209.0" promptText="enter team name " styleClass="button-73" />
 
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
 
-    <Button alignment="CENTER" layoutX="21.0" layoutY="143.0" mnemonicParsing="false" onAction="#onUpdateTeamInformationClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Update a certain match" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="311.0" layoutY="196.0" mnemonicParsing="false" onAction="#onDisplayTeamMatchesClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display team matches" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>
     </Button>
 
-    <Button alignment="CENTER" layoutX="311.0" layoutY="85.0" mnemonicParsing="false" onAction="#onDisplayTeamInformationClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display  matches with details" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="21.0" layoutY="143.0" mnemonicParsing="false" onAction="#onUpdateTeamInformationClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Update team information" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Button>
+
+    <Button alignment="CENTER" layoutX="311.0" layoutY="85.0" mnemonicParsing="false" onAction="#onDisplayTeamInformationClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display team information" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>
@@ -34,7 +41,7 @@
         </font>
     </Button>
 
-    <Label fx:id="infoLabel" layoutX="50.0" layoutY="279.0" prefHeight="63.0" prefWidth="500.0" text="" textAlignment="CENTER">
+    <Label fx:id="infoLabel" layoutX="50.0" layoutY="294.0" prefHeight="63.0" prefWidth="500.0" text="" textAlignment="CENTER">
         <textFill>
             <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
                 <stops>
@@ -57,7 +64,7 @@
             </LinearGradient>
         </textFill>
     </Label>
-    <Button alignment="CENTER" layoutX="166.0" layoutY="213.0" mnemonicParsing="false" onAction="#onSearchForTeamIClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display to-be-held matches" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="21.0" layoutY="196.0" mnemonicParsing="false" onAction="#onSearchForTeamIClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Search for team " textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>
@@ -66,6 +73,33 @@
     <Label alignment="CENTER" layoutX="142.0" layoutY="14.0" prefHeight="39.0" prefWidth="315.0" text="select desired function" wrapText="true" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
         <font>
             <Font name="System Bold Italic" size="27.0" />
+        </font>
+        <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                <stops>
+                    <Stop>
+                        <color>
+                            <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
+                        </color>
+                    </Stop>
+                    <Stop offset="0.4178082191780822">
+                        <color>
+                            <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                    </Stop>
+                    <Stop offset="1.0">
+                        <color>
+                            <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
+                        </color>
+                    </Stop>
+                </stops>
+            </LinearGradient>
+        </textFill>
+    </Label>
+
+    <Label alignment="CENTER" layoutX="29.0" layoutY="251.0" prefHeight="39.0" prefWidth="315.0" text="note: enter team name to use display functions" wrapText="true" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <font>
+            <Font name="System Bold Italic" size="14.0" />
         </font>
         <textFill>
             <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">

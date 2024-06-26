@@ -1,11 +1,11 @@
 package com.example.egyptian_league_management_system.Controllers;
 
-import com.example.egyptian_league_management_system.Application;
+
 import com.example.egyptian_league_management_system.Entities.Match;
 import com.example.egyptian_league_management_system.Entities.Team;
 import com.example.egyptian_league_management_system.Operations.TeamOperations;
 
-import com.example.egyptian_league_management_system.Operations.Team_MatchOperation;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -16,6 +16,9 @@ import java.io.IOException;
 
 import java.util.List;
 
+import static com.example.egyptian_league_management_system.Application.showAlert;
+import static com.example.egyptian_league_management_system.Application.switchScene;
+
 public class TeamsManagementController {
 
     @FXML
@@ -25,10 +28,9 @@ public class TeamsManagementController {
     private TextField teamNameField;
 
 
-    private Team_MatchOperation teamMatchOperation = new Team_MatchOperation();
 
 
-    private TeamOperations teamOperations = new TeamOperations();
+    private final TeamOperations teamOperations = new TeamOperations();
 
     public void onDisplayTeamInformationClick(ActionEvent event) {
         String teamName = teamNameField.getText();
@@ -53,24 +55,17 @@ public class TeamsManagementController {
     }
 
 
-
-
-
-
-
-
-
 public void onBackClick(ActionEvent event) throws IOException, IOException {
-    Application.switchScene(event, "choose.fxml");
+    switchScene(event, "choose.fxml");
 }
 
 public void onAddNewTeamClick(ActionEvent event)  throws IOException {
-    Application.switchScene(event,"AddNewTeam.fxml");
+    switchScene(event,"addNewTeam.fxml");
 
 }
 
 public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, IOException {
-    Application.switchScene(event,"updateTeamInformation.fxml");
+    switchScene(event,"updateTeamInformation.fxml");
 
 }
 
@@ -159,17 +154,11 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
 
             infoLabel.setText(playersScores.toString());
         } else {
-            showAlert("Team Not Found", "Team not found!");
+           showAlert("Team Not Found", "Team not found!");
         }
     }
 
-    private void showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
+
 }
 
 
