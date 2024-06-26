@@ -80,4 +80,8 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
 
         infoLabel.setText(information);
     }
+
+    public void onEnterClick(ActionEvent event) {
+
+    }
 }

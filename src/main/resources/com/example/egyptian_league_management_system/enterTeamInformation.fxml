@@ -35,12 +35,10 @@
             </LinearGradient>
         </textFill>
     </Label>
-    <TextField fx:id="idField" layoutX="247.0" layoutY="76.0" prefHeight="25.0" prefWidth="250.0" promptText="id" />
-    <TextField fx:id="nameField" layoutX="247.0" layoutY="124.0" prefHeight="25.0" prefWidth="250.0" promptText="name" />
-    <TextField fx:id="captainNameField" layoutX="247.0" layoutY="173.0" prefHeight="25.0" prefWidth="250.0" promptText="captainName" />
-    <TextField fx:id="totalScoreField" layoutX="247.0" layoutY="220.0" prefHeight="25.0" prefWidth="250.0" promptText="totalScore" />
-    <TextField fx:id="matchesField" layoutX="247.0" layoutY="267.0" prefHeight="25.0" prefWidth="250.0" promptText="MATCHES" />
-    <Label alignment="CENTER" layoutX="80.0" layoutY="65.0" prefHeight="39.0" prefWidth="150.0" text="id" wrapText="true">
+    <TextField fx:id="nameField" layoutX="233.0" layoutY="108.0" prefHeight="25.0" prefWidth="250.0" promptText="name" />
+    <TextField fx:id="captainNameField" layoutX="233.0" layoutY="157.0" prefHeight="25.0" prefWidth="250.0" promptText="captainName" />
+    <TextField fx:id="totalScoreField" layoutX="233.0" layoutY="204.0" prefHeight="25.0" prefWidth="250.0" promptText="totalScore" />
+    <Label alignment="CENTER" layoutX="66.0" layoutY="97.0" prefHeight="39.0" prefWidth="150.0" text="name" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -66,7 +64,7 @@
             </LinearGradient>
         </textFill>
     </Label>
-    <Label alignment="CENTER" layoutX="80.0" layoutY="113.0" prefHeight="39.0" prefWidth="150.0" text="name" wrapText="true">
+    <Label alignment="CENTER" layoutX="53.0" layoutY="146.0" prefHeight="39.0" prefWidth="150.0" text="captainName" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -92,7 +90,7 @@
             </LinearGradient>
         </textFill>
     </Label>
-    <Label alignment="CENTER" layoutX="67.0" layoutY="162.0" prefHeight="39.0" prefWidth="150.0" text="captainName" wrapText="true">
+    <Label alignment="CENTER" layoutX="66.0" layoutY="193.0" prefHeight="39.0" prefWidth="150.0" text="totalScore" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -118,57 +116,5 @@
             </LinearGradient>
         </textFill>
     </Label>
-    <Label alignment="CENTER" layoutX="80.0" layoutY="209.0" prefHeight="39.0" prefWidth="150.0" text="totalScore" wrapText="true">
-        <font>
-            <Font name="System Bold Italic" size="20.0" />
-        </font>
-        <textFill>
-            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
-                <stops>
-                    <Stop>
-                        <color>
-                            <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
-                        </color>
-                    </Stop>
-                    <Stop offset="0.4178082191780822">
-                        <color>
-                            <Color red="1.0" green="1.0" blue="1.0" />
-                        </color>
-                    </Stop>
-                    <Stop offset="1.0">
-                        <color>
-                            <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
-                        </color>
-                    </Stop>
-                </stops>
-            </LinearGradient>
-        </textFill>
-    </Label>
-    <Label alignment="CENTER" layoutX="80.0" layoutY="256.0" prefHeight="39.0" prefWidth="150.0" text="MATCHES" wrapText="true">
-        <font>
-            <Font name="System Bold Italic" size="20.0" />
-        </font>
-        <textFill>
-            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
-                <stops>
-                    <Stop>
-                        <color>
-                            <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
-                        </color>
-                    </Stop>
-                    <Stop offset="0.4178082191780822">
-                        <color>
-                            <Color red="1.0" green="1.0" blue="1.0" />
-                        </color>
-                    </Stop>
-                    <Stop offset="1.0">
-                        <color>
-                            <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
-                        </color>
-                    </Stop>
-                </stops>
-            </LinearGradient>
-        </textFill>
-    </Label>
-    <Button layoutX="268.0" layoutY="314.0" mnemonicParsing="false" onAction="#onEnterClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="ADD" wrapText="true" />
+    <Button layoutX="235.0" layoutY="302.0" mnemonicParsing="false" onAction="#onEnterClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="ADD" wrapText="true" />
 </AnchorPane>
