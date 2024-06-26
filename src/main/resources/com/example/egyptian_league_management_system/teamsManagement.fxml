@@ -43,7 +43,7 @@
     <Label fx:id="infoLabel" layoutX="50.0" layoutY="294.0" prefHeight="63.0" prefWidth="500.0" text="" textAlignment="CENTER">
         <font>
             <Font size="17.0" />
-        </font>
+        </font>zz
     </Label>
    <Button alignment="CENTER" layoutX="21.0" layoutY="196.0" mnemonicParsing="false" onAction="#onSearchForTeamIClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Search for team " textAlignment="CENTER" wrapText="true">
       <font>
@@ -51,7 +51,7 @@
       </font>
    </Button>
 
-   <TextField fx:id="nameField" alignment="CENTER" layoutX="352.0" layoutY="252.0" prefHeight="38.0" prefWidth="209.0" promptText="enter team name " styleClass="button-73" />
+   <TextField fx:id="teamNameField" alignment="CENTER" layoutX="352.0" layoutY="252.0" prefHeight="38.0" prefWidth="209.0" promptText="enter team name " styleClass="button-73" />
 
     <Label alignment="CENTER" layoutX="142.0" layoutY="14.0" prefHeight="39.0" prefWidth="315.0" text="select desired function" wrapText="true" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
         <font>
