@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class EnterTeamInformationController {
+public class AddNewTeamController {
 
     @FXML
     private TextField nameField;

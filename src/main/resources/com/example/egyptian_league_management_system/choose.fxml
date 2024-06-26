@@ -7,7 +7,7 @@
 
 <AnchorPane id="scene2anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.ChooseController">
 
-    <Label alignment="CENTER" layoutX="147.0" layoutY="29.0" prefHeight="61.0" prefWidth="258.0" text="Select Desired Function" wrapText="true" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <Label alignment="CENTER" layoutX="145.0" layoutY="31.0" prefHeight="61.0" prefWidth="321.0" text="Select Desired the Function" wrapText="true" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
         <font>
             <Font name="System Bold Italic" size="21.0" />
         </font>
@@ -36,11 +36,6 @@
 
 
     <Button id="home" alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Home" wrapText="true" />
-    <Button id="SHOW MATCHES" alignment="CENTER" layoutX="306.0" layoutY="129.0" mnemonicParsing="false" onAction="#onShowMatchesClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="SHOW MATCHES" textAlignment="CENTER" wrapText="true">
-        <font>
-            <Font size="17.0" />
-        </font>
-    </Button>
     <Button id="TEAMS MANAGEMENT" alignment="CENTER" layoutX="14.0" layoutY="205.0" mnemonicParsing="false" onAction="#onTeamsManagementClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="TEAMS MANAGEMENT" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
@@ -52,7 +47,7 @@
             <Font size="17.0" />
         </font>
     </Button>
-   <Button id="MATCHES MANAGEMENT" alignment="CENTER" layoutX="14.0" layoutY="271.0" mnemonicParsing="false" onAction="#onMatchesManagementClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="MATCHES MANAGEMENT" textAlignment="CENTER" wrapText="true">
+   <Button id="MATCHES MANAGEMENT" alignment="CENTER" layoutX="306.0" layoutY="129.0" mnemonicParsing="false" onAction="#onMatchesManagementClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="MATCHES MANAGEMENT" textAlignment="CENTER" wrapText="true">
       <font>
          <Font size="17.0" />
       </font>

@@ -71,6 +71,6 @@ public class PlayerController {
     }
 
     public void onBackClick(ActionEvent event) throws IOException {
-        Application.switchScene(event, "choose.fxml");
+        Application.switchScene(event, "team.fxml");
     }
 }
