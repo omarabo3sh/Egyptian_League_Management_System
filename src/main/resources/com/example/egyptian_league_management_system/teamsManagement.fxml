@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.TeamsManagementController">
-    <TextField visible="false" fx:id="teamNameField" layoutX="139.0" layoutY="247.0" prefHeight="38.0" prefWidth="193.0" promptText="Enter Team Name" />
+    <TextField fx:id="teamNameField" layoutX="139.0" layoutY="247.0" prefHeight="38.0" prefWidth="193.0" promptText="Enter Team Name" visible="false" />
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
 
@@ -49,10 +49,12 @@
          <Font size="17.0" />
       </font>
    </Button>
-   <Button visible="false" alignment="CENTER" layoutX="368.0" layoutY="247.0" mnemonicParsing="false" onAction="#onEnterClick" prefHeight="17.0" prefWidth="76.0" styleClass="button-73" text="Enter" textAlignment="CENTER" wrapText="true">
+   <Button alignment="CENTER" layoutX="368.0" layoutY="247.0" mnemonicParsing="false" onAction="#onEnterClick" prefHeight="17.0" prefWidth="76.0" styleClass="button-73" text="Enter" textAlignment="CENTER" visible="false" wrapText="true">
       <font>
          <Font size="17.0" />
       </font>
    </Button>
+   <TextField fx:id="nameField" layoutX="161.0" layoutY="254.0" />
+   <Button layoutX="333.0" layoutY="254.0" mnemonicParsing="false" onAction="#onOkSearch" prefHeight="25.0" prefWidth="66.0" text="ok" />
 
 </AnchorPane>

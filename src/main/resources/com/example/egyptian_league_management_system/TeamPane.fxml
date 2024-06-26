@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="150.0" prefWidth="480.0" style="-fx-background-color: #303030;"
+            xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <Label fx:id="labelTeamName" alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="50.0" prefWidth="450.0"
+           style="-fx-text-fill: white;" text="Team Name">
+        <font>
+            <Font name="Agency FB Bold" size="36.0"/>
+        </font>
+    </Label>
+    <Label fx:id="labelCaptainName" layoutX="20.0" layoutY="80.0" prefHeight="30.0" prefWidth="200.0"
+           style="-fx-text-fill: white;" text="Captain: ">
+        <font>
+            <Font name="Agency FB" size="24.0"/>
+        </font>
+    </Label>
+    <Label fx:id="labelTotalScore" layoutX="240.0" layoutY="80.0" prefHeight="30.0" prefWidth="200.0"
+           style="-fx-text-fill: white;" text="Total Score: ">
+        <font>
+            <Font name="Agency FB" size="24.0"/>
+        </font>
+    </Label>
+</AnchorPane>

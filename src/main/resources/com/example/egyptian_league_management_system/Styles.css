@@ -6,7 +6,7 @@
     -fx-text-fill: linear-gradient(to bottom, #ff3333, #090202);
     -fx-cursor: hand;
     -fx-font-family: "System Bold Italic";
-    /*-fx-font-size: 18.0px; */
+    -fx-font-size: 18.0px;
    -fx-font-weight: bold;
     -fx-padding: 0.5em 1em;
     -fx-text-alignment: center;

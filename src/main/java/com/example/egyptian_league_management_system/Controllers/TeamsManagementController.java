@@ -84,4 +84,8 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
     public void onEnterClick(ActionEvent event) {
 
     }
+
+    public void onOkSearch(ActionEvent event) {
+
+    }
 }

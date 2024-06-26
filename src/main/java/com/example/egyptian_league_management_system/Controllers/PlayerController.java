@@ -48,8 +48,8 @@ public class PlayerController {
     }
 
     private AnchorPane loadPlayerPane(Player player) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("PlayerPane.fxml"));
-        AnchorPane pane = loader.load();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/egyptian_league_management_system/PlayerPane.fxml"));
+        AnchorPane pane = fxmlLoader.load();
 
         Label labelName = (Label) pane.lookup("#labelName");
         Label labelTeam = (Label) pane.lookup("#labelTeam");
@@ -71,6 +71,6 @@ public class PlayerController {
     }
 
     public void onBackClick(ActionEvent event) throws IOException {
-        Application.switchScene(event, "choice.fxml");
+        Application.switchScene(event, "choose.fxml");
     }
 }

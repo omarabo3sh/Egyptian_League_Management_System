@@ -40,7 +40,10 @@ public class UpdateTeamInformationController {
             team.setTotalScore(totalScore);
 
             teamOperations.updateTeam(team);
-
+            idField.clear();
+        nameField.clear();
+        captainNameField.clear();
+        totalScoreField.clear();
 
     }
 }

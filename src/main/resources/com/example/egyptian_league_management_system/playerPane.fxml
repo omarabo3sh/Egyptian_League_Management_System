@@ -5,8 +5,9 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="244.0" prefWidth="480.0" style="-fx-background-color: #303030;"
-            xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
-    <Label fx:id="labelName" alignment="CENTER" layoutX="11.0" layoutY="36.0" prefHeight="70.0" prefWidth="449.0"
+            xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.PlayerPaneController">
+
+<Label fx:id="labelName" alignment="CENTER" layoutX="11.0" layoutY="36.0" prefHeight="70.0" prefWidth="449.0"
            style="-fx-text-fill: white;" text="Player Name">
         <font>
             <Font name="Agency FB Bold" size="48.0"/>
