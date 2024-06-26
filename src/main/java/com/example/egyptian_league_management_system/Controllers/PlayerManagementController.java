@@ -43,6 +43,11 @@ public class PlayerManagementController {
         String playerName = playerNameField.getText();
         Player player = playerOperations.getPlayerByName(playerName);
 
+        if (playerName.isEmpty()) {
+            showAlert("Input Error", "Please enter a player name.");
+            return;
+        }
+
         if (player != null) {
             String data = "Player Name: " + player.getName() + " " +
                     "Number: " + player.getNumber() + " " +
@@ -62,7 +67,10 @@ public class PlayerManagementController {
     public void onDisplayPlayerPositionClick(ActionEvent event) {
         String playerName = playerNameField.getText();
         Player player = playerOperations.getPlayerByName(playerName);
-
+        if (playerName.isEmpty()) {
+            showAlert("Input Error", "Please enter a player name.");
+            return;
+        }
         if (player != null) {
             String data = "Position: " + player.getPosition();
             infoLabel.setText(data);
