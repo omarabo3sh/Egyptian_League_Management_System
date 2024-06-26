@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.PlayerManagementController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.PlayerManagementController">
     <TextField fx:id="teamNameField" layoutX="225.0" layoutY="251.0" promptText="Enter Player Name" />
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
