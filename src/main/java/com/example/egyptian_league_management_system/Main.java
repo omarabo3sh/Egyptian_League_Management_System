@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
       TeamOperations teamOperations = new TeamOperations();
       MatchOperations matchOperations = new MatchOperations();
+      PlayerOperations playerOperations = new PlayerOperations();
 //      List<Team> teams ;
 //      teams = teamOperations.getAll();
 //      for (Team team : teams){
@@ -29,6 +30,10 @@ public class Main {
 //            System.out.println(team.getTotalScore());
 //        }
 
+        Player player = playerOperations.getPlayerByName("Lamin yamal");
+        Team team = teamOperations.getTeamById(3);
+        player.setTeam(team);
+        playerOperations.updatePlayer(player);
 
 
 
