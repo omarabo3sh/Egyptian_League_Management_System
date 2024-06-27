@@ -198,18 +198,19 @@ public class TeamOperations {
         }
         return sum;
     }
-
-    private int calculateAverageAge(Team team){
-        int sum = 0 ;
-        if (team.getPlayers() == null){
-            return 0;
-        }else {
-            for (Player player : team.getPlayers()){
-                sum+=player.getAge();
-            }
+    public int calculateAverageAge(Team team) {
+        List<Player> players = team.getPlayers();
+        if (players == null || players.isEmpty()) {
+            return 0; // or some other value indicating no players
         }
-        return sum/team.getPlayers().size();
+        int totalAge = 0;
+        for (Player player : players) {
+            totalAge += player.getAge();
+        }
+        return  totalAge / players.size();
     }
+
+
 
     public Team getTeamMatches(Team team){
         String query = "select * from team_match where team_id = ?";
