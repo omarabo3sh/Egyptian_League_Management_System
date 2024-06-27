@@ -2,9 +2,12 @@ package com.example.egyptian_league_management_system.Controllers;
 
 import com.example.egyptian_league_management_system.Entities.Player;
 import com.example.egyptian_league_management_system.Entities.Team;
+import com.example.egyptian_league_management_system.Entities.Match; // Correct import
+import com.example.egyptian_league_management_system.Operations.MatchOperations;
 import com.example.egyptian_league_management_system.Operations.PlayerOperations;
 import com.example.egyptian_league_management_system.Operations.TeamOperations;
 import javafx.event.ActionEvent;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
@@ -14,8 +17,10 @@ import static com.example.egyptian_league_management_system.Application.switchSc
 
 public class AdditionalManagementController {
     public Label infoLabel;
+    public DatePicker datePicker;
     private TeamOperations teamOperations = new TeamOperations();
     private PlayerOperations playerOperations = new PlayerOperations();
+    private final MatchOperations matchOperations = new MatchOperations();
 
     public void onBackClick(ActionEvent event) throws IOException {
         switchScene(event, "choose.fxml");
@@ -101,6 +106,24 @@ public class AdditionalManagementController {
     }
 
     public void onMatchOnCertainDateClick(ActionEvent event) {
-        // Handle the event
+        if (datePicker.getValue() != null) {
+            String selectedDate = datePicker.getValue().toString();
+            System.out.println("Selected date: " + selectedDate); // Debugging line
+            List<Match> matches = matchOperations.getMatchByDate(selectedDate);
+
+            if (matches.isEmpty()) {
+                infoLabel.setText("No matches found for " + selectedDate);
+            } else {
+                StringBuilder sb = new StringBuilder();
+                sb.append("Matches on ").append(selectedDate).append(":\n");
+                for (Match match : matches) {
+                    sb.append("Match ID: ").append(match.getId()).append(", Score: ").append(match.getScore()).append("\n");
+                }
+                infoLabel.setText(sb.toString());
+            }
+        } else {
+            infoLabel.setText("Please select a date.");
+        }
     }
+
 }

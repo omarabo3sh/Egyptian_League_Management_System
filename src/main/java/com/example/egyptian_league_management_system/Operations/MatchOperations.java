@@ -52,6 +52,7 @@ public class MatchOperations {
         try {
             PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
             preparedStatement.setString(1 , date);
+            System.out.println("Executing query: " + preparedStatement.toString()); // Debugging line
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 Match match = new Match() ;
@@ -65,4 +66,5 @@ public class MatchOperations {
             throw new RuntimeException(e);
         }
     }
+
 }
