@@ -7,6 +7,32 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.PlayerManagementController">
 
+    <Label alignment="CENTER" layoutX="142.0" layoutY="18.0" prefHeight="39.0" prefWidth="315.0" text="select desired function" wrapText="true" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <font>
+            <Font name="System Bold Italic" size="27.0" />
+        </font>
+        <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                <stops>
+                    <Stop>
+                        <color>
+                            <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
+                        </color>
+                    </Stop>
+                    <Stop offset="0.4178082191780822">
+                        <color>
+                            <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                    </Stop>
+                    <Stop offset="1.0">
+                        <color>
+                            <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
+                        </color>
+                    </Stop>
+                </stops>
+            </LinearGradient>
+        </textFill>
+    </Label>
 
     <Label alignment="CENTER" layoutX="23.0" layoutY="255.0" prefHeight="39.0" prefWidth="329.0" text="note: enter player name to use display functions" wrapText="true" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
         <font>
@@ -36,32 +62,6 @@
     </Label>
 
     <TextField fx:id="playerNameField" alignment="CENTER" layoutX="363.0" layoutY="256.0" prefHeight="38.0" prefWidth="187.0" promptText="Enter Player Name" styleClass="button-73" />
-    <Label alignment="CENTER" layoutX="142.0" layoutY="14.0" prefHeight="39.0" prefWidth="315.0" text="select desired function" wrapText="true" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
-        <font>
-            <Font name="System Bold Italic" size="27.0" />
-        </font>
-        <textFill>
-            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
-                <stops>
-                    <Stop>
-                        <color>
-                            <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
-                        </color>
-                    </Stop>
-                    <Stop offset="0.4178082191780822">
-                        <color>
-                            <Color red="1.0" green="1.0" blue="1.0" />
-                        </color>
-                    </Stop>
-                    <Stop offset="1.0">
-                        <color>
-                            <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
-                        </color>
-                    </Stop>
-                </stops>
-            </LinearGradient>
-        </textFill>
-    </Label>
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
 

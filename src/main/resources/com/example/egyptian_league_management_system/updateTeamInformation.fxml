@@ -14,7 +14,7 @@
         </font>
     </Button>
 
-    <Label alignment="CENTER" layoutX="4.0" layoutY="8.0" prefHeight="39.0" prefWidth="589.0" text="Update Team Information" wrapText="true">
+    <Label alignment="CENTER" layoutX="4.0" layoutY="23.0" prefHeight="39.0" prefWidth="589.0" text="Update Team Information" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="27.0" />
         </font>

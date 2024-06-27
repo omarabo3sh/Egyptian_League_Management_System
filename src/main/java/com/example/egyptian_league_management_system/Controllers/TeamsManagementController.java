@@ -89,7 +89,7 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
 
             showAlert("Team Not Found", "Team not found!");
         }
-
+        teamNameField.clear();
     }
     public void onDisplayTeamMatchesClick(ActionEvent event) {
         String teamName = teamNameField.getText().trim();
@@ -123,6 +123,7 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
             showAlert("Team Not Found", "Team not found!");
 
         }
+        teamNameField.clear();
     }
 
 
@@ -156,6 +157,7 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
         } else {
            showAlert("Team Not Found", "Team not found!");
         }
+        teamNameField.clear();
     }
 
 
