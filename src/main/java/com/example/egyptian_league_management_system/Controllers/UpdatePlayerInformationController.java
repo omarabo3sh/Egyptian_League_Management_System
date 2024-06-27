@@ -11,6 +11,8 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+import static com.example.egyptian_league_management_system.Application.switchScene;
+
 public class UpdatePlayerInformationController {
 
 
@@ -32,7 +34,7 @@ public class UpdatePlayerInformationController {
     private PlayerOperations playerOperations = new PlayerOperations();
 
     public void onBackClick(ActionEvent event) throws IOException {
-        Application.switchScene(event, "playerManagement.fxml");
+      switchScene(event, "playerManagement.fxml");
     }
 
     public void onUpdateClick(ActionEvent event) {

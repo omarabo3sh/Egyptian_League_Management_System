@@ -7,7 +7,7 @@ import javafx.scene.layout.AnchorPane;
 public class PlayerPaneController {
 
     @FXML
-    private AnchorPane anchorPane; // Ensure this matches the fx:id in FXML
+    private AnchorPane anchorPane;
 
     @FXML
     private Label labelName;

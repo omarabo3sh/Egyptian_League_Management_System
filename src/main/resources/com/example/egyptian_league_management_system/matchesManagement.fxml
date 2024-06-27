@@ -10,30 +10,30 @@
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
 
-    <Button alignment="CENTER" layoutX="310.0" layoutY="147.0" mnemonicParsing="false" onAction="#onUpdateCertainMatchClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Update a certain match" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="317.0" layoutY="196.0" mnemonicParsing="false" onAction="#onUpdateCertainMatchClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Update a certain match" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>
     </Button>
 
-    <Button alignment="CENTER" layoutX="14.0" layoutY="89.0" mnemonicParsing="false" onAction="#onDisplayMatchesDetailsClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display  matches with details" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="21.0" layoutY="134.0" mnemonicParsing="false" onAction="#onDisplayMatchesDetailsClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display  matches with details" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>
     </Button>
 
-    <Button alignment="CENTER" layoutX="310.0" layoutY="89.0" mnemonicParsing="false" onAction="#onAddNewMatchClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Add new match" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="317.0" layoutY="134.0" mnemonicParsing="false" onAction="#onAddNewMatchClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Add new match" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>
     </Button>
 
-    <Button alignment="CENTER" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" onAction="#onDisplayTeamScoresClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display team scores" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="21.0" layoutY="196.0" mnemonicParsing="false" onAction="#onDisplayHeldMatchesClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display held matches" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>
     </Button>
-    <Button alignment="CENTER" layoutX="8.0" layoutY="208.0" mnemonicParsing="false" onAction="#onDisplayToBeHeldMatchesClick" prefHeight="38.0" prefWidth="294.0" styleClass="button-73" text="Display to-be-held matches" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="153.0" layoutY="252.0" mnemonicParsing="false" onAction="#onDisplayToBeHeldMatchesClick" prefHeight="38.0" prefWidth="294.0" styleClass="button-73" text="Display to-be-held matches" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>

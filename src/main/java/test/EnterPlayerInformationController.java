@@ -1,4 +1,4 @@
-package com.example.egyptian_league_management_system.Controllers;
+package test;
 
 import javafx.event.ActionEvent;
 
