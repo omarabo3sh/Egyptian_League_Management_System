@@ -45,10 +45,7 @@ public class UpdatePlayerInformationController {
             int score = Integer.parseInt(scoreField.getText());
             int rank = Integer.parseInt(rankField.getText());
             int teamId = Integer.parseInt(teamField.getText());
-
             TeamOperations teamOperations = new TeamOperations();
-
-
             Player player = new Player();
             player.setName(name);
             player.setNumber(number);
@@ -58,9 +55,9 @@ public class UpdatePlayerInformationController {
             player.setRank(rank);
             Team team = teamOperations.getTeamById(teamId);
             player.setTeam(team);
-
             PlayerOperations playerOperations = new PlayerOperations();
             playerOperations.updatePlayer(player);
+
 
             nameField.clear();
             numberField.clear();
@@ -71,9 +68,7 @@ public class UpdatePlayerInformationController {
             teamField.clear();
 
         } catch (NumberFormatException e) {
-            // Handle exception (e.g., show an error message or log the error)
-            System.err.println("Error: Invalid number format");
-            e.printStackTrace(); // or handle it in a user-friendly way
+            e.printStackTrace();
         }
     }
 
