@@ -4,6 +4,7 @@ import com.example.egyptian_league_management_system.Application;
 import com.example.egyptian_league_management_system.Entities.Player;
 import com.example.egyptian_league_management_system.Entities.Team;
 import com.example.egyptian_league_management_system.Operations.PlayerOperations;
+import com.example.egyptian_league_management_system.Operations.TeamOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -12,8 +13,7 @@ import java.io.IOException;
 
 public class UpdatePlayerInformationController {
 
-    @FXML
-    private TextField idField;
+
     @FXML
     private TextField nameField;
     @FXML
@@ -36,34 +36,45 @@ public class UpdatePlayerInformationController {
     }
 
     public void onUpdateClick(ActionEvent event) {
-        int id = Integer.parseInt(idField.getText());
-        String name = nameField.getText();
-        String number = numberField.getText();
-        String position = positionField.getText();
-        int age = Integer.parseInt(ageField.getText());
-        int score = Integer.parseInt(scoreField.getText());
-        int rank = Integer.parseInt(rankField.getText());
-        //int teamId = Integer.parseInt(teamField.getText());
+        try {
 
-        Player player = new Player();
-        player.setId(id);
-        player.setName(name);
-        player.setNumber(number);
-        player.setPosition(position);
-        player.setAge(age);
-        player.setScore(score);
-        player.setRank(rank);
-       // player.setTeam(new Team(teamId));
+            String name = nameField.getText();
+            String number = numberField.getText();
+            String position = positionField.getText();
+            int age = Integer.parseInt(ageField.getText());
+            int score = Integer.parseInt(scoreField.getText());
+            int rank = Integer.parseInt(rankField.getText());
+            int teamId = Integer.parseInt(teamField.getText());
 
-        playerOperations.updatePlayer(player);
+            TeamOperations teamOperations = new TeamOperations();
 
-        idField.clear();
-        nameField.clear();
-        numberField.clear();
-        positionField.clear();
-        ageField.clear();
-        scoreField.clear();
-        rankField.clear();
-        teamField.clear();
+
+            Player player = new Player();
+            player.setName(name);
+            player.setNumber(number);
+            player.setPosition(position);
+            player.setAge(age);
+            player.setScore(score);
+            player.setRank(rank);
+            Team team = teamOperations.getTeamById(teamId);
+            player.setTeam(team);
+
+            PlayerOperations playerOperations = new PlayerOperations();
+            playerOperations.updatePlayer(player);
+
+            nameField.clear();
+            numberField.clear();
+            positionField.clear();
+            ageField.clear();
+            scoreField.clear();
+            rankField.clear();
+            teamField.clear();
+
+        } catch (NumberFormatException e) {
+            // Handle exception (e.g., show an error message or log the error)
+            System.err.println("Error: Invalid number format");
+            e.printStackTrace(); // or handle it in a user-friendly way
+        }
     }
+
 }

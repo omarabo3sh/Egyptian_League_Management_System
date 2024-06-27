@@ -68,7 +68,7 @@ public class PlayerOperations {
     }
 
     public void updatePlayer(Player player){
-        String query = "update player set Name = ? , Number = ? , Position = ? , Age = ? , Score = ? , Rank =? where id = ?";
+        String query = "update player set Name = ? , Number = ? , Position = ? , Age = ? , Score = ? , Rank =? , team_id = ? where id = ?";
         try {
             PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
             preparedStatement.setString(1,player.getName());
@@ -78,6 +78,7 @@ public class PlayerOperations {
             preparedStatement.setInt(5 , player.getScore());
             preparedStatement.setInt(6 , player.getRank());
             preparedStatement.setInt(7 , player.getId());
+            preparedStatement.setInt(8 ,player.getTeam().getId() );
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
