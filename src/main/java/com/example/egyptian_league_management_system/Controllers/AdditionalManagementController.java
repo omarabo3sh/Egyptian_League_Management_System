@@ -18,13 +18,23 @@ public class AdditionalManagementController {
         switchScene(event, "choose.fxml");
     }
 
+
     public void onTeamsByPointsClick(ActionEvent event) {
-        // Handle the event
+        List<Team> teams = teamOperations.getTeamsSorted();
+
+        if (teams.isEmpty()) {
+            infoLabel.setText("No teams found.");
+        } else {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Teams sorted by total points:  ");
+            for (Team team : teams) {
+                sb.append("Team: ").append(team.getName()).append(", Total Points: ").append(team.getTotalScore()).append("\n");
+            }
+            infoLabel.setText(sb.toString());
+        }
     }
 
-    public void onMatchOnCertainDateClick(ActionEvent event) {
-        // Handle the event
-    }
+
 
     public void onTeamsByAvgAgesClick() {
         List<Team> teams = teamOperations.getTeamAverageAgeSorted();
@@ -33,7 +43,7 @@ public class AdditionalManagementController {
             infoLabel.setText("No teams found.");
         } else {
             StringBuilder sb = new StringBuilder();
-            sb.append("Teams sorted by average age:\n");
+            sb.append("Teams sorted by average age:  ");
             for (Team team : teams) {
                 sb.append("Team: ").append(team.getName()).append(", Average Age: ").append(teamOperations.calculateAverageAge(team)).append("\n");
             }
@@ -49,7 +59,7 @@ public class AdditionalManagementController {
             infoLabel.setText("No teams found.");
         } else {
             StringBuilder sb = new StringBuilder();
-            sb.append("Teams sorted by total goals:\n");
+            sb.append("Teams sorted by total goals:  ");
             for (Team team : teams) {
                 sb.append("Team: ").append(team.getName()).append(", Total Goals: ").append(teamOperations.getTeamTotalScores(team)).append("\n");
             }
@@ -62,11 +72,15 @@ public class AdditionalManagementController {
         // Handle the event
     }
 
-    public void onTopPlayersBygoalsClick(ActionEvent event) {
+    public void onTopPlayersByGoalsClick(ActionEvent event) {
         // Handle the event
     }
 
     public void onTopPlayersByRankClick(ActionEvent event) {
+        // Handle the event
+    }
+
+    public void onMatchOnCertainDateClick(ActionEvent event) {
         // Handle the event
     }
 }
