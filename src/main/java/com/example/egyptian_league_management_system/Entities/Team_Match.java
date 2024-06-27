@@ -14,6 +14,14 @@ public class Team_Match {
     @JoinColumn(name = "match_id" , referencedColumnName = "id")
     Match match;
 
+    public Team_Match(Team team, Match match) {
+        this.team = team;
+        this.match = match;
+    }
+
+    public Team_Match() {
+    }
+
     public int getId() {
         return id;
     }

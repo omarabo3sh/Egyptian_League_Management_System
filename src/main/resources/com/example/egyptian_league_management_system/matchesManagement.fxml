@@ -16,7 +16,7 @@
         </font>
     </Button>
 
-    <Button alignment="CENTER" layoutX="313.0" layoutY="135.0" mnemonicParsing="false" onAction="#onDisplayMatchesDetailsClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display  matches with details" textAlignment="CENTER" wrapText="true">
+    <Button alignment="CENTER" layoutX="313.0" layoutY="135.0" mnemonicParsing="false" onAction="#onDisplayMatchesClick" prefHeight="38.0" prefWidth="268.0" styleClass="button-73" text="Display matches" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="17.0" />
         </font>

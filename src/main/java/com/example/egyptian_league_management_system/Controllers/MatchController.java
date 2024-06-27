@@ -97,6 +97,6 @@ public class MatchController {
     }
 
     public void onBackClick(ActionEvent event) throws IOException {
-       switchScene(event, "Choose.fxml");
+        switchScene(event, "matchesManagement.fxml");
     }
 }
