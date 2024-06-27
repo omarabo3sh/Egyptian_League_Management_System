@@ -4,5 +4,6 @@ import javafx.event.ActionEvent;
 
 public class MatchesManagementController {
     public void onBackClick(ActionEvent event) {
+
     }
 }
