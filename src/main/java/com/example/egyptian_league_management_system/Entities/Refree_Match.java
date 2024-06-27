@@ -11,7 +11,7 @@ public class Refree_Match {
      @JoinColumn(name = "refree_id" , referencedColumnName = "id")
     Refree refree;
     @ManyToOne
-    @JoinColumn(name = "match_id" , referencedColumnName = "id")
+    @JoinColumn(name = "match_iddd" , referencedColumnName = "id")
     Match match;
 
     public int getId() {
