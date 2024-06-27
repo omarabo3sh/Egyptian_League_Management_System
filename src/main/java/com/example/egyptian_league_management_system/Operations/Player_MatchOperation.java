@@ -3,11 +3,17 @@ package com.example.egyptian_league_management_system.Operations;
 
 
 import com.example.egyptian_league_management_system.Database.DatabaseManager ;
+import com.example.egyptian_league_management_system.Entities.Player;
 import com.example.egyptian_league_management_system.Entities.Player_Match;
 
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+import static com.example.egyptian_league_management_system.Operations.PlayerOperations.getAllPlayers;
 
 public class Player_MatchOperation {
     private DatabaseManager databaseManager = new DatabaseManager();

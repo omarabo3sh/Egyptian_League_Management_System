@@ -111,10 +111,35 @@ public class PlayerOperations {
         players.sort(Comparator.comparingInt(Player::getScore));
         return players;
     }
+
     public List<Player> getTopScoredPlayers() {
         List<Player> players = getPlayersSorted();
         Collections.reverse(players);
         return players.subList(0, Math.min(players.size(), 3));
     }
 
+    public List<Player> getTopRankedPlayers() {
+        List<Player> players = getAllPlayers();
+        players.sort(Comparator.comparingInt(Player::getRank));
+        Collections.reverse(players);
+        return players.subList(0, Math.min(players.size(), 3));
+    }
+
+    public List<Player> getGKsByCSH() {
+        List<Player> players = getAllPlayers();
+        List<Player> gks = new ArrayList<>();
+        for (Player player : players) {
+            if ("GK".equalsIgnoreCase(player.getPosition())) {
+                gks.add(player);
+            }
+        }
+        gks.sort(Comparator.comparingInt(Player::getScore));
+        return gks;
+    }
+
+    public List<Player> getFewestScoredGKs() {
+        List<Player> gks = getGKsByCSH();
+
+        return gks.subList(0, Math.min(gks.size(), 3));
+    }
 }

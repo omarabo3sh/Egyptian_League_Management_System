@@ -16,10 +16,10 @@ public class AdditionalManagementController {
     public Label infoLabel;
     private TeamOperations teamOperations = new TeamOperations();
     private PlayerOperations playerOperations = new PlayerOperations();
+
     public void onBackClick(ActionEvent event) throws IOException {
         switchScene(event, "choose.fxml");
     }
-
 
     public void onTeamsByPointsClick(ActionEvent event) {
         List<Team> teams = teamOperations.getTeamsSorted();
@@ -36,9 +36,7 @@ public class AdditionalManagementController {
         }
     }
 
-
-
-    public void onTeamsByAvgAgesClick() {
+    public void onTeamsByAvgAgesClick(ActionEvent event) {
         List<Team> teams = teamOperations.getTeamAverageAgeSorted();
 
         if (teams.isEmpty()) {
@@ -52,7 +50,6 @@ public class AdditionalManagementController {
             infoLabel.setText(sb.toString());
         }
     }
-
 
     public void onTeamsByGoalsClick(ActionEvent event) {
         List<Team> teams = teamOperations.getTeamsGoalSorted();
@@ -78,13 +75,29 @@ public class AdditionalManagementController {
         }
         infoLabel.setText(sb.toString());
     }
-    public void onTopGKByCleanSheetClick(ActionEvent event) {
-        // Handle the event
-    }
-
 
     public void onTopPlayersByRankClick(ActionEvent event) {
-        // Handle the event
+        List<Player> topRankedPlayers = playerOperations.getTopRankedPlayers();
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("Top Ranked Players:  ");
+        for (Player player : topRankedPlayers) {
+            sb.append(player.getName()).append(" - Rank: ").append(player.getRank()).append("\n");
+        }
+        infoLabel.setText(sb.toString());
+    }
+
+    public void onTopGKByCleanSheetClick(ActionEvent event) {
+        List<Player> fewestScoredGKs = playerOperations.getFewestScoredGKs();
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("Top Clean Sheets Goalkeepers:  ");
+        for (Player player : fewestScoredGKs) {
+            sb.append("Name: ").append(player.getName()).append(", ")
+                    .append("Position: ").append(player.getPosition()).append(", ")
+                    .append("Score: ").append(player.getScore()).append("\n");
+        }
+        infoLabel.setText(sb.toString());
     }
 
     public void onMatchOnCertainDateClick(ActionEvent event) {
