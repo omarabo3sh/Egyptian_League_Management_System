@@ -1,6 +1,8 @@
 package com.example.egyptian_league_management_system.Controllers;
 
+import com.example.egyptian_league_management_system.Entities.Player;
 import com.example.egyptian_league_management_system.Entities.Team;
+import com.example.egyptian_league_management_system.Operations.PlayerOperations;
 import com.example.egyptian_league_management_system.Operations.TeamOperations;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
@@ -13,7 +15,7 @@ import static com.example.egyptian_league_management_system.Application.switchSc
 public class AdditionalManagementController {
     public Label infoLabel;
     private TeamOperations teamOperations = new TeamOperations();
-
+    private PlayerOperations playerOperations = new PlayerOperations();
     public void onBackClick(ActionEvent event) throws IOException {
         switchScene(event, "choose.fxml");
     }
@@ -67,14 +69,19 @@ public class AdditionalManagementController {
         }
     }
 
-
+    public void onTopPlayersByGoalsClick(ActionEvent event) {
+        List<Player> topPlayers = playerOperations.getTopScoredPlayers();
+        StringBuilder sb = new StringBuilder();
+        sb.append("Top Scored Players:  ");
+        for (Player player : topPlayers) {
+            sb.append(player.getName()).append(" - Score: ").append(player.getScore()).append("\n");
+        }
+        infoLabel.setText(sb.toString());
+    }
     public void onTopGKByCleanSheetClick(ActionEvent event) {
         // Handle the event
     }
 
-    public void onTopPlayersByGoalsClick(ActionEvent event) {
-        // Handle the event
-    }
 
     public void onTopPlayersByRankClick(ActionEvent event) {
         // Handle the event

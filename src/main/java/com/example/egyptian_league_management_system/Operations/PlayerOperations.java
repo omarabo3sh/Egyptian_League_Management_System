@@ -111,9 +111,10 @@ public class PlayerOperations {
         players.sort(Comparator.comparingInt(Player::getScore));
         return players;
     }
-
     public List<Player> getTopScoredPlayers() {
         List<Player> players = getPlayersSorted();
-        return players.subList(0, Math.min(players.size(), 3));  // return top 3 or less if fewer players
+        Collections.reverse(players);
+        return players.subList(0, Math.min(players.size(), 3));
     }
+
 }
