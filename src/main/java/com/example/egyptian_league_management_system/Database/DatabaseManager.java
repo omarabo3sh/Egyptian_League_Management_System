@@ -4,11 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-//public class DatabaseManager {
-//    private static final String URL = "jdbc:mysql://localhost:3306/egyptian_league_management_system";
-//    private static final String USER = "root";
-//    private static final String PASSWORD = "12345";
-//
+
 //    private String URL = "jdbc:mysql://127.0.0.1:3306/egyptianleague2";
 //    private String USER = "root";
 //    private String PASSWORD = "Omar_Alsabahy2000";
@@ -40,13 +36,24 @@ import java.sql.SQLException;
 //    }
 //}
 
+
+
 public class DatabaseManager {
-    private String url = "jdbc:mysql://127.0.0.1:3306/egyptianleague2";
-    private String userName = "root";
-    private String password = "Omar_Alsabahy2000";
+
+
+
+    private static final String url = "jdbc:mysql://localhost:3306/egyptian_league_management_system"; //omar aboesh db
+    private static final String userName = "root";  //omar aboesh db
+    private static final String password = "12345";//omar aboesh db
+
+
+//    private String url = "jdbc:mysql://127.0.0.1:3306/egyptianleague2";
+//    private String userName = "root";
+//    private String password = "Omar_Alsabahy2000";
+
+
+
     private Connection connection ;
-
-
     public  DatabaseManager(){
         startConnection();
     }
