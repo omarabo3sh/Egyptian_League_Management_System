@@ -16,6 +16,8 @@ public class Main {
       TeamOperations teamOperations = new TeamOperations();
       MatchOperations matchOperations = new MatchOperations();
       PlayerOperations playerOperations = new PlayerOperations();
+      RefreeOperations refreeOperations = new RefreeOperations();
+      Refree_MatchOperations refreeMatchOperations = new Refree_MatchOperations();
 //      List<Team> teams ;
 //      teams = teamOperations.getAll();
 //      for (Team team : teams){
@@ -29,7 +31,10 @@ public class Main {
 //        for (Team team : teams){
 //            System.out.println(team.getTotalScore());
 //        }
+        Match match = matchOperations.getMatchById(1);
 
+        match = matchOperations.getMatchRefree(match);
+        System.out.print("");
 
 
 

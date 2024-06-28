@@ -14,6 +14,11 @@ public class Refree_Match {
     @JoinColumn(name = "match_iddd" , referencedColumnName = "id")
     Match match;
 
+    public Refree_Match(Refree refree, Match match) {
+        this.refree = refree;
+        this.match = match;
+    }
+
     public int getId() {
         return Id;
     }

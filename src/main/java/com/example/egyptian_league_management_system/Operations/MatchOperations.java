@@ -3,6 +3,7 @@ package com.example.egyptian_league_management_system.Operations;
 
 import com.example.egyptian_league_management_system.Database.DatabaseManager ;
 import com.example.egyptian_league_management_system.Entities.Match;
+import com.example.egyptian_league_management_system.Entities.Refree;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -78,6 +79,26 @@ public class MatchOperations {
             preparedStatement.setBoolean(3 , match.isIshelded());
             preparedStatement.setInt(4 , match.getId());
             preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Match getMatchRefree(Match match){
+        String query = "select * from refree_match where refree_match.match_iddd = ?";
+        List<Refree> refrees = new ArrayList<>();
+        RefreeOperations refreeOperations = new RefreeOperations();
+        try {
+            PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
+            preparedStatement.setInt(1 , match.getId());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Refree refree = refreeOperations.getRefreeById(resultSet.getInt("refree_id"));
+                refrees.add(refree);
+            }
+            match.setRefrees(refrees);
+
+            return match;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
