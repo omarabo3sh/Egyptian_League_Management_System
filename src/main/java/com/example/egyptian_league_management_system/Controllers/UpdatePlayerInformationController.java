@@ -11,6 +11,8 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+import static com.example.egyptian_league_management_system.Application.switchScene;
+
 public class UpdatePlayerInformationController {
 
 
@@ -32,7 +34,7 @@ public class UpdatePlayerInformationController {
     private PlayerOperations playerOperations = new PlayerOperations();
 
     public void onBackClick(ActionEvent event) throws IOException {
-        Application.switchScene(event, "playerManagement.fxml");
+      switchScene(event, "playerManagement.fxml");
     }
 
     public void onUpdateClick(ActionEvent event) {
@@ -45,19 +47,30 @@ public class UpdatePlayerInformationController {
             int score = Integer.parseInt(scoreField.getText());
             int rank = Integer.parseInt(rankField.getText());
             int teamId = Integer.parseInt(teamField.getText());
+
+            Player player = playerOperations.getPlayerByName(name);
+            if (player == null) {
+                System.err.println("Player not found: " + name);
+                return;
+            }
+
+
             TeamOperations teamOperations = new TeamOperations();
-            Player player = new Player();
-            player.setName(name);
+            Team team = teamOperations.getTeamById(teamId);
+            if (team == null) {
+                System.err.println("Team not found: " + teamId);
+                return;
+            }
+
+            // Update player information
             player.setNumber(number);
             player.setPosition(position);
             player.setAge(age);
             player.setScore(score);
             player.setRank(rank);
-            Team team = teamOperations.getTeamById(teamId);
             player.setTeam(team);
-            PlayerOperations playerOperations = new PlayerOperations();
-            playerOperations.updatePlayer(player);
 
+            playerOperations.updatePlayer(player);
 
             nameField.clear();
             numberField.clear();
@@ -67,9 +80,13 @@ public class UpdatePlayerInformationController {
             rankField.clear();
             teamField.clear();
 
+            System.out.println("Player updated successfully: " + name);
+
         } catch (NumberFormatException e) {
+            System.err.println("Invalid input: " + e.getMessage());
             e.printStackTrace();
         }
     }
+
 
 }

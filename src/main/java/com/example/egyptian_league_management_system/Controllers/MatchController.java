@@ -11,6 +11,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.control.ScrollPane;
 import javafx.geometry.Pos;
 
+import static com.example.egyptian_league_management_system.Application.switchScene;
+
 public class MatchController {
 
     @FXML
@@ -95,6 +97,6 @@ public class MatchController {
     }
 
     public void onBackClick(ActionEvent event) throws IOException {
-        Application.switchScene(event, "Choose.fxml");
+        switchScene(event, "matchesManagement.fxml");
     }
 }
