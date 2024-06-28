@@ -11,6 +11,7 @@ public class Match {
     int Id;
     String Date;
     int Score;
+    boolean ishelded ;
     @OneToMany(mappedBy = "Match" , cascade = CascadeType.ALL)
     List<Player>players;
     @OneToMany(mappedBy = "Match" ,cascade = CascadeType.ALL)
@@ -62,5 +63,37 @@ public class Match {
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public boolean isIshelded() {
+        return ishelded;
+    }
+
+    public void setIshelded(boolean ishelded) {
+        this.ishelded = ishelded;
+    }
+
+    public List<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
+    }
+
+    public Stadium getStadium() {
+        return stadium;
+    }
+
+    public void setStadium(Stadium stadium) {
+        this.stadium = stadium;
+    }
+
+    public List<Refree> getRefrees() {
+        return refrees;
+    }
+
+    public void setRefrees(List<Refree> refrees) {
+        this.refrees = refrees;
     }
 }

@@ -17,11 +17,12 @@ public class MatchOperations {
     }
 
     public void insertMatch(Match match){
-        String query = "insert into `match` (Date , Score) values (? , ?)";
+        String query = "insert into `match` (Date , Score , helded) values (? , ? , ?)";
         try {
             PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
             preparedStatement.setString(1 , match.getDate());
             preparedStatement.setInt(2 , match.getScore());
+            preparedStatement.setBoolean(3 , match.isIshelded());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -39,6 +40,7 @@ public class MatchOperations {
                 match.setDate(resultSet.getString("Date"));
                match.setScore(resultSet.getInt("Score"));
                match.setId(resultSet.getInt("id"));
+               match.setIshelded(resultSet.getBoolean("helded"));
             }
             return match;
         } catch (SQLException e) {
@@ -59,9 +61,23 @@ public class MatchOperations {
                 match.setId(resultSet.getInt("id"));
                 match.setDate(resultSet.getString("Date"));
                 match.setScore(resultSet.getInt("Score"));
+                match.setIshelded(resultSet.getBoolean("helded"));
                 matches.add(match);
             }
             return matches;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void updateMatch(Match match){
+        String query = "update `match` set Date = ? , Score = ? , helded =? where id = ? ";
+        try {
+            PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
+            preparedStatement.setString(1,match.getDate());
+            preparedStatement.setInt(2 , match.getScore());
+            preparedStatement.setBoolean(3 , match.isIshelded());
+            preparedStatement.setInt(4 , match.getId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

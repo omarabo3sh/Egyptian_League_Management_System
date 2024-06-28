@@ -30,11 +30,6 @@ public class Main {
 //            System.out.println(team.getTotalScore());
 //        }
 
-        Player player = playerOperations.getPlayerByName("Lamin yamal");
-        Team team = teamOperations.getTeamById(3);
-        player.setTeam(team);
-        playerOperations.updatePlayer(player);
-
 
 
 
