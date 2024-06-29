@@ -30,13 +30,35 @@ public class StadiumOperations {
             PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
             preparedStatement.setString(1, name);
             ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                Stadium stadium = new Stadium();
+            Stadium stadium = new Stadium();
+           if (resultSet.next()) {
+
                 stadium.setId(resultSet.getInt("id"));
                 stadium.setName(resultSet.getString("name"));
                 return stadium;
+
             }
-            return null; // return null if stadium with given name not found
+           return null;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public Stadium getStadiumById(int id){
+        String query = "select * from stadium where id = ?";
+        try {
+            PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            Stadium stadium = new Stadium();
+            if (resultSet.next()) {
+
+                stadium.setId(id);
+                stadium.setName(resultSet.getString("name"));
+                return stadium;
+
+            }
+            return null;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

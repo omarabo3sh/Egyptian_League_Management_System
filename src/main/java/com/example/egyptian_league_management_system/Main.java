@@ -18,6 +18,7 @@ public class Main {
       PlayerOperations playerOperations = new PlayerOperations();
       RefreeOperations refreeOperations = new RefreeOperations();
       Refree_MatchOperations refreeMatchOperations = new Refree_MatchOperations();
+      StadiumOperations stadiumOperations = new StadiumOperations();
 //      List<Team> teams ;
 //      teams = teamOperations.getAll();
 //      for (Team team : teams){
@@ -31,10 +32,11 @@ public class Main {
 //        for (Team team : teams){
 //            System.out.println(team.getTotalScore());
 //        }
+        Stadium stadium = stadiumOperations.getStadiumById(2);
         Match match = matchOperations.getMatchById(1);
+        match = matchOperations.getMatchStadium(match);
 
-        match = matchOperations.getMatchRefree(match);
-        System.out.print("");
+
 
 
 

@@ -4,6 +4,7 @@ package com.example.egyptian_league_management_system.Operations;
 import com.example.egyptian_league_management_system.Database.DatabaseManager ;
 import com.example.egyptian_league_management_system.Entities.Match;
 import com.example.egyptian_league_management_system.Entities.Refree;
+import com.example.egyptian_league_management_system.Entities.Stadium;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -99,6 +100,23 @@ public class MatchOperations {
             match.setRefrees(refrees);
 
             return match;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public Match getMatchStadium(Match match){
+       String query = "select * from stadium inner join `match` on stadium.id = `match`.stadiumId where `match`.id = ?";
+        try {
+            PreparedStatement preparedStatement =  databaseManager.getConnection().prepareStatement(query);
+            preparedStatement.setInt(1 , match.getId());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                StadiumOperations stadiumOperations = new StadiumOperations();
+                Stadium stadium = stadiumOperations.getStadiumById(resultSet.getInt("id"));
+                match.setStadium(stadium);
+                return match;
+            }
+            return null;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
