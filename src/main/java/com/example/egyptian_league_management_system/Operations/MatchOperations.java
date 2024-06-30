@@ -5,6 +5,7 @@ import com.example.egyptian_league_management_system.Database.DatabaseManager ;
 import com.example.egyptian_league_management_system.Entities.Match;
 import com.example.egyptian_league_management_system.Entities.Refree;
 import com.example.egyptian_league_management_system.Entities.Stadium;
+import com.example.egyptian_league_management_system.Entities.Team;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -117,6 +118,25 @@ public class MatchOperations {
                 return match;
             }
             return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public Match getMatchTeams(Match match){
+        String query = "select * from team_match where team_match.match_idd = ?";
+        try {
+            PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
+            preparedStatement.setInt(1 , match.getId());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<Team> teams = new ArrayList<>();
+            TeamOperations teamOperations = new TeamOperations();
+            while (resultSet.next()){
+                Team team = teamOperations.getTeamById(resultSet.getInt("team_idd"));
+                teams.add(team);
+
+            }
+            match.setTeams(teams);
+            return  match;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -32,12 +32,11 @@ public class Main {
 //        for (Team team : teams){
 //            System.out.println(team.getTotalScore());
 //        }
-        Stadium stadium = stadiumOperations.getStadiumById(2);
-        Match match = matchOperations.getMatchById(1);
-        match = matchOperations.getMatchStadium(match);
 
-
-
+      Match match = matchOperations.getMatchById(1);
+      match = matchOperations.getMatchTeams(match);
+      match = matchOperations.getMatchStadium(match);
+      System.out.print("");
 
 
     }
