@@ -1,15 +1,19 @@
 package com.example.egyptian_league_management_system.Controllers;
 
-import java.io.IOException;
-
-import com.example.egyptian_league_management_system.Application;
+import com.example.egyptian_league_management_system.Entities.Match;
+import com.example.egyptian_league_management_system.Entities.Refree;
+import com.example.egyptian_league_management_system.Entities.Stadium;
+import com.example.egyptian_league_management_system.Entities.Team;
+import com.example.egyptian_league_management_system.Operations.MatchOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.control.ScrollPane;
-import javafx.geometry.Pos;
+
+import java.io.IOException;
+import java.util.List;
 
 import static com.example.egyptian_league_management_system.Application.switchScene;
 
@@ -21,79 +25,65 @@ public class MatchController {
     @FXML
     private VBox vbox;
 
+    private final MatchOperations matchOperations = new MatchOperations();
+
     public void initialize() {
-        int numberOfPanes = 5;
+        // Fetch matches from the database
+        List<Match> matches = matchOperations.getAllMatches();
 
-        vbox.setPrefHeight(numberOfPanes * 254);
-        vbox.setAlignment(Pos.CENTER);
+        // Clear existing content in VBox
+        vbox.getChildren().clear();
 
-        for (int i = 1; i <= numberOfPanes; i++) {
-            AnchorPane matchAnchorPane = createMatchAnchorPane("Team1", "Team2", "Referee",
-                    "Score", "Stadium", "Date");
-            matchAnchorPane.setPrefWidth(505);
-            matchAnchorPane.setPrefHeight(244);
-            vbox.getChildren().add(matchAnchorPane);
+        // Load match panes for each match
+        for (Match match : matches) {
+            try {
+                // Fetch associated teams, referees, and stadium for the match
+                Match completeMatch = matchOperations.getMatchTeams(matchOperations.getMatchRefree(matchOperations.getMatchStadium(match)));
+
+                List<Team> teams = completeMatch.getTeams();
+                List<Refree> referees = completeMatch.getRefrees();
+                Stadium stadium = completeMatch.getStadium();
+
+                if (teams.size() == 2 && !referees.isEmpty() && stadium != null) {
+                    Team team1 = teams.get(0);
+                    Team team2 = teams.get(1);
+
+                    // Load match pane
+                    AnchorPane matchPane = loadMatchPane(match, team1, team2, referees, stadium);
+                    vbox.getChildren().add(matchPane);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
+        // Set content of ScrollPane
         scrollPane.setContent(vbox);
     }
 
-    private AnchorPane createMatchAnchorPane(String team1, String team2, String referee, String score,
-                                             String stadium, String date) {
-        AnchorPane anchorPane = new AnchorPane();
-        anchorPane.setPrefWidth(505);
-        anchorPane.setPrefHeight(244);
-        anchorPane.setStyle("-fx-background-color: #303030;");
+    private AnchorPane loadMatchPane(Match match, Team team1, Team team2, List<Refree> referees, Stadium stadium) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/egyptian_league_management_system/MatchPane.fxml"));
+        AnchorPane pane = loader.load();
 
-        Label labelTeam1 = new Label(team1);
-        labelTeam1.setLayoutX(56);
-        labelTeam1.setLayoutY(36);
-        labelTeam1.setPrefWidth(112);
-        labelTeam1.setPrefHeight(60);
-        labelTeam1.setTextFill(javafx.scene.paint.Color.WHITE);
-        labelTeam1.setFont(new javafx.scene.text.Font("Agency FB Bold", 48));
+        MatchPaneController controller = loader.getController();
 
-        Label labelReferee = new Label("Referee: " + referee);
-        labelReferee.setLayoutX(56);
-        labelReferee.setLayoutY(149);
-        labelReferee.setPrefWidth(112);
-        labelReferee.setPrefHeight(42);
-        labelReferee.setTextFill(javafx.scene.paint.Color.WHITE);
-        labelReferee.setFont(new javafx.scene.text.Font("Agency FB", 24));
+        // Set match details in the MatchPaneController
+        String refereeNames = getRefereeNames(referees);
+        controller.setMatchDetails(team1.getName(), team2.getName(),
+                refereeNames, String.valueOf(match.getScore()), stadium.getName(), match.getDate());
 
-        Label labelScore = new Label("Score: " + score);
-        labelScore.setLayoutX(56);
-        labelScore.setLayoutY(107);
-        labelScore.setPrefWidth(112);
-        labelScore.setPrefHeight(42);
-        labelScore.setTextFill(javafx.scene.paint.Color.WHITE);
-        labelScore.setFont(new javafx.scene.text.Font("Agency FB", 24));
+        return pane;
+    }
 
-        Label labelStadium = new Label("Stadium: " + stadium);
-        labelStadium.setLayoutX(186);
-        labelStadium.setLayoutY(191);
-        labelStadium.setPrefWidth(133);
-        labelStadium.setPrefHeight(42);
-        labelStadium.setTextFill(javafx.scene.paint.Color.WHITE);
-        labelStadium.setFont(new javafx.scene.text.Font("Agency FB", 24));
-
-        Label labelTeam2 = new Label(team2);
-        labelTeam2.setLayoutX(345);
-        labelTeam2.setLayoutY(37);
-        labelTeam2.setPrefWidth(112);
-        labelTeam2.setPrefHeight(42);
-        labelTeam2.setTextFill(javafx.scene.paint.Color.WHITE);
-        labelTeam2.setFont(new javafx.scene.text.Font("Agency FB Bold", 48));
-
-        Label labelDate = new Label(date);
-        labelDate.setLayoutX(221);
-        labelDate.setLayoutY(56);
-        labelDate.setTextFill(javafx.scene.paint.Color.WHITE);
-        labelDate.setFont(new javafx.scene.text.Font("System Bold", 24));
-
-        anchorPane.getChildren().addAll(labelTeam1, labelReferee, labelScore, labelStadium, labelTeam2, labelDate);
-
-        return anchorPane;
+    private String getRefereeNames(List<Refree> referees) {
+        StringBuilder names = new StringBuilder();
+        for (Refree referee : referees) {
+            if (names.length() > 0) {
+                names.append(", ");
+            }
+            names.append(referee.getName());
+        }
+        return names.toString();
     }
 
     public void onBackClick(ActionEvent event) throws IOException {
