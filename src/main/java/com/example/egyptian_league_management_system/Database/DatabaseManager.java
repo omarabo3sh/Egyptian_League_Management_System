@@ -42,7 +42,7 @@ public class DatabaseManager {
 
 
 
-    private static final String url = "jdbc:mysql://localhost:3306/egyptian_league_management_system"; //omar aboesh db
+    private static final String url = "jdbc:mysql://127.0.0.1:3306/egyptian_league_management_system"; //omar aboesh db
     private static final String userName = "root";  //omar aboesh db
     private static final String password = "12345";//omar aboesh db
 
