@@ -1,13 +1,13 @@
 package com.example.egyptian_league_management_system.Controllers;
 
-import com.example.egyptian_league_management_system.Application;
+
 import com.example.egyptian_league_management_system.Entities.Player;
 import com.example.egyptian_league_management_system.Entities.Team;
 import com.example.egyptian_league_management_system.Operations.PlayerOperations;
 import com.example.egyptian_league_management_system.Operations.TeamOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+
 import javafx.scene.control.TextField;
 
 import java.io.IOException;

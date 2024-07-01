@@ -18,16 +18,15 @@ public class Player_Match {
 
     // No-argument constructor
     public Player_Match() {
-        // This constructor is intentionally empty.
     }
 
-    // Parameterized constructor
+
     public  Player_Match(Player player, Match match) {
         this.player = player;
         this.match = match;
     }
 
-    // Getters and Setters
+
     public int getId() {
         return id;
     }

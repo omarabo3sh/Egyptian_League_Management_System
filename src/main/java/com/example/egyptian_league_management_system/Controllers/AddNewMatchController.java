@@ -9,8 +9,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
@@ -66,7 +64,7 @@ public class AddNewMatchController {
     @FXML
     private void onAddMatchClick() {
         try {
-            // Retrieve input values from UI components
+
             LocalDate date = datePicker.getValue();
             String team1Name = team1NameComboBox.getValue();
             String team2Name = team2NameComboBox.getValue();
@@ -74,24 +72,24 @@ public class AddNewMatchController {
             String stadiumName = stadiumComboBox.getValue();
             int score = Integer.parseInt(scoreField.getText());
 
-            // Validate inputs
+
             if (date == null || team1Name == null || team2Name == null ||
                     refereeName == null || stadiumName == null || scoreField.getText().isEmpty()) {
                 System.out.println("Please fill in all fields.");
                 return;
             }
 
-            // Create a new match object
+
             Match match = new Match();
             match.setDate(date.toString());
             match.setScore(score);
-            match.setishelded(false); // Assuming the match is not yet held
+            match.setishelded(false);
 
-            // Insert match into database and get generated ID
+
             int matchId = matchOperations.insertMatch(match);
             match.setId(matchId);
 
-            // Associate teams with the match
+
             Team team1 = teamOperations.getTeamByName(team1Name);
             Team team2 = teamOperations.getTeamByName(team2Name);
             Team_Match teamMatch1 = new Team_Match(team1, match);
@@ -100,21 +98,24 @@ public class AddNewMatchController {
             teamMatchOperation.insert(teamMatch1);
             teamMatchOperation.insert(teamMatch2);
 
-            // Associate referee with the match
             Refree referee = refereeOperations.getRefreeByName(refereeName); // Assuming you have a method to fetch referee by name
             Refree_Match refereeMatch = new Refree_Match(referee, match);
             Refree_MatchOperations refereeMatchOperations = new Refree_MatchOperations();
             refereeMatchOperations.insert(refereeMatch);
 
-            // Associate stadium with the match
+
             Stadium stadium = stadiumOperations.getStadiumByName(stadiumName); // Assuming you have a method to fetch stadium by name
             match.setStadium(stadium);
             matchOperations.updateMatch(match);
 
-            // Close the window or handle navigation
-            Stage stage = (Stage) datePicker.getScene().getWindow();
-            stage.close();
 
+
+            datePicker.setValue(null);
+            team1NameComboBox.getSelectionModel().clearSelection();
+            team2NameComboBox.getSelectionModel().clearSelection();
+            refereeComboBox.getSelectionModel().clearSelection();
+            stadiumComboBox.getSelectionModel().clearSelection();
+            scoreField.clear();
         } catch (NumberFormatException e) {
             System.out.println("Please enter a valid number for score.");
         } catch (Exception e) {

@@ -5,37 +5,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-//    private String URL = "jdbc:mysql://127.0.0.1:3306/egyptianleague2";
-//    private String USER = "root";
-//    private String PASSWORD = "Omar_Alsabahy2000";
-//
-//    private static Connection connection;
-//
-//    public void startConnection() {
-//        try {
-//            connection = DriverManager.getConnection(URL, USER, PASSWORD);
-//            System.out.println("Connected to database!");
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    public static Connection getConnection() {
-//        return connection;
-//    }
-//
-//    public void closeConnection() {
-//        if (connection != null) {
-//            try {
-//                connection.close();
-//                System.out.println("Database connection closed.");
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-//}
-
 
 
 public class DatabaseManager {

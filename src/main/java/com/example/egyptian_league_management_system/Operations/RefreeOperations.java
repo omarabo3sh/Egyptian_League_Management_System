@@ -88,7 +88,7 @@ public Refree getRefereeById(int refereeId) {
                 Refree referee = new Refree();
                 referee.setId(resultSet.getInt("id"));
                 referee.setName(resultSet.getString("name"));
-                // Populate other referee attributes as needed
+
                 referees.add(referee);
             }
         } catch (SQLException e) {

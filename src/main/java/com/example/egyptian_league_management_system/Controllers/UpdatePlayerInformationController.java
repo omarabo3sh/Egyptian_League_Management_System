@@ -1,6 +1,5 @@
 package com.example.egyptian_league_management_system.Controllers;
 
-import com.example.egyptian_league_management_system.Application;
 import com.example.egyptian_league_management_system.Entities.Player;
 import com.example.egyptian_league_management_system.Entities.Team;
 import com.example.egyptian_league_management_system.Operations.PlayerOperations;
@@ -62,7 +61,6 @@ public class UpdatePlayerInformationController {
                 return;
             }
 
-            // Update player information
             player.setNumber(number);
             player.setPosition(position);
             player.setAge(age);

@@ -33,7 +33,7 @@ public class ToBeHeldMatchController {
         System.out.println("Number of matches to process: " + matches.size());
 
         for (Match match : matches) {
-            if (!match.ishelded()) { // Only process matches that are held
+            if (!match.ishelded()) {
                 try {
                     Match completeMatch = matchOperations.getCompleteMatchDetails(match);
 
@@ -50,7 +50,7 @@ public class ToBeHeldMatchController {
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
-                    // Handle IOException as needed
+
                 }
             }
         }
