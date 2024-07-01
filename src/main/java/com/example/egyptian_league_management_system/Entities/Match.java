@@ -65,11 +65,11 @@ public class Match {
         this.players = players;
     }
 
-    public boolean isIshelded() {
+    public boolean ishelded() {
         return ishelded;
     }
 
-    public void setIshelded(boolean ishelded) {
+    public void setishelded(boolean ishelded) {
         this.ishelded = ishelded;
     }
 

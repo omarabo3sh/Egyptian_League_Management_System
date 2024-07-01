@@ -41,11 +41,11 @@ public class MatchOperations {
     }
 
     public void insertMatch(Match match) {
-        String query = "INSERT INTO `match` (Date, Score, helded) VALUES (?, ?, ?)";
+        String query = "INSERT INTO `match` (Date, Score, ishelded) VALUES (?, ?, ?)";
         try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
             preparedStatement.setString(1, match.getDate());
             preparedStatement.setInt(2, match.getScore());
-            preparedStatement.setBoolean(3, match.isIshelded());
+            preparedStatement.setBoolean(3, match.ishelded());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -63,7 +63,7 @@ public class MatchOperations {
                     match.setId(resultSet.getInt("id"));
                     match.setDate(resultSet.getString("Date"));
                     match.setScore(resultSet.getInt("Score"));
-                    match.setIshelded(resultSet.getBoolean("helded"));
+                    match.setishelded(resultSet.getBoolean("ishelded"));
                 }
             }
         } catch (SQLException e) {
@@ -83,7 +83,7 @@ public class MatchOperations {
                     match.setId(resultSet.getInt("id"));
                     match.setDate(resultSet.getString("Date"));
                     match.setScore(resultSet.getInt("Score"));
-                    match.setIshelded(resultSet.getBoolean("helded"));
+                    match.setishelded(resultSet.getBoolean("ishelded"));
                     matches.add(match);
                 }
             }
@@ -94,11 +94,11 @@ public class MatchOperations {
     }
 
     public void updateMatch(Match match) {
-        String query = "UPDATE `match` SET Date = ?, Score = ?, helded = ? WHERE id = ?";
+        String query = "UPDATE `match` SET Date = ?, Score = ?, ishelded = ? WHERE id = ?";
         try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
             preparedStatement.setString(1, match.getDate());
             preparedStatement.setInt(2, match.getScore());
-            preparedStatement.setBoolean(3, match.isIshelded());
+            preparedStatement.setBoolean(3, match.ishelded());
             preparedStatement.setInt(4, match.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -178,7 +178,7 @@ public class MatchOperations {
                     match.setId(resultSet.getInt("id"));
                     match.setDate(resultSet.getString("Date"));
                     match.setScore(resultSet.getInt("Score"));
-                    match.setIshelded(resultSet.getBoolean("helded"));
+                    match.setishelded(resultSet.getBoolean("ishelded"));
                     matches.add(match);
                 }
             }
@@ -213,7 +213,7 @@ public class MatchOperations {
                 match.setId(resultSet.getInt("id"));
                 match.setDate(resultSet.getString("Date"));
                 match.setScore(resultSet.getInt("Score"));
-                match.setIshelded(resultSet.getBoolean("helded"));
+                match.setishelded(resultSet.getBoolean("ishelded"));
                 matches.add(match);
             }
             return matches;

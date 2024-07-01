@@ -25,7 +25,7 @@ public class TeamOperations {
     }
 
     public void insertTeam(Team team){
-        String query = "insert into team (Name , Captain , TotalScore) values (? , ? , ?)";
+        String query = "insert into team (Name , captainName , TotalScore) values (? , ? , ?)";
         try {
             PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
             preparedStatement.setString(1 , team.getName());
@@ -46,7 +46,7 @@ public class TeamOperations {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 team.setName(resultSet.getString("Name"));
-                team.setCaptainName(resultSet.getString("Captain"));
+                team.setCaptainName(resultSet.getString("captainName"));
                 team.setTotalScore(resultSet.getInt("TotalScore"));
                 team.setId(resultSet.getInt("id"));
             }
@@ -65,7 +65,7 @@ public class TeamOperations {
             while (resultSet.next()){
                 team.setId(resultSet.getInt("id"));
                 team.setName(resultSet.getString("Name"));
-                team.setCaptainName(resultSet.getString("Captain"));
+                team.setCaptainName(resultSet.getString("captainName"));
                 team.setTotalScore(resultSet.getInt("TotalScore"));
             }
             return team;
@@ -75,7 +75,7 @@ public class TeamOperations {
     }
 
     public void updateTeam(Team team){
-        String query = "update team set Name =? , Captain =? , TotalScore = ? where id = ?";
+        String query = "update team set Name =? , captainName =? , TotalScore = ? where id = ?";
         try {
             PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
             preparedStatement.setString(1 , team.getName());
@@ -126,7 +126,7 @@ public class TeamOperations {
                 Team team = new Team();
                 team.setId(resultSet.getInt("id"));
                 team.setName(resultSet.getString("Name"));
-                team.setCaptainName(resultSet.getString("Captain"));
+                team.setCaptainName(resultSet.getString("captainName"));
                 team.setTotalScore(resultSet.getInt("TotalScore"));
                 team.setPlayers(getTeamPlayers(team).getPlayers());
                 teams.add(team);
