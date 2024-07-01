@@ -4,49 +4,41 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="244.0" prefWidth="480.0" style="-fx-background-color: #303030;"
-            xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.PlayerPaneController">
+<AnchorPane prefHeight="244.0" prefWidth="480.0" style="-fx-background-color: #303030;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.PlayerPaneController">
 
-<Label fx:id="labelName" alignment="CENTER" layoutX="11.0" layoutY="36.0" prefHeight="70.0" prefWidth="449.0"
-           style="-fx-text-fill: white;" text="Player Name">
+<Label fx:id="labelName" alignment="CENTER" layoutX="11.0" layoutY="36.0" prefHeight="70.0" prefWidth="449.0" style="-fx-text-fill: white;" text="Player Name">
         <font>
-            <Font name="Agency FB Bold" size="48.0"/>
+            <Font size="27.0" />
         </font>
     </Label>
-    <Label fx:id="labelTeam" layoutX="23.0" layoutY="107.0" prefHeight="42.0" prefWidth="200.0"
-           style="-fx-text-fill: white;" text="Team: ">
+    <Label fx:id="labelTeam" layoutX="23.0" layoutY="107.0" prefHeight="42.0" prefWidth="200.0" style="-fx-text-fill: white;" text="Team: ">
         <font>
-            <Font name="Agency FB" size="24.0"/>
+            <Font size="21.0" />
         </font>
     </Label>
-    <Label fx:id="labelAge" layoutX="23.0" layoutY="147.0" prefHeight="42.0" prefWidth="200.0"
-           style="-fx-text-fill: white;" text="Age: ">
+    <Label fx:id="labelAge" layoutX="23.0" layoutY="147.0" prefHeight="42.0" prefWidth="200.0" style="-fx-text-fill: white;" text="Age: ">
         <font>
-            <Font name="Agency FB" size="24.0"/>
+            <Font size="21.0" />
         </font>
     </Label>
-    <Label fx:id="labelPosition" layoutX="23.0" layoutY="189.0" prefHeight="42.0" prefWidth="200.0"
-           style="-fx-text-fill: white;" text="Position: ">
+    <Label fx:id="labelPosition" layoutX="23.0" layoutY="189.0" prefHeight="42.0" prefWidth="200.0" style="-fx-text-fill: white;" text="Position: ">
         <font>
-            <Font name="Agency FB" size="24.0"/>
+            <Font size="21.0" />
         </font>
     </Label>
-    <Label fx:id="labelRank" layoutX="281.0" layoutY="110.0" prefHeight="35.0" prefWidth="187.0"
-           style="-fx-text-fill: white;" text="Rank: ">
+    <Label fx:id="labelRank" layoutX="281.0" layoutY="110.0" prefHeight="35.0" prefWidth="187.0" style="-fx-text-fill: white;" text="Rank: ">
         <font>
-            <Font name="Agency FB" size="24.0"/>
+            <Font size="21.0" />
         </font>
     </Label>
-    <Label fx:id="labelScore" layoutX="281.0" layoutY="150.0" prefHeight="35.0" prefWidth="187.0"
-           style="-fx-text-fill: white;" text="Score: ">
+    <Label fx:id="labelScore" layoutX="281.0" layoutY="150.0" prefHeight="35.0" prefWidth="187.0" style="-fx-text-fill: white;" text="Score: ">
         <font>
-            <Font name="Agency FB" size="24.0"/>
+            <Font size="21.0" />
         </font>
     </Label>
-    <Label fx:id="labelNumber" layoutX="281.0" layoutY="192.0" prefHeight="35.0" prefWidth="187.0"
-           style="-fx-text-fill: white;" text="Number: ">
+    <Label fx:id="labelNumber" layoutX="281.0" layoutY="192.0" prefHeight="35.0" prefWidth="187.0" style="-fx-text-fill: white;" text="Number: ">
         <font>
-            <Font name="Agency FB" size="24.0"/>
+            <Font size="21.0" />
         </font>
     </Label>
 </AnchorPane>

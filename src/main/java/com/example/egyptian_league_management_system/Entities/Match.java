@@ -18,7 +18,7 @@ public class Match {
     List<Team>teams;
 
     @ManyToOne
-     @JoinColumn(name = "stadiumId" , referencedColumnName = "id")
+     @JoinColumn(name = "stadium_Id" , referencedColumnName = "id")
     Stadium stadium;
     @OneToMany(mappedBy = "Match" , cascade = CascadeType.ALL)
     List<Refree>refrees;

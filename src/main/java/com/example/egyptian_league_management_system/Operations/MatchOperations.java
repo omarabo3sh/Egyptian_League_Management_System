@@ -156,7 +156,7 @@ public Match getMatchById(int id) {
                 List<Refree> referees = new ArrayList<>();
                 RefreeOperations refereeOperations = new RefreeOperations();
                 while (resultSet.next()) {
-                    Refree referee = refereeOperations.getRefereeById(resultSet.getInt("referee_id"));
+                    Refree referee = refereeOperations.getRefereeById(resultSet.getInt("refree_id"));
                     referees.add(referee);
                 }
                 match.setRefrees(referees);
@@ -168,7 +168,7 @@ public Match getMatchById(int id) {
     }
 
     private Match getMatchStadium(Match match) {
-        String query = "SELECT * FROM stadium INNER JOIN `match` ON stadium.id = `match`.stadiumId WHERE `match`.id = ?";
+        String query = "SELECT * FROM stadium INNER JOIN `match` ON stadium.id = `match`.stadium_Id WHERE `match`.id = ?";
         try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
             preparedStatement.setInt(1, match.getId());
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
