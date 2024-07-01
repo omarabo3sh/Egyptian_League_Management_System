@@ -33,7 +33,6 @@ public class AddNewMatchController {
 
     @FXML
     public void initialize() {
-        // Populate team ComboBoxes
         try {
             List<Team> teams = teamOperations.getAll();
             ObservableList<String> teamNames = FXCollections.observableArrayList();
@@ -43,7 +42,7 @@ public class AddNewMatchController {
             team1NameComboBox.setItems(teamNames);
             team2NameComboBox.setItems(teamNames);
 
-            // Populate referee ComboBox
+
             List<Refree> referees = refereeOperations.getAllReferees();
             ObservableList<String> refereeNames = FXCollections.observableArrayList();
             for (Refree referee : referees) {
@@ -51,7 +50,7 @@ public class AddNewMatchController {
             }
             refereeComboBox.setItems(refereeNames);
 
-            // Populate stadium ComboBox
+
             List<Stadium> stadiums = stadiumOperations.getAllStadiums();
             ObservableList<String> stadiumNames = FXCollections.observableArrayList();
             for (Stadium stadium : stadiums) {

@@ -206,9 +206,9 @@
 
     <ComboBox fx:id="refereeComboBox" layoutX="215.0" layoutY="294.0" prefHeight="25.0" prefWidth="250.0" promptText="Referee" />
 
-    <ComboBox fx:id="team1ComboBox" layoutX="215.0" layoutY="84.0" prefHeight="25.0" prefWidth="250.0" promptText="First Team" />
+    <ComboBox fx:id="team1NameComboBox" layoutX="215.0" layoutY="84.0" prefHeight="25.0" prefWidth="250.0" promptText="First Team" />
 
-    <ComboBox fx:id="team2ComboBox" layoutX="215.0" layoutY="121.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
+    <ComboBox fx:id="team2NameComboBox" layoutX="215.0" layoutY="121.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
 
     <Button layoutX="235.0" layoutY="339.0" mnemonicParsing="false" onAction="#onUpdateMatchClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="Update" wrapText="true" />
 </AnchorPane>
