@@ -115,7 +115,7 @@
             </LinearGradient>
         </textFill>
     </Label>
-    <Button layoutX="235.0" layoutY="339.0" mnemonicParsing="false" onAction="#onAddMatchClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="ADD" wrapText="true" />
+    <Button layoutX="235.0" layoutY="339.0" mnemonicParsing="false" onAction="#onUpdateMatchClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="Update" wrapText="true" />
     <TextField fx:id="refereeField" layoutX="215.0" layoutY="294.0" prefHeight="25.0" prefWidth="250.0" promptText="referee" />
     <Label alignment="CENTER" layoutX="54.0" layoutY="281.0" prefHeight="39.0" prefWidth="150.0" text="referee" wrapText="true">
         <font>

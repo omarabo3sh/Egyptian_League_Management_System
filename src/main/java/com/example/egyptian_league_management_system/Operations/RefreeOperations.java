@@ -58,4 +58,23 @@ public class RefreeOperations {
             throw new RuntimeException(e);
         }
     }
+public Refree getRefereeById(int refereeId) {
+    String query = "SELECT * FROM refree WHERE id = ?";
+    Refree referee = null;
+    try {
+        PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
+        preparedStatement.setInt(1, refereeId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            referee = new Refree();
+            referee.setId(resultSet.getInt("id"));
+            referee.setName(resultSet.getString("name"));
+            // Populate other referee attributes as needed
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return referee;
+}
+
 }

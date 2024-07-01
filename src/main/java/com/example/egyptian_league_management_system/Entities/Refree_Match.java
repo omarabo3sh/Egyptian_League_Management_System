@@ -6,13 +6,18 @@ import javax.persistence.*;
 public class Refree_Match {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int Id;
+    private int Id;
+
     @ManyToOne
-     @JoinColumn(name = "refree_id" , referencedColumnName = "id")
-    Refree refree;
+    @JoinColumn(name = "refree_id", referencedColumnName = "id")
+    private Refree refree;
+
     @ManyToOne
-    @JoinColumn(name = "match_iddd" , referencedColumnName = "id")
-    Match match;
+    @JoinColumn(name = "match_id", referencedColumnName = "id")
+    private Match match;
+
+    public Refree_Match() {
+    }
 
     public Refree_Match(Refree refree, Match match) {
         this.refree = refree;

@@ -28,17 +28,12 @@ public class MatchController {
     private final MatchOperations matchOperations = new MatchOperations();
 
     public void initialize() {
-        // Fetch matches from the database
         List<Match> matches = matchOperations.getAllMatches();
-
-        // Clear existing content in VBox
         vbox.getChildren().clear();
 
-        // Load match panes for each match
         for (Match match : matches) {
             try {
-                // Fetch associated teams, referees, and stadium for the match
-                Match completeMatch = matchOperations.getMatchTeams(matchOperations.getMatchRefree(matchOperations.getMatchStadium(match)));
+                Match completeMatch = matchOperations.getCompleteMatchDetails(match);
 
                 List<Team> teams = completeMatch.getTeams();
                 List<Refree> referees = completeMatch.getRefrees();
@@ -47,17 +42,14 @@ public class MatchController {
                 if (teams.size() == 2 && !referees.isEmpty() && stadium != null) {
                     Team team1 = teams.get(0);
                     Team team2 = teams.get(1);
-
-                    // Load match pane
                     AnchorPane matchPane = loadMatchPane(match, team1, team2, referees, stadium);
                     vbox.getChildren().add(matchPane);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+                // Handle IOException as needed
             }
         }
-
-        // Set content of ScrollPane
         scrollPane.setContent(vbox);
     }
 
@@ -66,8 +58,6 @@ public class MatchController {
         AnchorPane pane = loader.load();
 
         MatchPaneController controller = loader.getController();
-
-        // Set match details in the MatchPaneController
         String refereeNames = getRefereeNames(referees);
         controller.setMatchDetails(team1.getName(), team2.getName(),
                 refereeNames, String.valueOf(match.getScore()), stadium.getName(), match.getDate());

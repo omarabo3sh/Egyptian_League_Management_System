@@ -229,5 +229,23 @@ public class TeamOperations {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    } public Team getTeamByMatchIdAndOrder(int matchId, int order) {
+        String query = "SELECT t.* FROM team t JOIN team_match tm ON t.id = tm.team_id WHERE tm.match_id = ? AND tm.team_order = ?";
+        Team team = null;
+        try {
+            PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
+            preparedStatement.setInt(1, matchId);
+            preparedStatement.setInt(2, order);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                team = new Team();
+                team.setId(resultSet.getInt("id"));
+                team.setName(resultSet.getString("name"));
+                // Populate other team attributes as needed
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return team;
     }
 }

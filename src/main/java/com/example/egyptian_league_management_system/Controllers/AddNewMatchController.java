@@ -1,17 +1,17 @@
 package com.example.egyptian_league_management_system.Controllers;
 
 import com.example.egyptian_league_management_system.Entities.Match;
+import com.example.egyptian_league_management_system.Entities.Refree;
 import com.example.egyptian_league_management_system.Entities.Refree_Match;
 import com.example.egyptian_league_management_system.Entities.Stadium;
 import com.example.egyptian_league_management_system.Entities.Team;
 import com.example.egyptian_league_management_system.Entities.Team_Match;
 import com.example.egyptian_league_management_system.Operations.MatchOperations;
-import com.example.egyptian_league_management_system.Operations.Refree_MatchOperation;
+import com.example.egyptian_league_management_system.Operations.Refree_MatchOperations;
 import com.example.egyptian_league_management_system.Operations.StadiumOperations;
 import com.example.egyptian_league_management_system.Operations.Team_MatchOperation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
@@ -30,7 +30,7 @@ public class AddNewMatchController {
 
     private final MatchOperations matchOperations = new MatchOperations();
     private final Team_MatchOperation teamMatchOperation = new Team_MatchOperation();
-    private final Refree_MatchOperation refereeMatchOperation = new Refree_MatchOperation();
+    private final Refree_MatchOperations refereeMatchOperation = new Refree_MatchOperations();
     private final StadiumOperations stadiumOperations = new StadiumOperations();
 
     @FXML
@@ -76,9 +76,16 @@ public class AddNewMatchController {
             }
 
             // Insert referee details
-            Refree_Match refereeMatch = new Refree_Match();
-            refereeMatch.setMatch(match);
-            refereeMatchOperation.insert(refereeMatch);
+            Refree refree = refereeMatchOperation.getRefreeByName(refereeField.getText().trim());
+            if (refree != null) {
+                Refree_Match refereeMatch = new Refree_Match();
+                refereeMatch.setMatch(match);
+                refereeMatch.setRefree(refree);
+                refereeMatchOperation.insert(refereeMatch);
+            } else {
+                showAlert("error", "Referee not found.");
+                return;
+            }
 
             // Insert team details
             Team team1 = new Team();

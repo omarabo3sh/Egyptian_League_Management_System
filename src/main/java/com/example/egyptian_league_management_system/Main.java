@@ -32,12 +32,12 @@ public class Main {
 //        for (Team team : teams){
 //            System.out.println(team.getTotalScore());
 //        }
-
-      Match match = matchOperations.getMatchById(1);
-      match = matchOperations.getMatchTeams(match);
-      match = matchOperations.getMatchStadium(match);
-      System.out.print("");
-
+//
+//      Match match = matchOperations.getMatchById(1);
+//      match = matchOperations.getMatchTeams(match);
+//      match = matchOperations.getMatchStadium(match);
+//      System.out.print("");
+//
 
     }
 

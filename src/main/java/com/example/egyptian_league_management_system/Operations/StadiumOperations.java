@@ -44,23 +44,22 @@ public class StadiumOperations {
             throw new RuntimeException(e);
         }
     }
-    public Stadium getStadiumById(int id){
-        String query = "select * from stadium where id = ?";
+    public Stadium getStadiumById(int stadiumId) {
+        String query = "SELECT * FROM stadium WHERE id = ?";
+        Stadium stadium = null;
         try {
             PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
-            preparedStatement.setInt(1, id);
+            preparedStatement.setInt(1, stadiumId);
             ResultSet resultSet = preparedStatement.executeQuery();
-            Stadium stadium = new Stadium();
             if (resultSet.next()) {
-
-                stadium.setId(id);
+                stadium = new Stadium();
+                stadium.setId(resultSet.getInt("id"));
                 stadium.setName(resultSet.getString("name"));
-                return stadium;
-
+                // Populate other stadium attributes as needed
             }
-            return null;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        return stadium;
     }
 }

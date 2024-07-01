@@ -1,17 +1,14 @@
 package com.example.egyptian_league_management_system.Controllers;
 
 import com.example.egyptian_league_management_system.Entities.Match;
+import com.example.egyptian_league_management_system.Entities.Refree;
 import com.example.egyptian_league_management_system.Entities.Refree_Match;
 import com.example.egyptian_league_management_system.Entities.Stadium;
 import com.example.egyptian_league_management_system.Entities.Team;
 import com.example.egyptian_league_management_system.Entities.Team_Match;
-import com.example.egyptian_league_management_system.Operations.MatchOperations;
-import com.example.egyptian_league_management_system.Operations.Refree_MatchOperation;
-import com.example.egyptian_league_management_system.Operations.StadiumOperations;
-import com.example.egyptian_league_management_system.Operations.Team_MatchOperation;
+import com.example.egyptian_league_management_system.Operations.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
@@ -40,11 +37,11 @@ public class UpdateMatchInformationController {
 
     private final MatchOperations matchOperations = new MatchOperations();
     private final Team_MatchOperation teamMatchOperation = new Team_MatchOperation();
-    private final Refree_MatchOperation refereeMatchOperation = new Refree_MatchOperation();
+    private final Refree_MatchOperations refereeMatchOperation = new Refree_MatchOperations();
     private final StadiumOperations stadiumOperations = new StadiumOperations();
 
-    @FXML
-    private void onUpdateMatchClick() {
+
+    public void onUpdateMatchClick() {
         try {
             int matchId = Integer.parseInt(matchIdField.getText().trim());
             Match match = matchOperations.getMatchById(matchId);
@@ -76,9 +73,16 @@ public class UpdateMatchInformationController {
             }
 
             // Update referee details
-            Refree_Match refereeMatch = new Refree_Match();
-            refereeMatch.setMatch(match);
-            refereeMatchOperation.update(refereeMatch);
+            Refree refree = refereeMatchOperation.getRefreeByName(refereeField.getText().trim());
+            if (refree != null) {
+                Refree_Match refereeMatch = new Refree_Match();
+                refereeMatch.setMatch(match);
+                refereeMatch.setRefree(refree);
+                refereeMatchOperation.update(refereeMatch);  // Call the update method here
+            } else {
+                showAlert("error", "Referee not found.");
+                return;
+            }
 
             // Update team details
             Team team1 = new Team();
@@ -110,6 +114,7 @@ public class UpdateMatchInformationController {
             showAlert("error", "Error occurred while updating match: " + e.getMessage());
         }
     }
+
 
     public void onBackClick(ActionEvent event) throws IOException {
         switchScene(event, "matchesManagement.fxml");
