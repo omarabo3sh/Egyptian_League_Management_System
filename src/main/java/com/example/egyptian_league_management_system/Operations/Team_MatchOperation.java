@@ -25,7 +25,6 @@ public class Team_MatchOperation {
         }
     }
 
-    // Method to update a team match relationship
     public void update(Team_Match teamMatch) {
         String query = "UPDATE team_match SET team_id = ? WHERE match_id = ?";
         try {
@@ -37,4 +36,5 @@ public class Team_MatchOperation {
             throw new RuntimeException(e);
         }
     }
+
 }

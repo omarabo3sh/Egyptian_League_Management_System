@@ -1,120 +1,129 @@
 package com.example.egyptian_league_management_system.Controllers;
 
-import com.example.egyptian_league_management_system.Entities.Match;
-import com.example.egyptian_league_management_system.Entities.Refree;
-import com.example.egyptian_league_management_system.Entities.Refree_Match;
-import com.example.egyptian_league_management_system.Entities.Stadium;
-import com.example.egyptian_league_management_system.Entities.Team;
-import com.example.egyptian_league_management_system.Entities.Team_Match;
-import com.example.egyptian_league_management_system.Operations.MatchOperations;
-import com.example.egyptian_league_management_system.Operations.Refree_MatchOperations;
-import com.example.egyptian_league_management_system.Operations.StadiumOperations;
-import com.example.egyptian_league_management_system.Operations.Team_MatchOperation;
+import com.example.egyptian_league_management_system.Entities.*;
+import com.example.egyptian_league_management_system.Operations.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.util.List;
 
-import static com.example.egyptian_league_management_system.Application.showAlert;
 import static com.example.egyptian_league_management_system.Application.switchScene;
 
 public class AddNewMatchController {
-    @FXML
-    private DatePicker datePicker;
-    @FXML
-    private TextField scoreField;
 
-    private final MatchOperations matchOperations = new MatchOperations();
-    private final Team_MatchOperation teamMatchOperation = new Team_MatchOperation();
-    private final Refree_MatchOperations refereeMatchOperation = new Refree_MatchOperations();
-    private final StadiumOperations stadiumOperations = new StadiumOperations();
+    @FXML private DatePicker datePicker;
+    @FXML private ComboBox<String> team1NameComboBox;
+    @FXML private ComboBox<String> team2NameComboBox;
+    @FXML private ComboBox<String> refereeComboBox;
+    @FXML private ComboBox<String> stadiumComboBox;
+    @FXML private TextField scoreField;
+
+    private MatchOperations matchOperations = new MatchOperations();
+    private TeamOperations teamOperations = new TeamOperations();
+    private RefreeOperations refereeOperations = new RefreeOperations();
+    private StadiumOperations stadiumOperations = new StadiumOperations();
 
     @FXML
-    private TextField stadiumField;
-    @FXML
-    private TextField refereeField;
-    @FXML
-    private TextField team1Field;
-    @FXML
-    private TextField team2Field;
+    public void initialize() {
+        // Populate team ComboBoxes
+        try {
+            List<Team> teams = teamOperations.getAll();
+            ObservableList<String> teamNames = FXCollections.observableArrayList();
+            for (Team team : teams) {
+                teamNames.add(team.getName());
+            }
+            team1NameComboBox.setItems(teamNames);
+            team2NameComboBox.setItems(teamNames);
+
+            // Populate referee ComboBox
+            List<Refree> referees = refereeOperations.getAllReferees();
+            ObservableList<String> refereeNames = FXCollections.observableArrayList();
+            for (Refree referee : referees) {
+                refereeNames.add(referee.getName());
+            }
+            refereeComboBox.setItems(refereeNames);
+
+            // Populate stadium ComboBox
+            List<Stadium> stadiums = stadiumOperations.getAllStadiums();
+            ObservableList<String> stadiumNames = FXCollections.observableArrayList();
+            for (Stadium stadium : stadiums) {
+                stadiumNames.add(stadium.getName());
+            }
+            stadiumComboBox.setItems(stadiumNames);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private void onAddMatchClick() {
         try {
+            // Retrieve input values from UI components
             LocalDate date = datePicker.getValue();
-            if (date == null) {
-                showAlert("error", "Please select a date.");
+            String team1Name = team1NameComboBox.getValue();
+            String team2Name = team2NameComboBox.getValue();
+            String refereeName = refereeComboBox.getValue();
+            String stadiumName = stadiumComboBox.getValue();
+            int score = Integer.parseInt(scoreField.getText());
+
+            // Validate inputs
+            if (date == null || team1Name == null || team2Name == null ||
+                    refereeName == null || stadiumName == null || scoreField.getText().isEmpty()) {
+                System.out.println("Please fill in all fields.");
                 return;
             }
 
-            String dateString = date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-            int score = Integer.parseInt(scoreField.getText().trim());
-
-            // Create new match object
+            // Create a new match object
             Match match = new Match();
-            match.setDate(dateString);
+            match.setDate(date.toString());
             match.setScore(score);
+            match.setishelded(false); // Assuming the match is not yet held
 
-            // Insert match into database
-            matchOperations.insertMatch(match);
+            // Insert match into database and get generated ID
+            int matchId = matchOperations.insertMatch(match);
+            match.setId(matchId);
 
-            // Retrieve the generated match ID
-            int matchId = match.getId();
-
-            // Insert stadium details
-            Stadium stadium = stadiumOperations.getStadiumByName(stadiumField.getText().trim());
-            if (stadium != null) {
-                match.setStadium(stadium);
-                matchOperations.updateMatch(match);
-            } else {
-                showAlert("error", "Stadium not found.");
-                return;
-            }
-
-            // Insert referee details
-            Refree refree = refereeMatchOperation.getRefreeByName(refereeField.getText().trim());
-            if (refree != null) {
-                Refree_Match refereeMatch = new Refree_Match();
-                refereeMatch.setMatch(match);
-                refereeMatch.setRefree(refree);
-                refereeMatchOperation.insert(refereeMatch);
-            } else {
-                showAlert("error", "Referee not found.");
-                return;
-            }
-
-            // Insert team details
-            Team team1 = new Team();
-            team1.setName(team1Field.getText().trim());
-
-            Team team2 = new Team();
-            team2.setName(team2Field.getText().trim());
-
+            // Associate teams with the match
+            Team team1 = teamOperations.getTeamByName(team1Name);
+            Team team2 = teamOperations.getTeamByName(team2Name);
             Team_Match teamMatch1 = new Team_Match(team1, match);
             Team_Match teamMatch2 = new Team_Match(team2, match);
-
+            Team_MatchOperation teamMatchOperation = new Team_MatchOperation();
             teamMatchOperation.insert(teamMatch1);
             teamMatchOperation.insert(teamMatch2);
 
-            showAlert("info", "Match added successfully.");
+            // Associate referee with the match
+            Refree referee = refereeOperations.getRefreeByName(refereeName); // Assuming you have a method to fetch referee by name
+            Refree_Match refereeMatch = new Refree_Match(referee, match);
+            Refree_MatchOperations refereeMatchOperations = new Refree_MatchOperations();
+            refereeMatchOperations.insert(refereeMatch);
 
-            datePicker.setValue(null);
-            scoreField.clear();
-            stadiumField.clear();
-            refereeField.clear();
-            team1Field.clear();
-            team2Field.clear();
+            // Associate stadium with the match
+            Stadium stadium = stadiumOperations.getStadiumByName(stadiumName); // Assuming you have a method to fetch stadium by name
+            match.setStadium(stadium);
+            matchOperations.updateMatch(match);
+
+            // Close the window or handle navigation
+            Stage stage = (Stage) datePicker.getScene().getWindow();
+            stage.close();
+
         } catch (NumberFormatException e) {
-            showAlert("error", "Score must be a valid number.");
+            System.out.println("Please enter a valid number for score.");
         } catch (Exception e) {
-            showAlert("error", "Error occurred while adding match: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
+    @FXML
     public void onBackClick(ActionEvent event) throws IOException {
         switchScene(event, "matchesManagement.fxml");
     }

@@ -109,7 +109,7 @@ public class AdditionalManagementController {
         if (datePicker.getValue() != null) {
             String selectedDate = datePicker.getValue().toString();
             System.out.println("Selected date: " + selectedDate); // Debugging line
-            List<Match> matches = matchOperations.getMatchByDate(selectedDate);
+            List<Match> matches = matchOperations.getMatchesByDate(selectedDate);
 
             if (matches.isEmpty()) {
                 infoLabel.setText("No matches found for " + selectedDate);

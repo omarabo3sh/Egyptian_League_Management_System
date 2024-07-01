@@ -6,6 +6,8 @@ import com.example.egyptian_league_management_system.Entities.Refree ;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RefreeOperations {
     private DatabaseManager databaseManager = new DatabaseManager();
@@ -76,5 +78,23 @@ public Refree getRefereeById(int refereeId) {
     }
     return referee;
 }
+    public List<Refree> getAllReferees() {
+        List<Refree> referees = new ArrayList<>();
+        String query = "SELECT * FROM refree";
+        try {
+            PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Refree referee = new Refree();
+                referee.setId(resultSet.getInt("id"));
+                referee.setName(resultSet.getString("name"));
+                // Populate other referee attributes as needed
+                referees.add(referee);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return referees;
+    }
 
 }

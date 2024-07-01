@@ -35,9 +35,10 @@
             </LinearGradient>
         </textFill>
     </Label>
-    <TextField fx:id="scoreField" layoutX="215.0" layoutY="210.0" prefHeight="25.0" prefWidth="250.0" promptText="score" />
-    <TextField fx:id="stadiumField" layoutX="215.0" layoutY="251.0" prefHeight="25.0" prefWidth="250.0" promptText="stadium" />
-    <Label alignment="CENTER" layoutX="65.0" layoutY="154.0" prefHeight="39.0" prefWidth="150.0" text="match date" wrapText="true">
+
+    <TextField fx:id="scoreField" layoutX="215.0" layoutY="210.0" prefHeight="25.0" prefWidth="250.0" promptText="Score" />
+    <TextField fx:id="stadiumField" layoutX="215.0" layoutY="251.0" prefHeight="25.0" prefWidth="250.0" promptText="Stadium" />
+    <Label alignment="CENTER" layoutX="65.0" layoutY="154.0" prefHeight="39.0" prefWidth="150.0" text="Match Date" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -63,7 +64,8 @@
             </LinearGradient>
         </textFill>
     </Label>
-    <Label alignment="CENTER" layoutX="14.0" layoutY="197.0" prefHeight="39.0" prefWidth="182.0" text="score ( if finished)" wrapText="true">
+
+    <Label alignment="CENTER" layoutX="14.0" layoutY="197.0" prefHeight="39.0" prefWidth="182.0" text="Score (if finished)" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -89,7 +91,8 @@
             </LinearGradient>
         </textFill>
     </Label>
-    <Label alignment="CENTER" layoutX="59.0" layoutY="244.0" prefHeight="39.0" prefWidth="150.0" text="stadium" wrapText="true">
+
+    <Label alignment="CENTER" layoutX="59.0" layoutY="244.0" prefHeight="39.0" prefWidth="150.0" text="Stadium" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -115,87 +118,101 @@
             </LinearGradient>
         </textFill>
     </Label>
+
     <Button layoutX="235.0" layoutY="339.0" mnemonicParsing="false" onAction="#onAddMatchClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="ADD" wrapText="true" />
-   <TextField fx:id="refereeField" layoutX="215.0" layoutY="294.0" prefHeight="25.0" prefWidth="250.0" promptText="referee" />
-   <Label alignment="CENTER" layoutX="54.0" layoutY="281.0" prefHeight="39.0" prefWidth="150.0" text="referee" wrapText="true">
-      <font>
-         <Font name="System Bold Italic" size="20.0" />
-      </font>
-      <textFill>
-         <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
-            <stops>
-               <Stop>
-                  <color>
-                     <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
-                  </color>
-               </Stop>
-               <Stop offset="0.4178082191780822">
-                  <color>
-                     <Color red="1.0" green="1.0" blue="1.0" />
-                  </color>
-               </Stop>
-               <Stop offset="1.0">
-                  <color>
-                     <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
-                  </color>
-               </Stop>
-            </stops>
-         </LinearGradient>
-      </textFill>
-   </Label>
-   <DatePicker fx:id="datePicker" layoutX="215.0" layoutY="167.0" prefHeight="25.0" prefWidth="250.0" promptText="match date" />
-   <TextField fx:id="team1Field" layoutX="215.0" layoutY="84.0" prefHeight="25.0" prefWidth="250.0" promptText="first team" />
-   <Label alignment="CENTER" layoutX="65.0" layoutY="71.0" prefHeight="39.0" prefWidth="150.0" text="first team" wrapText="true">
-      <font>
-         <Font name="System Bold Italic" size="20.0" />
-      </font>
-      <textFill>
-         <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
-            <stops>
-               <Stop>
-                  <color>
-                     <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
-                  </color>
-               </Stop>
-               <Stop offset="0.4178082191780822">
-                  <color>
-                     <Color red="1.0" green="1.0" blue="1.0" />
-                  </color>
-               </Stop>
-               <Stop offset="1.0">
-                  <color>
-                     <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
-                  </color>
-               </Stop>
-            </stops>
-         </LinearGradient>
-      </textFill>
-   </Label>
-   <TextField fx:id="team2Field" layoutX="215.0" layoutY="121.0" prefHeight="25.0" prefWidth="250.0" promptText="second team" />
-   <Label alignment="CENTER" layoutX="65.0" layoutY="114.0" prefHeight="39.0" prefWidth="150.0" text="second team" wrapText="true">
-      <font>
-         <Font name="System Bold Italic" size="20.0" />
-      </font>
-      <textFill>
-         <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
-            <stops>
-               <Stop>
-                  <color>
-                     <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
-                  </color>
-               </Stop>
-               <Stop offset="0.4178082191780822">
-                  <color>
-                     <Color red="1.0" green="1.0" blue="1.0" />
-                  </color>
-               </Stop>
-               <Stop offset="1.0">
-                  <color>
-                     <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
-                  </color>
-               </Stop>
-            </stops>
-         </LinearGradient>
-      </textFill>
-   </Label>
+
+    <TextField fx:id="refereeField" layoutX="215.0" layoutY="294.0" prefHeight="25.0" prefWidth="250.0" promptText="Referee" />
+
+    <Label alignment="CENTER" layoutX="54.0" layoutY="281.0" prefHeight="39.0" prefWidth="150.0" text="Referee" wrapText="true">
+        <font>
+            <Font name="System Bold Italic" size="20.0" />
+        </font>
+        <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                <stops>
+                    <Stop>
+                        <color>
+                            <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
+                        </color>
+                    </Stop>
+                    <Stop offset="0.4178082191780822">
+                        <color>
+                            <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                    </Stop>
+                    <Stop offset="1.0">
+                        <color>
+                            <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
+                        </color>
+                    </Stop>
+                </stops>
+            </LinearGradient>
+        </textFill>
+    </Label>
+
+    <DatePicker fx:id="datePicker" layoutX="215.0" layoutY="167.0" prefHeight="25.0" prefWidth="250.0" promptText="Match Date" />
+
+    <ComboBox fx:id="team1NameComboBox" layoutX="215.0" layoutY="84.0" prefHeight="25.0" prefWidth="250.0" promptText="First Team" />
+
+    <Label alignment="CENTER" layoutX="65.0" layoutY="71.0" prefHeight="39.0" prefWidth="150.0" text="First Team" wrapText="true">
+        <font>
+            <Font name="System Bold Italic" size="20.0" />
+        </font>
+        <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                <stops>
+                    <Stop>
+                        <color>
+                            <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
+                        </color>
+                    </Stop>
+                    <Stop offset="0.4178082191780822">
+                        <color>
+                            <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                    </Stop>
+                    <Stop offset="1.0">
+                        <color>
+                            <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
+                        </color>
+                    </Stop>
+                </stops>
+            </LinearGradient>
+        </textFill>
+    </Label>
+
+    <ComboBox fx:id="team2NameComboBox" layoutX="215.0" layoutY="121.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
+
+    <Label alignment="CENTER" layoutX="65.0" layoutY="114.0" prefHeight="39.0" prefWidth="150.0" text="Second Team" wrapText="true">
+        <font>
+            <Font name="System Bold Italic" size="20.0" />
+        </font>
+        <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                <stops>
+                    <Stop>
+                        <color>
+                            <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
+                        </color>
+                    </Stop>
+                    <Stop offset="0.4178082191780822">
+                        <color>
+                            <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                    </Stop>
+                    <Stop offset="1.0">
+                        <color>
+                            <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
+                        </color>
+                    </Stop>
+                </stops>
+            </LinearGradient>
+        </textFill>
+    </Label>
+
+    <!-- Add ComboBoxes for Referee and Stadium -->
+    <ComboBox fx:id="refereeComboBox" layoutX="215.0" layoutY="294.0" prefHeight="25.0" prefWidth="250.0" promptText="Select Referee" />
+
+    <ComboBox fx:id="stadiumComboBox" layoutX="215.0" layoutY="251.0" prefHeight="25.0" prefWidth="250.0" promptText="Select Stadium" />
+
 </AnchorPane>

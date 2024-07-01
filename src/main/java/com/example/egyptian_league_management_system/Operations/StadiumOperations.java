@@ -6,6 +6,8 @@ import com.example.egyptian_league_management_system.Entities.Stadium;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StadiumOperations {
     private DatabaseManager databaseManager = new DatabaseManager();
@@ -61,5 +63,23 @@ public class StadiumOperations {
             e.printStackTrace();
         }
         return stadium;
+    }
+    public List<Stadium> getAllStadiums() {
+        List<Stadium> stadiums = new ArrayList<>();
+        String query = "SELECT * FROM stadium";
+        try {
+            PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Stadium stadium = new Stadium();
+                stadium.setId(resultSet.getInt("id"));
+                stadium.setName(resultSet.getString("name"));
+                // Populate other stadium attributes as needed
+                stadiums.add(stadium);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return stadiums;
     }
 }
