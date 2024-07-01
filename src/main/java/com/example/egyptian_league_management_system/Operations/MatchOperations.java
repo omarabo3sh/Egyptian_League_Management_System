@@ -203,27 +203,5 @@ public Match getMatchById(int id) {
 
         return match;
     }
-    public List<Match> getHeldedMatches() {
-        String query = "SELECT * FROM `match` WHERE ishelded = ?";
-        List<Match> heldedMatches = new ArrayList<>();
-
-        try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
-            preparedStatement.setBoolean(1, true);
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                while (resultSet.next()) {
-                    Match match = new Match();
-                    match.setId(resultSet.getInt("id"));
-                    match.setDate(resultSet.getString("Date"));
-                    match.setScore(resultSet.getInt("Score"));
-                    match.setishelded(resultSet.getBoolean("ishelded"));
-                    heldedMatches.add(match);
-                }
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException("Error getting helded matches: " + e.getMessage());
-        }
-
-        return heldedMatches;
-    }
 
 }
