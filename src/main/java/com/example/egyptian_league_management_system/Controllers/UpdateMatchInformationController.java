@@ -18,6 +18,8 @@ import static com.example.egyptian_league_management_system.Application.switchSc
 public class UpdateMatchInformationController {
 
     @FXML
+    private TextField matchIdTextField; // New field to input match ID
+    @FXML
     private DatePicker datePicker;
     @FXML
     private ComboBox<String> team1NameComboBox;
@@ -39,8 +41,12 @@ public class UpdateMatchInformationController {
 
     @FXML
     public void initialize() {
-        try {
+        // Load comboboxes with data
+        loadComboBoxes();
+    }
 
+    private void loadComboBoxes() {
+        try {
             List<Team> teams = teamOperations.getAll();
             ObservableList<String> teamNames = FXCollections.observableArrayList();
             for (Team team : teams) {
@@ -49,7 +55,6 @@ public class UpdateMatchInformationController {
             team1NameComboBox.setItems(teamNames);
             team2NameComboBox.setItems(teamNames);
 
-
             List<Refree> referees = refereeOperations.getAllReferees();
             ObservableList<String> refereeNames = FXCollections.observableArrayList();
             for (Refree referee : referees) {
@@ -57,61 +62,27 @@ public class UpdateMatchInformationController {
             }
             refereeComboBox.setItems(refereeNames);
 
-
             List<Stadium> stadiums = stadiumOperations.getAllStadiums();
             ObservableList<String> stadiumNames = FXCollections.observableArrayList();
             for (Stadium stadium : stadiums) {
                 stadiumNames.add(stadium.getName());
             }
             stadiumComboBox.setItems(stadiumNames);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @FXML
-    public void onBackClick(ActionEvent event) throws IOException {
-        switchScene(event, "matchesManagement.fxml");
-    }
-
-
-
-
-    public void setMatch(Match match) {
-        this.match = match;
-
-        // Initialize UI with match data if match is not null
-        if (match != null) {
-            datePicker.setValue(LocalDate.parse(match.getDate()));
-            scoreField.setText(String.valueOf(match.getScore()));
-
-            // Set team names in ComboBoxes
-            if (team1NameComboBox.getItems().contains(match.getTeams().get(0).getName())) {
-                team1NameComboBox.setValue(match.getTeams().get(0).getName());
-            }
-            if (team2NameComboBox.getItems().contains(match.getTeams().get(1).getName())) {
-                team2NameComboBox.setValue(match.getTeams().get(1).getName());
-            }
-
-            // Set referee and stadium names
-            if (refereeComboBox.getItems().contains(match.getRefrees().get(0).getName())) {
-                refereeComboBox.setValue(match.getRefrees().get(0).getName());
-            }
-            if (stadiumComboBox.getItems().contains(match.getStadium().getName())) {
-                stadiumComboBox.setValue(match.getStadium().getName());
-            }
-        } else {
-            System.out.println("Match object is null. Cannot populate fields.");
-        }
-    }
-
-    @FXML
     private void onUpdateMatchClick() {
         try {
-            // Ensure match is not null before updating
-            if (match == null) {
-                System.out.println("Match object is null. Cannot update.");
+            // Retrieve match ID from text field
+            int matchId = Integer.parseInt(matchIdTextField.getText().trim());
+
+            // Fetch the match from the database by ID
+            Match updatedMatch = matchOperations.getMatchById(matchId);
+            if (updatedMatch == null) {
+                System.out.println("Match not found in the database.");
                 return;
             }
 
@@ -130,31 +101,31 @@ public class UpdateMatchInformationController {
                 return;
             }
 
-            // Update the match object
-            match.setDate(date.toString());
-            match.setScore(score);
+            // Update the retrieved match object with new data
+            updatedMatch.setDate(date.toString());
+            updatedMatch.setScore(score);
 
             // Get and set the stadium
             Stadium stadium = stadiumOperations.getStadiumByName(stadiumName);
-            match.setStadium(stadium);
+            updatedMatch.setStadium(stadium);
 
             // Update match in the database
-            matchOperations.updateMatch(match);
+            matchOperations.updateMatch(updatedMatch);
 
             // Update team associations if teams are different
             if (!team1Name.equals(team2Name)) {
                 Team team1 = teamOperations.getTeamByName(team1Name);
                 Team team2 = teamOperations.getTeamByName(team2Name);
                 Team_MatchOperation teamMatchOperation = new Team_MatchOperation();
-                teamMatchOperation.update(new Team_Match(team1, match));
-                teamMatchOperation.update(new Team_Match(team2, match));
+                teamMatchOperation.update(new Team_Match(team1, updatedMatch));
+                teamMatchOperation.update(new Team_Match(team2, updatedMatch));
             } else {
                 System.out.println("Please select different teams.");
             }
 
             // Update referee association
             Refree referee = refereeOperations.getRefreeByName(refereeName);
-            Refree_Match refereeMatch = new Refree_Match(referee, match);
+            Refree_Match refereeMatch = new Refree_Match(referee, updatedMatch);
             Refree_MatchOperations refereeMatchOperations = new Refree_MatchOperations();
             refereeMatchOperations.update(refereeMatch);
 
@@ -163,9 +134,14 @@ public class UpdateMatchInformationController {
             stage.close();
 
         } catch (NumberFormatException e) {
-            System.out.println("Please enter a valid number for score.");
+            System.out.println("Please enter a valid number for match ID and score.");
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void onBackClick(ActionEvent event) throws IOException {
+        switchScene(event, "matchesManagement.fxml");
     }
 }

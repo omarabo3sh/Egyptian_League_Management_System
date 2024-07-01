@@ -36,7 +36,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="65.0" layoutY="154.0" prefHeight="39.0" prefWidth="150.0" text="Match Date" wrapText="true">
+    <Label alignment="CENTER" layoutX="65.0" layoutY="174.0" prefHeight="39.0" prefWidth="150.0" text="Match Date" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -63,7 +63,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="14.0" layoutY="197.0" prefHeight="39.0" prefWidth="182.0" text="Score (if finished)" wrapText="true">
+    <Label alignment="CENTER" layoutX="14.0" layoutY="217.0" prefHeight="39.0" prefWidth="182.0" text="Score (if finished)" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -90,7 +90,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="59.0" layoutY="244.0" prefHeight="39.0" prefWidth="150.0" text="Stadium" wrapText="true">
+    <Label alignment="CENTER" layoutX="59.0" layoutY="264.0" prefHeight="39.0" prefWidth="150.0" text="Stadium" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -117,7 +117,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="54.0" layoutY="281.0" prefHeight="39.0" prefWidth="150.0" text="Referee" wrapText="true">
+    <Label alignment="CENTER" layoutX="54.0" layoutY="301.0" prefHeight="39.0" prefWidth="150.0" text="Referee" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -144,7 +144,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="65.0" layoutY="71.0" prefHeight="39.0" prefWidth="150.0" text="First Team" wrapText="true">
+    <Label alignment="CENTER" layoutX="65.0" layoutY="91.0" prefHeight="39.0" prefWidth="150.0" text="First Team" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -171,7 +171,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="65.0" layoutY="114.0" prefHeight="39.0" prefWidth="150.0" text="Second Team" wrapText="true">
+    <Label alignment="CENTER" layoutX="65.0" layoutY="134.0" prefHeight="39.0" prefWidth="150.0" text="Second Team" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -198,17 +198,44 @@
         </textFill>
     </Label>
 
-    <DatePicker fx:id="datePicker" layoutX="215.0" layoutY="167.0" prefHeight="25.0" prefWidth="250.0" promptText="Match Date" />
+    <DatePicker fx:id="datePicker" layoutX="215.0" layoutY="187.0" prefHeight="25.0" prefWidth="250.0" promptText="Match Date" />
 
-    <TextField fx:id="scoreField" layoutX="215.0" layoutY="210.0" prefHeight="25.0" prefWidth="250.0" promptText="Score (if finished)" />
+    <TextField fx:id="scoreField" layoutX="215.0" layoutY="230.0" prefHeight="25.0" prefWidth="250.0" promptText="Score (if finished)" />
 
-    <ComboBox fx:id="stadiumComboBox" layoutX="215.0" layoutY="251.0" prefHeight="25.0" prefWidth="250.0" promptText="Stadium" />
+    <ComboBox fx:id="stadiumComboBox" layoutX="215.0" layoutY="271.0" prefHeight="25.0" prefWidth="250.0" promptText="Stadium" />
 
-    <ComboBox fx:id="refereeComboBox" layoutX="215.0" layoutY="294.0" prefHeight="25.0" prefWidth="250.0" promptText="Referee" />
+    <ComboBox fx:id="refereeComboBox" layoutX="215.0" layoutY="314.0" prefHeight="25.0" prefWidth="250.0" promptText="Referee" />
 
-    <ComboBox fx:id="team1NameComboBox" layoutX="215.0" layoutY="84.0" prefHeight="25.0" prefWidth="250.0" promptText="First Team" />
+    <ComboBox fx:id="team1NameComboBox" layoutX="215.0" layoutY="104.0" prefHeight="25.0" prefWidth="250.0" promptText="First Team" />
 
-    <ComboBox fx:id="team2NameComboBox" layoutX="215.0" layoutY="121.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
+    <ComboBox fx:id="team2NameComboBox" layoutX="215.0" layoutY="141.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
 
-    <Button layoutX="235.0" layoutY="339.0" mnemonicParsing="false" onAction="#onUpdateMatchClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="Update" wrapText="true" />
+    <Button layoutX="235.0" layoutY="347.0" mnemonicParsing="false" onAction="#onUpdateMatchClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="Update" wrapText="true" />
+   <TextField fx:id="matchIdTextField" layoutX="223.0" layoutY="69.0" prefHeight="25.0" prefWidth="250.0" />
+   <Label alignment="CENTER" layoutX="73.0" layoutY="62.0" prefHeight="39.0" prefWidth="150.0" text="Match id" wrapText="true">
+      <font>
+         <Font name="System Bold Italic" size="20.0" />
+      </font>
+      <textFill>
+         <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
+                  </color>
+               </Stop>
+               <Stop offset="0.4178082191780822">
+                  <color>
+                     <Color red="1.0" green="1.0" blue="1.0" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </textFill>
+   </Label>
 </AnchorPane>
