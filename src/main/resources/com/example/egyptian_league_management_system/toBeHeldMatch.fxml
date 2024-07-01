@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0"
             style="-fx-background-image: url('epl.jpg'); -fx-background-size: cover; -fx-background-position: center;"
             xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.egyptian_league_management_system.Controllers.MatchController">
+            fx:controller="com.example.egyptian_league_management_system.Controllers.ToBeHeldMatchController"
+>
     <ScrollPane fx:id="scrollPane" prefHeight="400.0" prefWidth="600.0"
                 AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="30.0">
         <VBox  style="-fx-background-image: url('epl.jpg'); -fx-background-size: cover; -fx-background-position: center;"
@@ -16,3 +16,4 @@
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick"
             prefHeight="26.0" prefWidth="66.0" text="Back" />
 </AnchorPane>
+

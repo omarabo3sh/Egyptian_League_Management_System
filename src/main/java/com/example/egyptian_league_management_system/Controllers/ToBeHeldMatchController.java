@@ -17,8 +17,7 @@ import java.util.List;
 
 import static com.example.egyptian_league_management_system.Application.switchScene;
 
-public class MatchController {
-
+public class ToBeHeldMatchController {
     @FXML
     private ScrollPane scrollPane;
 
@@ -34,23 +33,25 @@ public class MatchController {
         System.out.println("Number of matches to process: " + matches.size());
 
         for (Match match : matches) {
-            try {
-                Match completeMatch = matchOperations.getCompleteMatchDetails(match);
+            if (!match.ishelded()) { // Only process matches that are held
+                try {
+                    Match completeMatch = matchOperations.getCompleteMatchDetails(match);
 
-                List<Team> teams = completeMatch.getTeams();
-                List<Refree> referees = completeMatch.getRefrees();
-                Stadium stadium = completeMatch.getStadium();
+                    List<Team> teams = completeMatch.getTeams();
+                    List<Refree> referees = completeMatch.getRefrees();
+                    Stadium stadium = completeMatch.getStadium();
 
-                if (teams.size() == 2 && !referees.isEmpty() && stadium != null) {
-                    Team team1 = teams.get(0);
-                    Team team2 = teams.get(1);
-                    AnchorPane matchPane = loadMatchPane(match, team1, team2, referees, stadium);
-                    vbox.getChildren().add(matchPane);
-                    System.out.println("Added match with ID " + match.getId() + " to vbox.");
+                    if (teams.size() == 2 && !referees.isEmpty() && stadium != null) {
+                        Team team1 = teams.get(0);
+                        Team team2 = teams.get(1);
+                        AnchorPane matchPane = loadMatchPane(match, team1, team2, referees, stadium);
+                        vbox.getChildren().add(matchPane);
+                        System.out.println("Added match with ID " + match.getId() + " to vbox.");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    // Handle IOException as needed
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-                // Handle IOException as needed
             }
         }
         scrollPane.setContent(vbox);

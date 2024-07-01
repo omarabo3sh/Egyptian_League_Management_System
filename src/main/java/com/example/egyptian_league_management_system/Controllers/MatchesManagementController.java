@@ -23,11 +23,11 @@ public class MatchesManagementController {
          switchScene(event,"match.fxml");
     }
     public void onDisplayHeldMatchesClick(ActionEvent event) throws IOException {
-       switchScene(event,"match.fxml");
+       switchScene(event,"heldedMatch.fxml");
     }
 
     public void onDisplayToBeHeldMatchesClick(ActionEvent event) throws IOException {
-        switchScene(event,"match.fxml");
+        switchScene(event,"toBeHeldMatch.fxml");
 
     }
 }

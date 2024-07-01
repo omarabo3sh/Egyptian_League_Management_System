@@ -7,10 +7,7 @@ import com.example.egyptian_league_management_system.Entities.Stadium;
 import com.example.egyptian_league_management_system.Entities.Team;
 
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,17 +18,6 @@ public class MatchOperations {
         databaseManager.startConnection();
     }
 
-//    public void insertMatch(Match match) {
-//        String query = "INSERT INTO `match` (Date, Score, ishelded) VALUES (?, ?, ?)";
-//        try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
-//            preparedStatement.setString(1, match.getDate());
-//            preparedStatement.setInt(2, match.getScore());
-//            preparedStatement.setBoolean(3, match.ishelded());
-//            preparedStatement.executeUpdate();
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
 public int insertMatch(Match match) {
     String query = "INSERT INTO `match` (Date, Score, ishelded) VALUES (?, ?, ?)";
     try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -50,25 +36,6 @@ public int insertMatch(Match match) {
         throw new RuntimeException(e);
     }
 }
-//    public Match getMatchById(int id) {
-//        String query = "SELECT * FROM `match` WHERE id = ?";
-//        Match match = null;
-//        try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
-//            preparedStatement.setInt(1, id);
-//            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-//                if (resultSet.next()) {
-//                    match = new Match();
-//                    match.setId(resultSet.getInt("id"));
-//                    match.setDate(resultSet.getString("Date"));
-//                    match.setScore(resultSet.getInt("Score"));
-//                    match.setishelded(resultSet.getBoolean("ishelded"));
-//                }
-//            }
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//        return match;
-//    }
 public Match getMatchById(int id) {
     String query = "SELECT * FROM `match` WHERE id = ?";
     Match match = null;
@@ -184,46 +151,28 @@ public Match getMatchById(int id) {
         return match;
     }
 
-//    public List<Match> getAllMatches() {
-//        String query = "SELECT * FROM `match`";
-//        List<Match> matches = new ArrayList<>();
-//        try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
-//            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-//                while (resultSet.next()) {
-//                    Match match = new Match();
-//                    match.setId(resultSet.getInt("id"));
-//                    match.setDate(resultSet.getString("Date"));
-//                    match.setScore(resultSet.getInt("Score"));
-//                    match.setishelded(resultSet.getBoolean("ishelded"));
-//                    matches.add(match);
-//                }
-//            }
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//        return matches;
-//    }
-//
-//
-public List<Match> getAllMatches() {
-    String query = "SELECT * FROM `match`";
-    List<Match> matches = new ArrayList<>();
-    try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
-        try (ResultSet resultSet = preparedStatement.executeQuery()) {
-            while (resultSet.next()) {
-                Match match = new Match();
-                match.setId(resultSet.getInt("id"));
-                match.setDate(resultSet.getString("Date"));
-                match.setScore(resultSet.getInt("Score"));
-                match.setishelded(resultSet.getBoolean("ishelded"));
-                matches.add(match);
+    public List<Match> getAllMatches() {
+        String query = "SELECT * FROM `match`";
+        List<Match> matches = new ArrayList<>();
+        try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    Match match = new Match();
+                    match.setId(resultSet.getInt("id"));
+                    match.setDate(resultSet.getString("Date"));
+                    match.setScore(resultSet.getInt("Score"));
+                    match.setishelded(resultSet.getBoolean("ishelded"));
+                    matches.add(match);
+                }
             }
+            // Log the number of matches retrieved
+            System.out.println("Number of matches retrieved: " + matches.size());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-    } catch (SQLException e) {
-        throw new RuntimeException(e);
+        return matches;
     }
-    return matches;
-}
+
     public Match getMatchByTeams(String teamName1, String teamName2) throws SQLException {
         Match match = null;
         String query = "SELECT m.id, m.date, m.score, m.is_held, s.name AS stadium_name " +
@@ -254,4 +203,27 @@ public List<Match> getAllMatches() {
 
         return match;
     }
+    public List<Match> getHeldedMatches() {
+        String query = "SELECT * FROM `match` WHERE ishelded = ?";
+        List<Match> heldedMatches = new ArrayList<>();
+
+        try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
+            preparedStatement.setBoolean(1, true);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    Match match = new Match();
+                    match.setId(resultSet.getInt("id"));
+                    match.setDate(resultSet.getString("Date"));
+                    match.setScore(resultSet.getInt("Score"));
+                    match.setishelded(resultSet.getBoolean("ishelded"));
+                    heldedMatches.add(match);
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error getting helded matches: " + e.getMessage());
+        }
+
+        return heldedMatches;
+    }
+
 }
