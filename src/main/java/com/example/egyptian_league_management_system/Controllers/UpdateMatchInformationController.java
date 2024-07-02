@@ -18,7 +18,7 @@ import static com.example.egyptian_league_management_system.Application.switchSc
 public class UpdateMatchInformationController {
 
     @FXML
-    private TextField matchIdTextField; // New field to input match ID
+    private TextField matchIdTextField;
     @FXML
     private DatePicker datePicker;
     @FXML
@@ -93,7 +93,7 @@ public class UpdateMatchInformationController {
             String stadiumName = stadiumComboBox.getValue();
             int score = Integer.parseInt(scoreField.getText());
 
-            // Validate inputs
+
             if (date == null || team1Name == null || team2Name == null ||
                     refereeName == null || stadiumName == null || scoreField.getText().isEmpty()) {
                 System.out.println("Please fill in all fields.");

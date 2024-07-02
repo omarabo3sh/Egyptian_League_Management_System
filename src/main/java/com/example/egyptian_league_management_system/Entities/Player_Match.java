@@ -16,7 +16,7 @@ public class Player_Match {
     @JoinColumn(name = "match_id")
     Match match;
 
-    // No-argument constructor
+
     public Player_Match() {
     }
 

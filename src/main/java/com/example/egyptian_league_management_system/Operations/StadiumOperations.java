@@ -57,7 +57,7 @@ public class StadiumOperations {
                 stadium = new Stadium();
                 stadium.setId(resultSet.getInt("id"));
                 stadium.setName(resultSet.getString("name"));
-                // Populate other stadium attributes as needed
+
             }
         } catch (SQLException e) {
             e.printStackTrace();

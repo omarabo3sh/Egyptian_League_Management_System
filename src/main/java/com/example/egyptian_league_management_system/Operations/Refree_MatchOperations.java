@@ -15,7 +15,7 @@ public class Refree_MatchOperations {
         databaseManager.startConnection();
     }
 
-    // Method to fetch a referee by name
+
     public Refree getRefreeByName(String name) {
         String query = "SELECT * FROM refree WHERE name = ?";
         try {
@@ -34,7 +34,7 @@ public class Refree_MatchOperations {
         return null;
     }
 
-    // Method to insert a referee match relationship
+
     public void insert(Refree_Match refereeMatch) {
         String query = "INSERT INTO refree_match (match_id, refree_id) VALUES (?, ?)";
         try {
@@ -47,7 +47,7 @@ public class Refree_MatchOperations {
         }
     }
 
-    // Method to update a referee match relationship
+
     public void update(Refree_Match refereeMatch) {
         String query = "UPDATE refree_match SET refree_id = ? WHERE match_id = ?";
         try {

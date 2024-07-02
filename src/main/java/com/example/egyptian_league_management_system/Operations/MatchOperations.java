@@ -28,7 +28,7 @@ public int insertMatch(Match match) {
 
         ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
         if (generatedKeys.next()) {
-            return generatedKeys.getInt(1); // Return the generated ID
+            return generatedKeys.getInt(1);
         } else {
             throw new SQLException("Creating match failed, no ID obtained.");
         }
@@ -165,7 +165,7 @@ public Match getMatchById(int id) {
                     matches.add(match);
                 }
             }
-            // Log the number of matches retrieved
+
             System.out.println("Number of matches retrieved: " + matches.size());
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -195,7 +195,7 @@ public Match getMatchById(int id) {
                     match.setDate(resultSet.getString("date"));
                     match.setScore(resultSet.getInt("score"));
                     match.setishelded(resultSet.getBoolean("is_held"));
-                    // Assuming you have setStadium method in Match class
+
                     match.setStadium(new Stadium(resultSet.getString("stadium_name")));
                 }
             }

@@ -2,7 +2,7 @@ package com.example.egyptian_league_management_system.Controllers;
 
 import com.example.egyptian_league_management_system.Entities.Player;
 import com.example.egyptian_league_management_system.Entities.Team;
-import com.example.egyptian_league_management_system.Entities.Match; // Correct import
+import com.example.egyptian_league_management_system.Entities.Match;
 import com.example.egyptian_league_management_system.Operations.MatchOperations;
 import com.example.egyptian_league_management_system.Operations.PlayerOperations;
 import com.example.egyptian_league_management_system.Operations.TeamOperations;
@@ -108,7 +108,7 @@ public class AdditionalManagementController {
     public void onMatchOnCertainDateClick(ActionEvent event) {
         if (datePicker.getValue() != null) {
             String selectedDate = datePicker.getValue().toString();
-            System.out.println("Selected date: " + selectedDate); // Debugging line
+            System.out.println("Selected date: " + selectedDate);
             List<Match> matches = matchOperations.getMatchesByDate(selectedDate);
 
             if (matches.isEmpty()) {

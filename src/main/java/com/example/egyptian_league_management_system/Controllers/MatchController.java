@@ -50,7 +50,7 @@ public class MatchController {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
-                // Handle IOException as needed
+
             }
         }
         scrollPane.setContent(vbox);

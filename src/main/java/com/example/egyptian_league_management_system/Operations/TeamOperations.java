@@ -199,7 +199,7 @@ public class TeamOperations {
     public int calculateAverageAge(Team team) {
         List<Player> players = team.getPlayers();
         if (players == null || players.isEmpty()) {
-            return 0; // or some other value indicating no players
+            return 0;
         }
         int totalAge = 0;
         for (Player player : players) {
@@ -239,7 +239,7 @@ public class TeamOperations {
                 team = new Team();
                 team.setId(resultSet.getInt("id"));
                 team.setName(resultSet.getString("name"));
-                // Populate other team attributes as needed
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
