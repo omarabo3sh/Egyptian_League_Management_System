@@ -98,13 +98,13 @@ public class AddNewMatchController {
             teamMatchOperation.insert(teamMatch1);
             teamMatchOperation.insert(teamMatch2);
 
-            Refree referee = refereeOperations.getRefreeByName(refereeName); // Assuming you have a method to fetch referee by name
+            Refree referee = refereeOperations.getRefreeByName(refereeName);
             Refree_Match refereeMatch = new Refree_Match(referee, match);
             Refree_MatchOperations refereeMatchOperations = new Refree_MatchOperations();
             refereeMatchOperations.insert(refereeMatch);
 
 
-            Stadium stadium = stadiumOperations.getStadiumByName(stadiumName); // Assuming you have a method to fetch stadium by name
+            Stadium stadium = stadiumOperations.getStadiumByName(stadiumName);
             match.setStadium(stadium);
             matchOperations.updateMatch(match);
 
