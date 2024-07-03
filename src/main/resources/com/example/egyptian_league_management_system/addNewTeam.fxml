@@ -9,7 +9,7 @@
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
 
-    <Label alignment="CENTER" layoutX="193.0" layoutY="14.0" prefHeight="39.0" prefWidth="213.0" text="Add New Team" wrapText="true">
+    <Label alignment="CENTER" layoutX="193.0" layoutY="40.0" prefHeight="39.0" prefWidth="213.0" text="Add New Team" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="27.0" />
         </font>

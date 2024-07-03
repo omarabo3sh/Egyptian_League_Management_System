@@ -61,7 +61,7 @@
         </textFill>
     </Label>
 
-    <TextField fx:id="playerNameField" alignment="CENTER" layoutX="363.0" layoutY="256.0" prefHeight="38.0" prefWidth="187.0" promptText="Enter Player Name" styleClass="button-73" />
+    <TextField fx:id="playerNameField" alignment="CENTER" layoutX="363.0" layoutY="256.0" prefHeight="38.0" prefWidth="195.0" promptText="Enter Player Name" styleClass="button-73" />
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
 

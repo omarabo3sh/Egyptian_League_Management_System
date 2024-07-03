@@ -9,7 +9,7 @@
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
 
-    <Label alignment="CENTER" layoutX="162.0" layoutY="23.0" prefHeight="39.0" prefWidth="356.0" text="Update Match Information" wrapText="true">
+    <Label alignment="CENTER" layoutX="122.0" layoutY="22.0" prefHeight="39.0" prefWidth="356.0" text="Update Match Information" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="27.0" />
         </font>
@@ -210,9 +210,9 @@
 
     <ComboBox fx:id="team2NameComboBox" layoutX="215.0" layoutY="141.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
 
-    <Button layoutX="235.0" layoutY="347.0" mnemonicParsing="false" onAction="#onUpdateMatchClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="Update" wrapText="true" />
-   <TextField fx:id="matchIdTextField" layoutX="223.0" layoutY="69.0" prefHeight="25.0" prefWidth="250.0" />
-   <Label alignment="CENTER" layoutX="73.0" layoutY="62.0" prefHeight="39.0" prefWidth="150.0" text="Match id" wrapText="true">
+    <Button layoutX="235.0" layoutY="351.0" mnemonicParsing="false" onAction="#onUpdateMatchClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="Update" wrapText="true" />
+   <TextField fx:id="matchIdTextField" layoutX="215.0" layoutY="69.0" prefHeight="25.0" prefWidth="250.0" promptText="match id" />
+   <Label alignment="CENTER" layoutX="63.0" layoutY="62.0" prefHeight="39.0" prefWidth="150.0" text="Match id" wrapText="true">
       <font>
          <Font name="System Bold Italic" size="20.0" />
       </font>
