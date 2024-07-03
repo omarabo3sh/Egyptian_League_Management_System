@@ -22,7 +22,7 @@ public class Application extends javafx.application.Application {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource(STYLESHEET_PATH)).toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("/epl.jpg")));
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/epl.jpg"))));
 
         stage.setResizable(false);
         stage.setTitle("Egyptian League Management System");
