@@ -36,7 +36,7 @@
         </textFill>
     </Label>
 
-    <TextField fx:id="scoreField" layoutX="215.0" layoutY="210.0" prefHeight="25.0" prefWidth="250.0" promptText="Score" />
+    <TextField fx:id="scoreField" layoutX="215.0" layoutY="210.0" prefHeight="25.0" prefWidth="250.0" promptText="if the match didn't end enter '0' " />
     <TextField fx:id="stadiumField" layoutX="215.0" layoutY="251.0" prefHeight="25.0" prefWidth="250.0" promptText="Stadium" />
     <Label alignment="CENTER" layoutX="65.0" layoutY="154.0" prefHeight="39.0" prefWidth="150.0" text="Match Date" wrapText="true">
         <font>
@@ -65,7 +65,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="14.0" layoutY="197.0" prefHeight="39.0" prefWidth="182.0" text="Score (if finished)" wrapText="true">
+    <Label alignment="CENTER" layoutX="70.0" layoutY="203.0" prefHeight="39.0" prefWidth="140.0" text="Score " wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
