@@ -129,7 +129,7 @@ public class PlayerOperations {
         List<Player> players = getAllPlayers();
         List<Player> gks = new ArrayList<>();
         for (Player player : players) {
-            if ("GK".equalsIgnoreCase(player.getPosition())) {
+            if ("Goalkeeper".equalsIgnoreCase(player.getPosition())) {
                 gks.add(player);
             }
         }

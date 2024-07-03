@@ -91,6 +91,9 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
         }
         teamNameField.clear();
     }
+
+
+
     public void onDisplayTeamMatchesClick(ActionEvent event) {
         String teamName = teamNameField.getText().trim();
         if (teamName.isEmpty()) {
@@ -112,7 +115,7 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
 
                 for (Match match : matches) {
                     matchInfo.append("Match ID: ").append(match.getId()).append(" ")
-                            .append("Date: ").append(match.getDate()).append(" ");
+                            .append("Date: ").append(match.getDate()).append(" ").append( "\n");
                 }
 
                 infoLabel.setText(matchInfo.toString());
@@ -147,7 +150,7 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, 
             for (Team t : teamsWithPlayers) {
                 if (t.getName().equals(team.getName())) {
                     for (int i = 0; i < t.getPlayers().size(); i++) {
-                        playersScores.append("Player Name: ").append(t.getPlayers().get(i).getName()).append("\n")
+                        playersScores.append("Player Name: ").append(t.getPlayers().get(i).getName())
                                 .append("Player Score: ").append(t.getPlayers().get(i).getScore()).append("\n");
                     }
                 }

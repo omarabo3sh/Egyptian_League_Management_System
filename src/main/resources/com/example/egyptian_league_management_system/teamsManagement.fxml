@@ -40,9 +40,6 @@
     </Button>
 
     <Label fx:id="infoLabel" layoutX="76.0" layoutY="294.0" prefHeight="106.0" prefWidth="474.0" text="" textAlignment="CENTER">
-        <font>
-            <Font size="17.0" />
-        </font>
         <textFill>
             <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
                 <stops>

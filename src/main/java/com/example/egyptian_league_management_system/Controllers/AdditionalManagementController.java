@@ -96,7 +96,7 @@ public class AdditionalManagementController {
         List<Player> fewestScoredGKs = playerOperations.getFewestScoredGKs();
 
         StringBuilder sb = new StringBuilder();
-        sb.append("Top Clean Sheets Goalkeepers:  ");
+        sb.append("Top Clean Sheets Goalkeepers(score = the goals scored against them) :  ").append("\n");
         for (Player player : fewestScoredGKs) {
             sb.append("Name: ").append(player.getName()).append(", ")
                     .append("Position: ").append(player.getPosition()).append(", ")
