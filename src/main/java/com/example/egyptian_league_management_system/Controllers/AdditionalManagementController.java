@@ -20,7 +20,7 @@ public class AdditionalManagementController {
     public DatePicker datePicker;
     private TeamOperations teamOperations = new TeamOperations();
     private PlayerOperations playerOperations = new PlayerOperations();
-    private  MatchOperations matchOperations = new MatchOperations();
+    private final MatchOperations matchOperations = new MatchOperations();
 
     public void onBackClick(ActionEvent event) throws IOException {
         switchScene(event, "choose.fxml");
