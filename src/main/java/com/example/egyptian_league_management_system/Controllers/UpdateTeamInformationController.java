@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+import static com.example.egyptian_league_management_system.Application.showAlert;
 import static com.example.egyptian_league_management_system.Application.switchScene;
 
 public class UpdateTeamInformationController {
@@ -28,7 +29,7 @@ public class UpdateTeamInformationController {
     }
 
     public void onUpdateClick(ActionEvent event) {
-
+try {
             int id = Integer.parseInt(idField.getText());
             String name = nameField.getText();
             String captainName = captainNameField.getText();
@@ -45,6 +46,11 @@ public class UpdateTeamInformationController {
         nameField.clear();
         captainNameField.clear();
         totalScoreField.clear();
-
+    showAlert("Success", "Team updated successfully: "+name);
+} catch (NumberFormatException e) {
+    showAlert("Input Error", "Please enter valid data.");
+}
     }
+
+
 }
