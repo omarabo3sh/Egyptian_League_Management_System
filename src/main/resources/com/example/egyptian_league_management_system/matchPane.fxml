@@ -5,12 +5,12 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="232.0" prefWidth="600.0" style="-fx-background-color: #303030;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.MatchPaneController">
-    <Label fx:id="labelTeam1" alignment="CENTER" layoutX="14.0" layoutY="37.0" prefWidth="153.0" style="-fx-text-fill: white;" text="Team1">
+    <Label fx:id="labelTeam1" alignment="CENTER" layoutX="14.0" layoutY="37.0" prefHeight="39.0" prefWidth="189.0" style="-fx-text-fill: white;" text="Team1">
         <font>
             <Font size="27.0" />
         </font>
     </Label>
-    <Label fx:id="labelTeam2" alignment="CENTER" layoutX="378.0" layoutY="37.0" prefWidth="147.0" style="-fx-text-fill: white;" text="Team2">
+    <Label fx:id="labelTeam2" alignment="CENTER" layoutX="411.0" layoutY="37.0" prefHeight="39.0" prefWidth="174.0" style="-fx-text-fill: white;" text="Team2">
         <font>
             <Font size="27.0" />
         </font>
@@ -30,7 +30,7 @@
             <Font size="20.0" />
         </font>
     </Label>
-    <Label fx:id="labelDate" layoutX="186.0" layoutY="51.0" prefWidth="107.0" style="-fx-text-fill: white;">
+    <Label fx:id="labelDate" layoutX="246.0" layoutY="43.0" prefWidth="107.0" style="-fx-text-fill: white;">
         <font>
             <Font name="System Bold" size="19.0" />
         </font>
