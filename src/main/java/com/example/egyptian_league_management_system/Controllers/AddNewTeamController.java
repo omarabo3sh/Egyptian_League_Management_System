@@ -27,7 +27,7 @@ public class AddNewTeamController {
        switchScene(event, "teamsManagement.fxml");
     }
 
-    public void onEnterClick( ) {
+    public void onEnterClick(ActionEvent event) {
 try {
         String name = nameField.getText();
         String captainName = captainNameField.getText();

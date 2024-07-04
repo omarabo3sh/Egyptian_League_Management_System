@@ -32,7 +32,7 @@ public class TeamsManagementController {
 
     private final TeamOperations teamOperations = new TeamOperations();
 
-    public void onDisplayTeamInformationClick( ) {
+    public void onDisplayTeamInformationClick(ActionEvent event) {
         String teamName = teamNameField.getText();
         Team team = teamOperations.getTeamByName(teamName);
 
@@ -55,7 +55,7 @@ public class TeamsManagementController {
     }
 
 
-public void onBackClick(ActionEvent event) throws  IOException {
+public void onBackClick(ActionEvent event) throws IOException, IOException {
     switchScene(event, "choose.fxml");
 }
 
@@ -64,7 +64,7 @@ public void onAddNewTeamClick(ActionEvent event)  throws IOException {
 
 }
 
-public void onUpdateTeamInformationClick(ActionEvent event) throws  IOException {
+public void onUpdateTeamInformationClick(ActionEvent event) throws IOException, IOException {
     switchScene(event,"updateTeamInformation.fxml");
 
 }
@@ -72,7 +72,7 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws  IOException 
 
 
 
-    public void onSearchForTeamIClick( )   {
+    public void onSearchForTeamIClick(ActionEvent event) throws IOException {
         String teamName = teamNameField.getText().trim();
         if (teamName.isEmpty()) {
 
@@ -83,7 +83,7 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws  IOException 
         Team team = teamOperations.getTeamByName(teamName);
 
         if (team != null && team.getName() != null && team.getName().equals(teamName)) {
-             new Alert(Alert.AlertType.INFORMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             showAlert("Team Found", "Team found!");
         } else {
 
@@ -94,7 +94,7 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws  IOException 
 
 
 
-    public void onDisplayTeamMatchesClick( ) {
+    public void onDisplayTeamMatchesClick(ActionEvent event) {
         String teamName = teamNameField.getText().trim();
         if (teamName.isEmpty()) {
             showAlert("Input Error", "Please enter a team name.");
@@ -130,7 +130,7 @@ public void onUpdateTeamInformationClick(ActionEvent event) throws  IOException 
     }
 
 
-    public void onDisplayTeamDetailedScoresClick( ) {
+    public void onDisplayTeamDetailedScoresClick(ActionEvent event) {
         String teamName = teamNameField.getText().trim();
         if (teamName.isEmpty()) {
             showAlert("Input Error", "Please enter a team name.");

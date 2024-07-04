@@ -20,9 +20,9 @@ public class PlayerManagementController {
 
     @FXML
     private TextField playerNameField;
-    private final PlayerOperations playerOperations = new PlayerOperations();
+    private PlayerOperations playerOperations = new PlayerOperations();
 
-    public void onSearchForPlayerClick( ) {
+    public void onSearchForPlayerClick(ActionEvent event) {
         String playerName = playerNameField.getText().trim();
         if (playerName.isEmpty()) {
             showAlert("Input Error", "Please enter a player name.");
@@ -39,7 +39,7 @@ public class PlayerManagementController {
         playerNameField.clear();
     }
 
-    public void onDisplayPlayerInformationClick( ) {
+    public void onDisplayPlayerInformationClick(ActionEvent event) {
         String playerName = playerNameField.getText();
         Player player = playerOperations.getPlayerByName(playerName);
 
@@ -64,7 +64,7 @@ public class PlayerManagementController {
     }
 
 
-    public void onDisplayPlayerPositionClick( ) {
+    public void onDisplayPlayerPositionClick(ActionEvent event) {
         String playerName = playerNameField.getText();
         Player player = playerOperations.getPlayerByName(playerName);
         if (playerName.isEmpty()) {
@@ -81,7 +81,7 @@ public class PlayerManagementController {
     }
 
 
-    public void onBackClick(ActionEvent event) throws  IOException {
+    public void onBackClick(ActionEvent event) throws IOException, IOException {
         switchScene(event, "choose.fxml");
     }
 
@@ -90,7 +90,7 @@ public class PlayerManagementController {
 
     }
 
-    public void onUpdatePlayerInformationClick(ActionEvent event) throws IOException {
+    public void onUpdatePlayerInformationClick(ActionEvent event) throws IOException, IOException {
         switchScene(event, "updatePlayerInformation.fxml");
 
     }

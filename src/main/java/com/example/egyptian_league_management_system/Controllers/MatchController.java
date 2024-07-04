@@ -71,7 +71,7 @@ public class MatchController {
     private String getRefereeNames(List<Refree> referees) {
         StringBuilder names = new StringBuilder();
         for (Refree referee : referees) {
-            if (!names.isEmpty()) {
+            if (names.length() > 0) {
                 names.append(", ");
             }
             names.append(referee.getName());

@@ -35,7 +35,7 @@ public class AddNewPlayerController {
 
     PlayerOperations playerOperations =new PlayerOperations();
 
-    public void onEnterClick() {
+    public void onEnterClick(ActionEvent event) {
         try {
             String name = nameField.getText();
             String number = numberField.getText();
