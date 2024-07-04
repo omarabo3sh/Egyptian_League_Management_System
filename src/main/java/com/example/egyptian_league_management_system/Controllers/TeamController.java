@@ -11,7 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import static com.example.egyptian_league_management_system.Application.switchScene;
-import static com.example.egyptian_league_management_system.Application.switchScene;
+import static com.example.egyptian_league_management_system.Application.switchSceneWithParams;
 
 public class TeamController {
 
@@ -36,23 +36,23 @@ public class TeamController {
     }
 
     public void onImage1Click(MouseEvent mouseEvent) throws IOException {
-    switchScene(mouseEvent, "player.fxml", "AlAhly");
+     switchSceneWithParams(mouseEvent, "player.fxml", "AlAhly");
     }
 
     public void onImage2Click(MouseEvent mouseEvent) throws IOException {
-        switchScene(mouseEvent, "player.fxml", "ELZamalek");
+        switchSceneWithParams(mouseEvent, "player.fxml", "ELZamalek");
     }
 
     public void onImage3Click(MouseEvent mouseEvent) throws IOException {
-      switchScene(mouseEvent, "player.fxml", "ELIsmaily");
+        switchSceneWithParams(mouseEvent, "player.fxml", "ELIsmaily");
     }
 
     public void onImage4Click(MouseEvent mouseEvent) throws IOException {
-        switchScene(mouseEvent, "player.fxml", "ELMasry");
+        switchSceneWithParams(mouseEvent, "player.fxml", "ELMasry");
     }
 
     public void onImage5Click(MouseEvent mouseEvent) throws IOException {
-        switchScene(mouseEvent, "player.fxml", "ELMokawloon");
+        switchSceneWithParams(mouseEvent, "player.fxml", "ELMokawloon");
     }
 
 

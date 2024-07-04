@@ -34,7 +34,9 @@ public class AddNewPlayerController {
     private TextField teamField;
 
     PlayerOperations playerOperations =new PlayerOperations();
-
+    public void onBackClick(ActionEvent event) throws IOException {
+    switchScene(event, "playerManagement.fxml");
+}
     public void onEnterClick(ActionEvent event) {
         try {
             String name = nameField.getText();
@@ -74,12 +76,7 @@ public class AddNewPlayerController {
 
             showAlert("Success", "Player information added successfully.");
         } catch (NumberFormatException e) {
-            showAlert("Input Error", "Please enter valid data.");
+            showAlert("Input Error", "Please enter valid numerical values for age, score, rank, and team ID.");
         }
     }
-
-    public void onBackClick(ActionEvent event) throws IOException {
-        switchScene(event, "playerManagement.fxml");
-    }
-
 }

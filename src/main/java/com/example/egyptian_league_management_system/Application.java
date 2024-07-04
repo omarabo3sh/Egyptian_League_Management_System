@@ -40,7 +40,7 @@ public class Application extends javafx.application.Application {
         stage.show();
     }
 
-    public static void switchScene(Event event, String fxmlFile, String teamName) throws IOException {
+    public static void switchSceneWithParams(Event event, String fxmlFile, String teamName) throws IOException {
         FXMLLoader loader = new FXMLLoader(Application.class.getResource(fxmlFile));
         Parent root = loader.load();
 

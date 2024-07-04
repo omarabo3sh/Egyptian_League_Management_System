@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" alignment="CENTER" fx:controller="test.Mainc" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Button text="Team Management" fx:id="teamManagementButton" onAction="#handleTeamManagement"/>
+        <Button text="Player Management" fx:id="playerManagementButton" onAction="#handlePlayerManagement"/>
+        <Button text="Match Management" fx:id="matchManagementButton" onAction="#handleMatchManagement"/>
+        <Button text="General Functions" fx:id="generalFunctionsButton" onAction="#handleGeneralFunctions"/>
+    </children>
+</VBox>
+

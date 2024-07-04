@@ -10,7 +10,6 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-import static com.example.egyptian_league_management_system.Application.showAlert;
 import static com.example.egyptian_league_management_system.Application.switchScene;
 
 public class UpdatePlayerInformationController {
@@ -79,11 +78,12 @@ public class UpdatePlayerInformationController {
             rankField.clear();
             teamField.clear();
 
+            System.out.println("Player updated successfully: " + name);
 
-        showAlert("Success", "Player updated successfully: " + name );
-    } catch (NumberFormatException e) {
-        showAlert("Input Error", "Please enter valid data.");
-    }
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid input: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
 

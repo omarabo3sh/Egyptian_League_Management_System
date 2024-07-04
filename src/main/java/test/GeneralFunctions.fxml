@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="test.GeneralFunctions">
+    <children>
+        <Button text="Display Teams Ordered By Points" onAction="#handleDisplayTeamsOrderedByPoints"/>
+        <Button text="Display Top Scorers" onAction="#handleDisplayTopScorers"/>
+        <Button text="Display Top Goalkeepers" onAction="#handleDisplayTopGoalkeepers"/>
+        <Button text="Display Top Players By Rank" onAction="#handleDisplayTopPlayersByRank"/>
+        <Button text="Display Teams By Goals" onAction="#handleDisplayTeamsByGoals"/>
+        <Button text="Display Teams By Average Age" onAction="#handleDisplayTeamsByAverageAge"/>
+        <Button text="Display Matches On Date" onAction="#handleDisplayMatchesOnDate"/>
+        <TableView fx:id="generalTableView">
+            <columns>
+                <TableColumn text="Attribute"/>
+                <TableColumn text="Value"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

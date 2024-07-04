@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="scene2anchorpane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.ChoiceController">
+   <Button alignment="CENTER" layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Home" wrapText="true" />
+
+
+   <Button alignment="CENTER" layoutX="255.0" layoutY="340.0" mnemonicParsing="false" onAction="#onMatchesClick" prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="MATCHES" textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Button>
+   <Button alignment="CENTER" layoutX="407.0" layoutY="340.0" mnemonicParsing="false" onAction="#onAddNewClick" prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="ADD NEW" textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Button>
+
+   <Button alignment="CENTER" layoutX="110.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTeamsClick" prefHeight="38.0" prefWidth="126.0" styleClass="button-73" text="TEAMS" textAlignment="CENTER">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Button>
+
+   <Label alignment="CENTER" layoutX="173.0" layoutY="25.0" prefHeight="45.0" prefWidth="234.0" text="Select The Date Of Match" wrapText="true">
+      <font>
+         <Font name="System Bold Italic" size="15.0" />
+      </font>
+      <textFill>
+         <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="1.0" green="0.31481480598449707" blue="0.31481480598449707" />
+                  </color>
+               </Stop>
+               <Stop offset="0.4178082191780822">
+                  <color>
+                     <Color red="1.0" green="1.0" blue="1.0" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="0.39181286096572876" green="0.9473684430122375" blue="0.7714424729347229" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </textFill>
+   </Label>
+   <DatePicker layoutX="186.0" layoutY="70.0" onAction="#handleDateSelection" prefHeight="45.0" prefWidth="208.0" promptText="Select Date" styleClass="button-73" />
+   <AnchorPane fx:id="matchAnchorPane" layoutX="41.0" layoutY="133.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="189.0" prefWidth="505.0" style="-fx-background-color: #303030;" visible="false">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="21.0" prefHeight="60.0" prefWidth="112.0" text="Team1" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="137.0" prefHeight="42.0" prefWidth="112.0" text="Referee   :" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="197.0" layoutY="95.0" prefHeight="42.0" prefWidth="112.0" text="score" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="324.0" layoutY="137.0" prefHeight="42.0" prefWidth="133.0" text="Stadium   :" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="346.0" layoutY="29.0" prefHeight="42.0" prefWidth="112.0" text="Team2" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="216.0" layoutY="40.0" prefHeight="30.0" prefWidth="73.0" text="Date" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </AnchorPane>
+
+</AnchorPane>

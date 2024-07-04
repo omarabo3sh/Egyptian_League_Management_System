@@ -31,7 +31,7 @@ public class MatchController {
         List<Match> matches = matchOperations.getAllMatches();
         vbox.getChildren().clear();
 
-
+        System.out.println("Number of matches to process: " + matches.size());
 
         for (Match match : matches) {
             try {
@@ -46,7 +46,7 @@ public class MatchController {
                     Team team2 = teams.get(1);
                     AnchorPane matchPane = loadMatchPane(match, team1, team2, referees, stadium);
                     vbox.getChildren().add(matchPane);
-
+                    System.out.println("Added match with ID " + match.getId() + " to vbox.");
                 }
             } catch (IOException e) {
                 e.printStackTrace();

@@ -38,7 +38,7 @@
 
     <TextField fx:id="scoreField" layoutX="215.0" layoutY="210.0" prefHeight="25.0" prefWidth="250.0" promptText="if the match didn't end enter '0' " />
     <TextField fx:id="stadiumField" layoutX="215.0" layoutY="251.0" prefHeight="25.0" prefWidth="250.0" promptText="Stadium" />
-    <Label alignment="CENTER" layoutX="65.0" layoutY="161.0" prefHeight="39.0" prefWidth="150.0" text="Match Date" wrapText="true">
+    <Label alignment="CENTER" layoutX="65.0" layoutY="154.0" prefHeight="39.0" prefWidth="150.0" text="Match Date" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -154,7 +154,7 @@
 
     <ComboBox fx:id="team1NameComboBox" layoutX="215.0" layoutY="84.0" prefHeight="25.0" prefWidth="250.0" promptText="First Team" />
 
-    <Label alignment="CENTER" layoutX="65.0" layoutY="77.0" prefHeight="39.0" prefWidth="150.0" text="First Team" wrapText="true">
+    <Label alignment="CENTER" layoutX="65.0" layoutY="71.0" prefHeight="39.0" prefWidth="150.0" text="First Team" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -183,7 +183,7 @@
 
     <ComboBox fx:id="team2NameComboBox" layoutX="215.0" layoutY="121.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
 
-    <Label alignment="CENTER" layoutX="65.0" layoutY="117.0" prefHeight="39.0" prefWidth="150.0" text="Second Team" wrapText="true">
+    <Label alignment="CENTER" layoutX="65.0" layoutY="114.0" prefHeight="39.0" prefWidth="150.0" text="Second Team" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
