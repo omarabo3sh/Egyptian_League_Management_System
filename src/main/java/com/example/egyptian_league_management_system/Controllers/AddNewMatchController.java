@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
+import static com.example.egyptian_league_management_system.Application.showAlert;
 import static com.example.egyptian_league_management_system.Application.switchScene;
 
 public class AddNewMatchController {
@@ -116,10 +117,12 @@ public class AddNewMatchController {
             refereeComboBox.getSelectionModel().clearSelection();
             stadiumComboBox.getSelectionModel().clearSelection();
             scoreField.clear();
+
+
+
+            showAlert("Success", "Match added successfully.");
         } catch (NumberFormatException e) {
-            System.out.println("Please enter a valid number for score.");
-        } catch (Exception e) {
-            e.printStackTrace();
+            showAlert("Input Error", "Please enter valid data.");
         }
     }
 

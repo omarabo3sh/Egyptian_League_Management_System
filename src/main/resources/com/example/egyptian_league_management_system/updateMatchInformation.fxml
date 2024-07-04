@@ -8,6 +8,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.UpdateMatchInformationController">
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
+    <CheckBox fx:id="heldCheckBox" layoutX="392.0" layoutY="355.0" prefHeight="17.0" prefWidth="82.0" styleClass="button-7" text="Held" />
 
     <Label alignment="CENTER" layoutX="122.0" layoutY="22.0" prefHeight="39.0" prefWidth="356.0" text="Update Match Information" wrapText="true">
         <font>
@@ -144,7 +145,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="65.0" layoutY="91.0" prefHeight="39.0" prefWidth="150.0" text="First Team" wrapText="true">
+    <Label alignment="CENTER" layoutX="65.0" layoutY="97.0" prefHeight="39.0" prefWidth="150.0" text="First Team" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -171,7 +172,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="65.0" layoutY="134.0" prefHeight="39.0" prefWidth="150.0" text="Second Team" wrapText="true">
+    <Label alignment="CENTER" layoutX="65.0" layoutY="136.0" prefHeight="39.0" prefWidth="150.0" text="Second Team" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -206,9 +207,9 @@
 
     <ComboBox fx:id="refereeComboBox" layoutX="215.0" layoutY="314.0" prefHeight="25.0" prefWidth="250.0" promptText="Referee" />
 
-    <ComboBox fx:id="team1NameComboBox" layoutX="215.0" layoutY="104.0" prefHeight="25.0" prefWidth="250.0" promptText="First Team" />
+    <ComboBox fx:id="team1NameComboBox" layoutX="215.0" layoutY="106.0" prefHeight="25.0" prefWidth="250.0" promptText="First Team" />
 
-    <ComboBox fx:id="team2NameComboBox" layoutX="215.0" layoutY="141.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
+    <ComboBox fx:id="team2NameComboBox" layoutX="215.0" layoutY="145.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
 
     <Button layoutX="235.0" layoutY="351.0" mnemonicParsing="false" onAction="#onUpdateMatchClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="Update" wrapText="true" />
    <TextField fx:id="matchIdTextField" layoutX="215.0" layoutY="69.0" prefHeight="25.0" prefWidth="250.0" promptText="match id" />

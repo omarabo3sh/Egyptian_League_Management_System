@@ -13,6 +13,4 @@ module com.example.egyptian_league_management_system {
     exports com.example.egyptian_league_management_system;
     exports com.example.egyptian_league_management_system.Controllers;
     opens com.example.egyptian_league_management_system.Controllers to javafx.fxml;
-    exports test;
-    opens test to javafx.fxml;
 }
