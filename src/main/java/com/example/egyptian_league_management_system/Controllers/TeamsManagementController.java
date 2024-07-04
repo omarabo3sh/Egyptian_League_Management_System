@@ -30,7 +30,7 @@ public class TeamsManagementController {
 
 
 
-    private final TeamOperations teamOperations = new TeamOperations();
+    private  TeamOperations teamOperations = new TeamOperations();
 
     public void onDisplayTeamInformationClick( ) {
         String teamName = teamNameField.getText();

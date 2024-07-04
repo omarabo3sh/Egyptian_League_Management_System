@@ -30,7 +30,7 @@ public class UpdatePlayerInformationController {
     @FXML
     private TextField teamField;
 
-    private final PlayerOperations playerOperations = new PlayerOperations();
+    private  PlayerOperations playerOperations = new PlayerOperations();
 
     public void onBackClick(ActionEvent event) throws IOException {
       switchScene(event, "playerManagement.fxml");

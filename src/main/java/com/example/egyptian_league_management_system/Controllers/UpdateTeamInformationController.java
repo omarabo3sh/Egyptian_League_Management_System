@@ -22,7 +22,7 @@ public class UpdateTeamInformationController {
     @FXML
     private TextField totalScoreField;
 
-    private final TeamOperations teamOperations = new TeamOperations();
+    private  TeamOperations teamOperations = new TeamOperations();
 
     public void onBackClick(ActionEvent event) throws IOException {
     switchScene(event, "teamsManagement.fxml");

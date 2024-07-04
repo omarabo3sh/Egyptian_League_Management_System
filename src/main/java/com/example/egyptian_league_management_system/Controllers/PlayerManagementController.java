@@ -20,7 +20,7 @@ public class PlayerManagementController {
 
     @FXML
     private TextField playerNameField;
-    private final PlayerOperations playerOperations = new PlayerOperations();
+    private  PlayerOperations playerOperations = new PlayerOperations();
 
     public void onSearchForPlayerClick( ) {
         String playerName = playerNameField.getText().trim();

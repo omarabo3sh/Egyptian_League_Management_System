@@ -18,9 +18,9 @@ import static com.example.egyptian_league_management_system.Application.switchSc
 public class AdditionalManagementController {
     public Label infoLabel;
     public DatePicker datePicker;
-    private final TeamOperations teamOperations = new TeamOperations();
-    private final PlayerOperations playerOperations = new PlayerOperations();
-    private final MatchOperations matchOperations = new MatchOperations();
+    private  TeamOperations teamOperations = new TeamOperations();
+    private  PlayerOperations playerOperations = new PlayerOperations();
+    private  MatchOperations matchOperations = new MatchOperations();
 
     public void onBackClick(ActionEvent event) throws IOException {
         switchScene(event, "choose.fxml");

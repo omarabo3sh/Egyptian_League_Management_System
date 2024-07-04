@@ -25,7 +25,7 @@ public class HeldedMatchController {
     @FXML
     private VBox vbox;
 
-    private final MatchOperations matchOperations = new MatchOperations();
+    private  MatchOperations matchOperations = new MatchOperations();
 
     public void initialize() {
         List<Match> matches = matchOperations.getAllMatches();
