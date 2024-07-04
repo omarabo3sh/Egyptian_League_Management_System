@@ -14,6 +14,8 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
+
+import static com.example.egyptian_league_management_system.Application.showAlert;
 import static com.example.egyptian_league_management_system.Application.switchScene;
 
 public class UpdateMatchInformationController {
@@ -130,10 +132,11 @@ public class UpdateMatchInformationController {
             scoreField.clear();
             heldCheckBox.setSelected(false);
 
+
+
+            showAlert("Success", "match info updated successfully: ");
         } catch (NumberFormatException e) {
-            System.out.println("Please enter a valid number for match ID and score.");
-        } catch (Exception e) {
-            e.printStackTrace();
+            showAlert("Input Error", "Please enter valid data.");
         }
     }
 
