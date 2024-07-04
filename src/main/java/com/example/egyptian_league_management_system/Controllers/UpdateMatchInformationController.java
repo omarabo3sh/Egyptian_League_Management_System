@@ -32,10 +32,10 @@ public class UpdateMatchInformationController {
     @FXML
     private TextField scoreField;
 
-    private MatchOperations matchOperations = new MatchOperations();
-    private TeamOperations teamOperations = new TeamOperations();
-    private RefreeOperations refereeOperations = new RefreeOperations();
-    private StadiumOperations stadiumOperations = new StadiumOperations();
+    private final MatchOperations matchOperations = new MatchOperations();
+    private final TeamOperations teamOperations = new TeamOperations();
+    private final RefreeOperations refereeOperations = new RefreeOperations();
+    private final StadiumOperations stadiumOperations = new StadiumOperations();
 
 
 

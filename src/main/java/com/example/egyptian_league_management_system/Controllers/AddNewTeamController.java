@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+import static com.example.egyptian_league_management_system.Application.showAlert;
 import static com.example.egyptian_league_management_system.Application.switchScene;
 
 public class AddNewTeamController {
@@ -26,8 +27,8 @@ public class AddNewTeamController {
        switchScene(event, "teamsManagement.fxml");
     }
 
-    public void onEnterClick(ActionEvent event) {
-
+    public void onEnterClick( ) {
+try {
         String name = nameField.getText();
         String captainName = captainNameField.getText();
         String totalScore = totalScoreField.getText();
@@ -42,5 +43,9 @@ public class AddNewTeamController {
         captainNameField.clear();
         totalScoreField.clear();
 
+        showAlert("Success", "Team added successfully: "+name);
+    } catch (NumberFormatException e) {
+        showAlert("Input Error", "Please enter valid data.");
+    }
     }
 }
