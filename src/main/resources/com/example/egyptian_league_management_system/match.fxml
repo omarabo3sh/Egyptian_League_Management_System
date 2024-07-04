@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: cover; -fx-background-position: center;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.MatchController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.MatchController">
     <ScrollPane fx:id="scrollPane" prefHeight="362.0" prefWidth="600.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <VBox fx:id="vbox" alignment="CENTER" minHeight="0.0" minWidth="0.0" spacing="10" style="-fx-background-image: url('epl.jpg'); -fx-background-size: cover; -fx-background-position: center;">
         </VBox>
