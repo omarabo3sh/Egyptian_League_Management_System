@@ -90,7 +90,7 @@
     </Button>
 
 
-    <Label fx:id="infoLabel" layoutX="75.0" layoutY="300.0" prefHeight="97.0" prefWidth="475.0" text="" textAlignment="CENTER" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <Label fx:id="infoLabel" layoutX="50.0" layoutY="294.0" prefHeight="63.0" prefWidth="500.0" text="" textAlignment="CENTER" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
         <textFill>
             <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
                 <stops>
