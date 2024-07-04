@@ -8,5 +8,5 @@
         <VBox fx:id="vbox" alignment="CENTER" minHeight="0.0" minWidth="0.0" spacing="10" style="-fx-background-image: url('epl.jpg'); -fx-background-size: cover; -fx-background-position: center;">
         </VBox>
     </ScrollPane>
-    <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" text="Back" />
+    <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" />
 </AnchorPane>

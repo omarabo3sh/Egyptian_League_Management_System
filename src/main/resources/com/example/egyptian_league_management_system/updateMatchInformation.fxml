@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('epl.jpg'); -fx-background-size: stretch; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.egyptian_league_management_system.Controllers.UpdateMatchInformationController">
 
     <Button layoutX="7.0" layoutY="364.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="66.0" styleClass="button-7" text="Back" wrapText="true" />
-    <CheckBox fx:id="heldCheckBox" layoutX="391.0" layoutY="361.0" prefHeight="17.0" prefWidth="73.0" text="Held" styleClass="button-7" />
+    <CheckBox fx:id="heldCheckBox" layoutX="391.0" layoutY="357.0" prefHeight="17.0" prefWidth="73.0" styleClass="button-7" text="Held" />
 
     <Label alignment="CENTER" layoutX="122.0" layoutY="22.0" prefHeight="39.0" prefWidth="356.0" text="Update Match Information" wrapText="true">
         <font>
