@@ -18,15 +18,15 @@ import static com.example.egyptian_league_management_system.Application.switchSc
 public class AdditionalManagementController {
     public Label infoLabel;
     public DatePicker datePicker;
-    private TeamOperations teamOperations = new TeamOperations();
-    private PlayerOperations playerOperations = new PlayerOperations();
-    private  MatchOperations matchOperations = new MatchOperations();
+    private final TeamOperations teamOperations = new TeamOperations();
+    private final PlayerOperations playerOperations = new PlayerOperations();
+    private final MatchOperations matchOperations = new MatchOperations();
 
     public void onBackClick(ActionEvent event) throws IOException {
         switchScene(event, "choose.fxml");
     }
 
-    public void onTeamsByPointsClick(ActionEvent event) {
+    public void onTeamsByPointsClick() {
         List<Team> teams = teamOperations.getTeamsSorted();
 
         if (teams.isEmpty()) {
@@ -41,7 +41,7 @@ public class AdditionalManagementController {
         }
     }
 
-    public void onTeamsByAvgAgesClick(ActionEvent event) {
+    public void onTeamsByAvgAgesClick() {
         List<Team> teams = teamOperations.getTeamAverageAgeSorted();
 
         if (teams.isEmpty()) {
@@ -56,7 +56,7 @@ public class AdditionalManagementController {
         }
     }
 
-    public void onTeamsByGoalsClick(ActionEvent event) {
+    public void onTeamsByGoalsClick() {
         List<Team> teams = teamOperations.getTeamsGoalSorted();
 
         if (teams.isEmpty()) {
@@ -71,7 +71,7 @@ public class AdditionalManagementController {
         }
     }
 
-    public void onTopPlayersByGoalsClick(ActionEvent event) {
+    public void onTopPlayersByGoalsClick() {
         List<Player> topPlayers = playerOperations.getTopScoredPlayers();
         StringBuilder sb = new StringBuilder();
         sb.append("Top Scored Players:  ");
@@ -81,7 +81,7 @@ public class AdditionalManagementController {
         infoLabel.setText(sb.toString());
     }
 
-    public void onTopPlayersByRankClick(ActionEvent event) {
+    public void onTopPlayersByRankClick() {
         List<Player> topRankedPlayers = playerOperations.getTopRankedPlayers();
 
         StringBuilder sb = new StringBuilder();
@@ -92,7 +92,7 @@ public class AdditionalManagementController {
         infoLabel.setText(sb.toString());
     }
 
-    public void onTopGKByCleanSheetClick(ActionEvent event) {
+    public void onTopGKByCleanSheetClick() {
         List<Player> fewestScoredGKs = playerOperations.getFewestScoredGKs();
 
         StringBuilder sb = new StringBuilder();
@@ -105,7 +105,7 @@ public class AdditionalManagementController {
         infoLabel.setText(sb.toString());
     }
 
-    public void onMatchOnCertainDateClick(ActionEvent event) {
+    public void onMatchOnCertainDateClick() {
         if (datePicker.getValue() != null) {
             String selectedDate = datePicker.getValue().toString();
             System.out.println("Selected date: " + selectedDate);

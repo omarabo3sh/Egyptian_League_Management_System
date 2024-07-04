@@ -22,13 +22,13 @@ public class UpdateTeamInformationController {
     @FXML
     private TextField totalScoreField;
 
-    private TeamOperations teamOperations = new TeamOperations();
+    private final TeamOperations teamOperations = new TeamOperations();
 
     public void onBackClick(ActionEvent event) throws IOException {
     switchScene(event, "teamsManagement.fxml");
     }
 
-    public void onUpdateClick(ActionEvent event) {
+    public void onUpdateClick( ) {
 try {
             int id = Integer.parseInt(idField.getText());
             String name = nameField.getText();

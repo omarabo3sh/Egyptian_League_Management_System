@@ -3,7 +3,7 @@ package com.example.egyptian_league_management_system.Controllers;
 import java.io.IOException;
 import java.util.Objects;
 
-import com.example.egyptian_league_management_system.Application;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
@@ -11,7 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import static com.example.egyptian_league_management_system.Application.switchScene;
-import static com.example.egyptian_league_management_system.Application.switchScene;
+
 
 public class TeamController {
 
