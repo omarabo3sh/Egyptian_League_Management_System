@@ -144,7 +144,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="65.0" layoutY="91.0" prefHeight="39.0" prefWidth="150.0" text="First Team" wrapText="true">
+    <Label alignment="CENTER" layoutX="65.0" layoutY="99.0" prefHeight="39.0" prefWidth="150.0" text="First Team" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -171,7 +171,7 @@
         </textFill>
     </Label>
 
-    <Label alignment="CENTER" layoutX="65.0" layoutY="134.0" prefHeight="39.0" prefWidth="150.0" text="Second Team" wrapText="true">
+    <Label alignment="CENTER" layoutX="65.0" layoutY="138.0" prefHeight="39.0" prefWidth="150.0" text="Second Team" wrapText="true">
         <font>
             <Font name="System Bold Italic" size="20.0" />
         </font>
@@ -206,9 +206,9 @@
 
     <ComboBox fx:id="refereeComboBox" layoutX="215.0" layoutY="314.0" prefHeight="25.0" prefWidth="250.0" promptText="Referee" />
 
-    <ComboBox fx:id="team1NameComboBox" layoutX="215.0" layoutY="104.0" prefHeight="25.0" prefWidth="250.0" promptText="First Team" />
+    <ComboBox fx:id="team1NameComboBox" layoutX="215.0" layoutY="107.0" prefHeight="25.0" prefWidth="250.0" promptText="First Team" />
 
-    <ComboBox fx:id="team2NameComboBox" layoutX="215.0" layoutY="141.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
+    <ComboBox fx:id="team2NameComboBox" layoutX="215.0" layoutY="147.0" prefHeight="25.0" prefWidth="250.0" promptText="Second Team" />
 
     <Button layoutX="235.0" layoutY="351.0" mnemonicParsing="false" onAction="#onUpdateMatchClick" prefHeight="37.0" prefWidth="129.0" styleClass="button-7" text="Update" wrapText="true" />
    <TextField fx:id="matchIdTextField" layoutX="215.0" layoutY="69.0" prefHeight="25.0" prefWidth="250.0" promptText="match id" />
