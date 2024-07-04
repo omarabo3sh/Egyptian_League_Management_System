@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -31,13 +32,13 @@ public class UpdateMatchInformationController {
     private ComboBox<String> stadiumComboBox;
     @FXML
     private TextField scoreField;
+    @FXML
+    private CheckBox heldCheckBox;
 
-    private  MatchOperations matchOperations = new MatchOperations();
-    private  TeamOperations teamOperations = new TeamOperations();
-    private  RefreeOperations refereeOperations = new RefreeOperations();
-    private  StadiumOperations stadiumOperations = new StadiumOperations();
-
-
+    private MatchOperations matchOperations = new MatchOperations();
+    private TeamOperations teamOperations = new TeamOperations();
+    private RefreeOperations refereeOperations = new RefreeOperations();
+    private StadiumOperations stadiumOperations = new StadiumOperations();
 
     @FXML
     public void initialize() {
@@ -75,9 +76,7 @@ public class UpdateMatchInformationController {
     @FXML
     private void onUpdateMatchClick() {
         try {
-
             int matchId = Integer.parseInt(matchIdTextField.getText().trim());
-
 
             Match updatedMatch = matchOperations.getMatchById(matchId);
             if (updatedMatch == null) {
@@ -85,14 +84,12 @@ public class UpdateMatchInformationController {
                 return;
             }
 
-
             LocalDate date = datePicker.getValue();
             String team1Name = team1NameComboBox.getValue();
             String team2Name = team2NameComboBox.getValue();
             String refereeName = refereeComboBox.getValue();
             String stadiumName = stadiumComboBox.getValue();
             int score = Integer.parseInt(scoreField.getText());
-
 
             if (date == null || team1Name == null || team2Name == null ||
                     refereeName == null || stadiumName == null || scoreField.getText().isEmpty()) {
@@ -102,14 +99,12 @@ public class UpdateMatchInformationController {
 
             updatedMatch.setDate(date.toString());
             updatedMatch.setScore(score);
-
+            updatedMatch.setishelded(heldCheckBox.isSelected());
 
             Stadium stadium = stadiumOperations.getStadiumByName(stadiumName);
             updatedMatch.setStadium(stadium);
 
-
             matchOperations.updateMatch(updatedMatch);
-
 
             if (!team1Name.equals(team2Name)) {
                 Team team1 = teamOperations.getTeamByName(team1Name);
@@ -120,7 +115,6 @@ public class UpdateMatchInformationController {
             } else {
                 System.out.println("Please select different teams.");
             }
-
 
             Refree referee = refereeOperations.getRefreeByName(refereeName);
             Refree_Match refereeMatch = new Refree_Match(referee, updatedMatch);
@@ -134,6 +128,7 @@ public class UpdateMatchInformationController {
             refereeComboBox.getSelectionModel().clearSelection();
             stadiumComboBox.getSelectionModel().clearSelection();
             scoreField.clear();
+            heldCheckBox.setSelected(false);
 
         } catch (NumberFormatException e) {
             System.out.println("Please enter a valid number for match ID and score.");
