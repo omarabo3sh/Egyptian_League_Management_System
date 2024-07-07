@@ -9,11 +9,12 @@ import com.example.egyptian_league_management_system.Entities.Player_Match;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 public class Player_MatchOperation {
+
+
     private DatabaseManager databaseManager = new DatabaseManager();
-    public Player_MatchOperation(){
-        databaseManager.startConnection();
-    }
+
 
     public void insert(Player_Match playerMatch){
         String query = "insert into player_match (player_id , match_id) values (? , ?)";

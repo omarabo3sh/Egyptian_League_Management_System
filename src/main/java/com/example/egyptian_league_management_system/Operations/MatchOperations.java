@@ -18,7 +18,7 @@ public class MatchOperations {
         databaseManager.startConnection();
     }
 
-public int insertMatch(Match match) {
+    public int insertMatch(Match match) {
     String query = "INSERT INTO `match` (Date, Score, ishelded) VALUES (?, ?, ?)";
     try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
         preparedStatement.setString(1, match.getDate());
@@ -36,7 +36,8 @@ public int insertMatch(Match match) {
         throw new RuntimeException(e);
     }
 }
-public Match getMatchById(int id) {
+
+    public Match getMatchById(int id) {
     String query = "SELECT * FROM `match` WHERE id = ?";
     Match match = null;
     try (PreparedStatement preparedStatement = databaseManager.getConnection().prepareStatement(query)) {
@@ -55,6 +56,7 @@ public Match getMatchById(int id) {
     }
     return match;
 }
+
     public List<Match> getMatchesByDate(String date) {
         String query = "SELECT * FROM `match` WHERE Date = ?";
         List<Match> matches = new ArrayList<>();

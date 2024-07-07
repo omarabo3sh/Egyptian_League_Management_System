@@ -60,6 +60,7 @@ public class RefreeOperations {
             throw new RuntimeException(e);
         }
     }
+
 public Refree getRefereeById(int refereeId) {
     String query = "SELECT * FROM refree WHERE id = ?";
     Refree referee = null;

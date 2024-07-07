@@ -38,6 +38,7 @@ public class PlayerController {
         TeamOperations teamOperations = new TeamOperations();
         Team team = teamOperations.getTeamByName(teamName);
         team = teamOperations.getTeamPlayers(team);
+
         for (Player player : team.getPlayers()) {
             try {
                 AnchorPane playerPane = loadPlayerPane(player);
